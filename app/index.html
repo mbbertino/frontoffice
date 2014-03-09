@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>frontoffice</title>
+        <title>FO</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -27,22 +27,55 @@
         <![endif]-->
 
 
-        <div class="hero-unit">
-          <h1>'Allo, 'Allo!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
-            <li>Sass with Compass</li>
-            <li>Modernizr</li>
-          </ul>
+        <div class="header">
+            <div class="container">
+                <span class="text-muted pull-left">FRONT OFFICE</span>
+                <button class="button btn btn-default pull-right">LOGIN</button>
+            </div>
+        </div>
+
+
+        <div class="jumbotron">
+            <div class="container">
+                <h1>'Allo, 'Allo!</h1>
+                <p class="lead">Always a pleasure scaffolding your apps.</p>
+            </div>
+        </div>
+        
+        <div class="row marketing">
+            <div class="container">
+                <div class="col-lg-12">Coach Sign Ups
+                    <input value="Matt Bertino" placeholder="username"class="username js-coach-username"></input>
+                    <input value="1234" placeholder="password"class="password js-coach-password"></input>
+                    <input value="bertman45@gmail.com" placeholder="email"class="email js-coach-email"></input>
+                    <button class="button btn btn-default js-coach-join">Join!</button>
+                </div>
+                <div class="col-lg-12">Player Sign Ups
+                    <input value="Matt Bertino" placeholder="username"class="coach-name js-player-username"></input>
+                    <input value="1234" placeholder="password"class="password js-player-password"></input>
+                    <input value="bertman45@gmail.com" placeholder="email"class="email js-player-email"></input>
+                    <button class="button btn btn-default js-player-join">Join!</button>
+                </div>
+                <div class="col-lg-12">Team Information
+                    <input value="Enfuego" placeholder="username"class="team-name js-team-name"></input>
+                    <input value="Firefighters" placeholder="password"class="team-sport js-team-sport"></input>
+                    <input value="Equator" placeholder="team-location"class="team-location js-team-location"></input>
+                    <button class="button btn btn-default js-team-creation">Create a team!</button>
+                </div>
+            </div>
         </div>
 
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/backbone/backbone.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
+        
+        <!-- this is the parse sdk -->
+        <script src="//www.parsecdn.com/js/parse-1.2.17.min.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -54,7 +87,23 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
 
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/sass-bootstrap/js/affix.js"></script>
+        <script src="bower_components/sass-bootstrap/js/alert.js"></script>
+        <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
+        <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
+        <script src="bower_components/sass-bootstrap/js/modal.js"></script>
+        <script src="bower_components/sass-bootstrap/js/transition.js"></script>
+        <script src="bower_components/sass-bootstrap/js/button.js"></script>
+        <script src="bower_components/sass-bootstrap/js/popover.js"></script>
+        <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
+        <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
+        <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
+        <script src="bower_components/sass-bootstrap/js/tab.js"></script>
+        <!-- endbuild -->
+
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/model.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
