@@ -9,8 +9,26 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     padding: 0.2em 0;
 }
 
+$brandbkgd: #C6C6CB;
+$fontcolor: #fff;
+$brandmain: #2f2f33;
+$brandsecond: #37373c;
+
+@mixin inputgen {
+    padding-left: 10px;
+    // border-radius: 6px;
+    font-size: 18px;
+    height: 60px;
+    background: #fff;
+    color: $brandsecond;
+    text-align: left;
+    line-height: 60px;
+}
+
 /* Space out content a bit */
 body {
+    color: $fontcolor;
+    background: $brandbkgd;
     // padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -25,11 +43,15 @@ body {
 .header {
     padding: 15px 0;
     border-bottom: 1px solid #e5e5e5;
-
-    /* Make the masthead heading the same height as the navigation */
+    background: $brandbkgd;
+    color: $brandsecond;
 
     span {
         line-height: 30px;
+    }
+    button {
+        background: $brandsecond;
+        color: #fff;
     }
 }
 
@@ -48,9 +70,73 @@ body {
 .jumbotron {
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
+    background: $brandsecond;
+    border-bottom: 1px solid $brandbkgd;
+
     .btn {
         font-size: 21px;
         padding: 14px 24px;
+    }
+
+    .signup-button {
+        text-align: center;
+        border-radius: 9px;
+        background: $brandbkgd;
+        color: #fff;
+    }
+
+    .find-team-button {
+        text-align: center;
+        border-radius: 9px;
+        background: $brandbkgd;
+        color: #fff;
+    }
+
+    .inputtainer {
+        border-radius: 10px;
+        padding: 0px;
+
+        
+        .signup-tainer {
+            overflow: hidden;
+            background: $brandbkgd;
+            border-radius: 10px;
+            // margin-top: 50px;
+
+            select {
+                width: 100%;
+                @include inputgen;
+                border-radius: 0px;
+            }
+
+            input {
+                width: 100%;
+                @include inputgen;
+            }
+
+            .btn {
+                background: $brandsecond;
+                width: 100%;
+                border-radius: 0 0 9px 9px;
+                color: #fff;
+                border: 1px solid #fff;
+            }
+        }
+        .findtainer {
+            input {
+                color: #fff;
+                width: 100%;
+                @include inputgen;
+            }
+
+            .btn {
+                background: $brandsecond;
+                width: 100%;
+                border-radius: 0 0 9px 9px;
+                color: #fff;
+                border: 1px solid #fff;
+            }
+        }
     }
 }
 
@@ -83,6 +169,5 @@ body {
     
     /* Remove the bottom border on the jumbotron for visual effect */
     .jumbotron {
-        border-bottom: 0;
     }
 }

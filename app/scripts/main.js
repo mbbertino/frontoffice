@@ -15,6 +15,8 @@ $(function(){
 	// 		}
 	// 	})
 
+	new AppView()
+
 })
 
 $('.js-coach-join').click(function() {
@@ -31,43 +33,6 @@ $('.js-coach-join').click(function() {
 			alert("Welcome "+newcoach.username);
 		},
 		error: function(newcoach, error) {
-			alert("Error: " + error.code + " " + error.message);
-		}
-	});
-})
-
-$('.js-player-join').click(function() {
-	var newplayer = new Parse.User();
-
-	newplayer.set('username', $('.js-player-userame').val());
-	newplayer.set('password', $('.js-player-password').val());
-	newplayer.set('email', $('.js-player-email').val());
-	newplayer.set('coach', 'False');
-
-	newplayer.signUp(null, {
-		success: function(newplayer) {
-			// I think this will create a user database for me :) please work
-			alert("Welcome "+newplayer.username);
-		},
-		error: function(newplayer, error) {
-			alert("Error: " + error.code + " " + error.message);
-		}
-	});
-})
-
-$('.js-team-creation').click(function() {
-	var newTeam = new Team();
-
-	newTeam.set('team_name', $('.js-team-name').val());
-	newTeam.set('team_sport', $('.js-team-sport').val());
-	newTeam.set('team_location', $('.js-team-location').val());
-
-	newTeam.save(null, {
-		success: function(newTeam) {
-			// I think this will create a user database for me :) please work
-			alert("Welcome "+newTeam);
-		},
-		error: function(newTeam, error) {
 			alert("Error: " + error.code + " " + error.message);
 		}
 	});

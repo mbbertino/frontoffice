@@ -29,42 +29,89 @@
 
         <div class="header">
             <div class="container">
-                <span class="text-muted pull-left">FRONT OFFICE</span>
-                <button class="button btn btn-default pull-right">LOGIN</button>
+                <span class="text-muted pull-left">FRONTOFFICE</span>
+                <button class="button btn btn-inverse pull-right">LOGIN</button>
             </div>
         </div>
 
+        <!-- create a couple buttons -->
 
         <div class="jumbotron">
-            <div class="container">
-                <h1>'Allo, 'Allo!</h1>
-                <p class="lead">Always a pleasure scaffolding your apps.</p>
-            </div>
         </div>
         
         <div class="row marketing">
             <div class="container">
-                <div class="col-lg-12">Coach Sign Ups
-                    <input value="Matt Bertino" placeholder="username"class="username js-coach-username"></input>
-                    <input value="1234" placeholder="password"class="password js-coach-password"></input>
-                    <input value="bertman45@gmail.com" placeholder="email"class="email js-coach-email"></input>
-                    <button class="button btn btn-default js-coach-join">Join!</button>
+                <div class="service col-lg-4 col-md-6">
+                    <!-- <img src=""> need to add in a calander here for an image -->
+                    <h3>Scheduling</h3>
+                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
                 </div>
-                <div class="col-lg-12">Player Sign Ups
-                    <input value="Matt Bertino" placeholder="username"class="coach-name js-player-username"></input>
-                    <input value="1234" placeholder="password"class="password js-player-password"></input>
-                    <input value="bertman45@gmail.com" placeholder="email"class="email js-player-email"></input>
-                    <button class="button btn btn-default js-player-join">Join!</button>
+                <div class="service col-lg-4 col-md-6">
+                    <!-- <img src=""> need to add in a calander here for an image -->
+                    <h3>Scheduling</h3>
+                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
                 </div>
-                <div class="col-lg-12">Team Information
-                    <input value="Enfuego" placeholder="username"class="team-name js-team-name"></input>
-                    <input value="Firefighters" placeholder="password"class="team-sport js-team-sport"></input>
-                    <input value="Equator" placeholder="team-location"class="team-location js-team-location"></input>
-                    <button class="button btn btn-default js-team-creation">Create a team!</button>
+                <div class="service col-lg-4 col-md-6">
+                    <!-- <img src=""> need to add in a calander here for an image -->
+                    <h3>Scheduling</h3>
+                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
+                </div>
+                <div class="service col-lg-4 col-md-6">
+                    <!-- <img src=""> need to add in a calander here for an image -->
+                    <h3>Scheduling</h3>
+                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
+                </div>
+                <div class="service col-lg-4 col-md-6">
+                    <!-- <img src=""> need to add in a calander here for an image -->
+                    <h3>Scheduling</h3>
+                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
+                </div>
+                <div class="service col-lg-4 col-md-6">
+                    <!-- <img src=""> need to add in a calander here for an image -->
+                    <h3>Scheduling</h3>
+                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
                 </div>
             </div>
         </div>
 
+        <!-- ////////////////////////// -->
+        <!-- Below are all my templates -->
+        <!-- ////////////////////////// -->
+
+        <script type="text/template" id="appview-template">
+            <div class="pull-left">
+                <h1>FrontOffice</h1>
+                <p class="lead">Sports Team Management Software.</p>
+                <button class="col-xs-5 pull-left signup-button js-signup">Sign Up</button>
+                <button class="col-xs-5 pull-right find-team-button js-find">Find Team</button>
+            </div>
+            <div class="pull-right col-lg-4 inputtainer"></div>
+        </script>
+
+        <script type="text/template" id="find-template">
+            <input placeholder="Teamname???" class="search"></input>
+            <button class="button btn btn-inverse js-find-team">Find Team</button>
+        </script>
+    
+        <script type="text/template" id="signup-template">
+            <input value="Enfuego" placeholder="Teamname"class="username js-teamname"></input>
+            <select>
+                <option value="Baseball">Baseball</option>
+                <option value="Football">Football</option>
+                <option value="Soccer">Soccer</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Other">Other</option>
+            </select>
+            <!-- <input value="MattBertino" placeholder="Username"class="username js-coach-username"></input> -->
+            <input value="bertman45@gmail.com" placeholder="Email"class="email js-coach-email"></input>
+            <input value="1234" placeholder="Password"class="password js-coach-password"></input>
+            <!-- this email address will also be the username -->
+            <button class="button btn btn-inverse js-coach-join">Create Team</button>
+        </script>
+
+        <!-- ////////////////////////// -->
+        <!-- End of my templates -->
+        <!-- ////////////////////////// -->
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
@@ -105,6 +152,7 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/model.js"></script>
         <script src="scripts/main.js"></script>
+        <script src="scripts/AppView.js"></script>
         <!-- endbuild -->
 </body>
 </html>
