@@ -29,7 +29,7 @@
 
         <div class="header">
             <div class="container">
-                <span class="text-muted pull-left">FRONTOFFICE</span>
+                <h2 class="pull-left">FRONTOFFICE</h2>
                 <button class="button btn btn-inverse pull-right">LOGIN</button>
             </div>
         </div>
@@ -37,36 +37,44 @@
         <!-- create a couple buttons -->
 
         <div class="jumbotron">
+            <div class="container">
+                <div class="js-dashboard row">
+                    
+                </div>
+            </div>
         </div>
+
+        <script type="text/template" id="coach-dashboard">
+            <div class="header-level-2">
+                <h4 class="pull-left">Coach Dashboard</h4>
+                <button class="button btn-xs pull-right">Add Team</button>
+            </div>
+            <div class="maincontent col-xs-12">
+                 <div class="col-sm-6 col-xs-12 section">
+                    <div class="col-xs-12 hello">Team A</div>  
+                </div>   
+            </div>
+        </script>
+
+        <script type="text/template" id="team-dashboard">
+            <div class="header-level-2">
+                <h4 class="pull-left">Coach Dashboard</h4>
+                <button class="button btn-xs pull-right">Add Team</button>
+            </div>
+            <div class="col-sm-6 col-xs-12 section">
+                <div class="col-xs-12 hello">Schedule</div> 
+            </div>                        
+            <div class="col-sm-6 col-xs-12 section">
+                <div class="col-xs-12 hello">Players</div>
+            </div>
+            <div class="col-sm-6 col-xs-12 section">
+                <div class="col-xs-12 hello">Coaches</div> 
+            </div>
+        </script>
         
         <div class="row marketing">
             <div class="container">
-                <div class="service col-lg-4 col-md-6">
-                    <!-- <img src=""> need to add in a calander here for an image -->
-                    <h3>Scheduling</h3>
-                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
-                </div>
-                <div class="service col-lg-4 col-md-6">
-                    <!-- <img src=""> need to add in a calander here for an image -->
-                    <h3>Scheduling</h3>
-                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
-                </div>
-                <div class="service col-lg-4 col-md-6">
-                    <!-- <img src=""> need to add in a calander here for an image -->
-                    <h3>Scheduling</h3>
-                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
-                </div>
-                <div class="service col-lg-4 col-md-6">
-                    <!-- <img src=""> need to add in a calander here for an image -->
-                    <h3>Scheduling</h3>
-                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
-                </div>
-                <div class="service col-lg-4 col-md-6">
-                    <!-- <img src=""> need to add in a calander here for an image -->
-                    <h3>Scheduling</h3>
-                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
-                </div>
-                <div class="service col-lg-4 col-md-6">
+                <div class="service col-xs-12">
                     <!-- <img src=""> need to add in a calander here for an image -->
                     <h3>Scheduling</h3>
                     <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
@@ -78,35 +86,40 @@
         <!-- Below are all my templates -->
         <!-- ////////////////////////// -->
 
+
         <script type="text/template" id="appview-template">
-            <div class="pull-left">
+            <div class="col-xs-12 inputtainer">
                 <h1>FrontOffice</h1>
                 <p class="lead">Sports Team Management Software.</p>
-                <button class="col-xs-5 pull-left signup-button js-signup">Sign Up</button>
-                <button class="col-xs-5 pull-right find-team-button js-find">Find Team</button>
+                <div class="col-xs-12">
+                    <button class="signup-button js-signup">Create A Team</button>
+                </div>
             </div>
-            <div class="pull-right col-lg-4 inputtainer"></div>
         </script>
 
         <script type="text/template" id="find-template">
             <input placeholder="Teamname???" class="search"></input>
             <button class="button btn btn-inverse js-find-team">Find Team</button>
         </script>
-    
+
         <script type="text/template" id="signup-template">
-            <input value="Enfuego" placeholder="Teamname"class="username js-teamname"></input>
-            <select>
-                <option value="Baseball">Baseball</option>
-                <option value="Football">Football</option>
-                <option value="Soccer">Soccer</option>
-                <option value="Basketball">Basketball</option>
-                <option value="Other">Other</option>
-            </select>
-            <!-- <input value="MattBertino" placeholder="Username"class="username js-coach-username"></input> -->
-            <input value="bertman45@gmail.com" placeholder="Email"class="email js-coach-email"></input>
-            <input value="1234" placeholder="Password"class="password js-coach-password"></input>
-            <!-- this email address will also be the username -->
-            <button class="button btn btn-inverse js-coach-join">Create Team</button>
+            <div class="col-xs-3"></div>
+            <div class="col-xs-6">
+                <input value="Enfuego" placeholder="Teamname"class="username js-teamname"></input>
+                <select>
+                    <option value="Baseball">Baseball</option>
+                    <option value="Football">Football</option>
+                    <option value="Soccer">Soccer</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Other">Other</option>
+                </select>
+                <!-- <input value="MattBertino" placeholder="Username"class="username js-coach-username"></input> -->
+                <input value="bertman45@gmail.com" placeholder="Email"class="email js-coach-email"></input>
+                <input value="1234" placeholder="Password"class="password js-coach-password"></input>
+                <!-- this email address will also be the username -->
+                <button class="button btn btn-inverse js-create-team">Create Team</button>
+            </div>
+            <div class="col-xs-3"></div>
         </script>
 
         <!-- ////////////////////////// -->
