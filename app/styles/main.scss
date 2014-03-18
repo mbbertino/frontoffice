@@ -11,7 +11,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 $brandbkgd: #ecf0f1;
 $brandbkgdtwo: white;
-$brandpop: #27ae60;
+$brandpop: #2980b9;
 $fontcolor: white;
 $brandmain: #2f2f33;
 $brandsecond: #37373c;
@@ -41,6 +41,13 @@ body {
 .marketing,
 .footer {}
 
+.modal {
+    color: $brandmain;
+
+    .modal-content{
+        background: $brandbkgd;
+    }
+}
 /* Custom page header */
 .header {
     padding: 0 0;
@@ -97,18 +104,28 @@ body {
         
             h2 {
                 display: inline-block;
-                margin-right: 30px;
-                margin-bottom: 0px;
             }
         
+            .add-team-toggle {
+                margin-top: 2px;
+            }
+
             button {
                 display: inline-block;
                 background: $brandpop;
                 border: none;
                 border-radius: 0px;
                 color: #fff;
-                margin-top: 20px;
-                margin-right: 10%;
+            }
+                
+            select {
+                display: inline-block;
+                @include inputgen;
+                border-radius: 0px;
+            }
+            input {
+                display: inline-block;
+                @include inputgen;
             }
         }
         .maincontent {

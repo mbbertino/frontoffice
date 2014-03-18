@@ -65,8 +65,22 @@
         <script type="text/template" id="coach-dashboard">
             <div class="js-dashboard row">
                 <div class="header-level-2">
-                    <h2 class="">Coach Dashboard</h2>
-                    <button class="button btn-sm pull-right">Add New Team</button>
+                    <h2 class="pull-left">Dashboard</h2>
+                    <div class="pull-right add-team-toggle js-add-team-toggle">
+                        <button class="button btn">Add Team</button>
+                    </div>
+                    <div class="create-team-form hidden pull-right js-create-team-form">
+                        <input value="Enfuego" placeholder="Teamname"class="username js-teamname"></input>
+                        <select class="js-team-sport">
+                            <option value="" disabled selected>Select Sport</option>
+                            <option value="Baseball">Baseball</option>
+                            <option value="Football">Football</option>
+                            <option value="Soccer">Soccer</option>
+                            <option value="Basketball">Basketball</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <button class="button btn js-add-team">Add Team</button>
+                    </div>
                 </div>
                 <div class="maincontent col-xs-12">
                 </div>
@@ -129,8 +143,8 @@
                 <h2>Create Your Team Below!</h2>
                 <input value="Enfuego" placeholder="Teamname"class="username js-teamname"></input>
                 <select class="js-team-sport">
-                    <option value="Baseball">Baseball</option>
                     <option value="" disabled selected>Select Sport</option>
+                    <option value="Baseball">Baseball</option>
                     <option value="Football">Football</option>
                     <option value="Soccer">Soccer</option>
                     <option value="Basketball">Basketball</option>
@@ -138,7 +152,7 @@
                 </select>
                 <input value="bertman45@gmail.com" placeholder="Email"class="email js-coach-username"></input>
                 <input value="1234" placeholder="Password"class="password js-coach-password"></input>
-                <button class="button btn btn-inverse js-create-team">Create</button>
+                <button class="button btn js-create-team">Create</button>
             </div>
         </script>
 

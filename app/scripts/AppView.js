@@ -148,6 +148,10 @@ var CoachDashboard = Parse.View.extend({
 
     renderedtemplate: _.template($('#coach-dashboard').text()),
 
+    events: {
+        'click .js-add-team-toggle': 'toggleAddTeam'
+    },
+
     initialize: function() {
         $('.jumbotron').html(this.el)
         this.render()
@@ -171,6 +175,12 @@ var CoachDashboard = Parse.View.extend({
 
     render: function() {
         this.$el.html(this.renderedtemplate())
+    },
+
+    toggleAddTeam: function() {
+        this.$el.find($('.js-add-team-toggle')).toggleClass('hidden')
+        this.$el.find($('.js-create-team-form')).toggleClass('hidden')
+
     }
 })
 
