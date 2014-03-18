@@ -28,12 +28,19 @@
 
 
         <div class="header">
-            <div class="container">
-                <h2 class="pull-left">FRONT OFFICE</h2>
-                <button class="button btn btn-inverse pull-right">LOGIN</button>
-            </div>
         </div>
 
+        <script type="text/template" id="guest-headerbar-template">
+            <h2 class="pull-left">FRONT OFFICE</h2>
+            <button class="button btn btn-inverse pull-right js-login">LOGIN</button>
+            <input value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
+            <input value="bertman45@gmail.com" placeholder="Username"class="email js-login-username pull-right"></input>
+        </script>
+
+        <script type="text/template" id="user-headerbar-template">
+            <h2 class="pull-left">FRONT OFFICE</h2>
+            <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>
+        </script>
         <!-- create a couple buttons -->
 
         <div class="jumbotron">
@@ -41,15 +48,15 @@
 
         
         <div class="row marketing">
-            <div class="container">
+        </div>
+
+        <script type="text/template" id="marketing-template">
                 <div class="service col-xs-12">
                     <!-- <img src=""> need to add in a calander here for an image -->
                     <h3>Scheduling</h3>
-                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you'll be able to distrubte this schedule out to players, parents, and other coaches. </p>
+                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
                 </div>
-            </div>
-        </div>
-
+        </script>
         <!-- ////////////////////////// -->
         <!-- Below are all my templates -->
         <!-- ////////////////////////// -->
@@ -128,10 +135,8 @@
                     <option value="Basketball">Basketball</option>
                     <option value="Other">Other</option>
                 </select>
-                <!-- <input value="MattBertino" placeholder="Username"class="username js-coach-username"></input> -->
-                <input value="bertman45@gmail.com" placeholder="Email"class="email js-coach-email"></input>
+                <input value="bertman45@gmail.com" placeholder="Email"class="email js-coach-username"></input>
                 <input value="1234" placeholder="Password"class="password js-coach-password"></input>
-                <!-- this email address will also be the username -->
                 <button class="button btn btn-inverse js-create-team">Create</button>
             </div>
         </script>
