@@ -1,6 +1,6 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
-@import 'sass-bootstrap/lib/bootstrap';
+@import "sass-bootstrap/lib/bootstrap";
 
 .browsehappy {
     margin: 0.2em 0;
@@ -10,9 +10,9 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 $brandbkgd: #ecf0f1;
-$brandbkgdtwo: #fff;
+$brandbkgdtwo: white;
 $brandpop: #27ae60;
-$fontcolor: #fff;
+$fontcolor: white;
 $brandmain: #2f2f33;
 $brandsecond: #37373c;
 
@@ -36,24 +36,21 @@ body {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
+
 .header,
 .marketing,
-.footer {
-}
+.footer {}
 
 /* Custom page header */
 .header {
     padding: 0 0;
     background: $brandpop;
-
     h2 {
         margin-left: 10px;
     }
-
     input {
         margin-top: 22px;
     }
-
     button {
         background: $brandpop;
         color: #fff;
@@ -78,19 +75,16 @@ body {
     background: $brandbkgd;
     border-bottom: 1px solid $brandbkgd;
     padding: 0;
-
     .btn {
         font-size: 21px;
         padding: 14px 24px;
     }
-
-    h1  {
+    h1 {
         margin-top: 61px;
     }
     // ////////////////////////////
     // this is the section for the dashboard
     // ////////////////////////////
-    
     .js-dashboard {
         position: relative;
         overflow: hidden;
@@ -100,13 +94,13 @@ body {
             margin-top: 25px;
             padding: 0 25px;
             color: $brandmain;
-
+        
             h2 {
                 display: inline-block;
                 margin-right: 30px;
                 margin-bottom: 0px;
             }
-
+        
             button {
                 display: inline-block;
                 background: $brandpop;
@@ -117,7 +111,6 @@ body {
                 margin-right: 10%;
             }
         }
-
         .maincontent {
             padding-top: 20px;
 
@@ -126,18 +119,19 @@ body {
 
                 .board-title {
                     background: $brandpop;
+                    border-radius: 10px 10px 0 0;
                     color: #fff;
                 }
                 .board {
                     height: 300px;
                     background: $brandbkgdtwo;
-                    border-radius: 0 0 20px 20px;
+                    border-radius: 0 0 10px 10px;
                     overflow: hidden;
+                    color: $brandmain;
                 }
             }
         }
     }
-
     .inputtainer {
         border-radius: 10px;
         margin: 20px 0;
@@ -149,12 +143,10 @@ body {
             border-radius: 0px;
             color: #fff;
         }
-        
         .signup-tainer {
             overflow: hidden;
             position: relative;
             text-align: center;
-
             .centered {
                 float: none;
                 margin: 0 auto;
@@ -164,13 +156,10 @@ body {
                 @include inputgen;
                 border-radius: 0px;
             }
-
             input {
                 width: 100%;
                 @include inputgen;
-
             }
-
             .btn {
                 background: $brandpop;
                 width: 100%;
@@ -178,7 +167,6 @@ body {
                 border-radius: 0px;
             }
         }
-        
     }
 }
 
@@ -197,7 +185,6 @@ body {
     .container {
         max-width: 960px;
     }
-
     /* Remove the padding we set earlier */
     .header,
     .marketing,
@@ -205,13 +192,11 @@ body {
         padding-left: 0;
         padding-right: 0;
     }
-
     /* Space out the masthead */
     .header {
         // margin-bottom: 30px;
+   
     }
-    
     /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-    }
+    .jumbotron {}
 }

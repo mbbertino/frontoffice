@@ -1,211 +1,215 @@
 var GuestHeaderBar = Parse.View.extend({
-	className: 'container',
+    className: 'container',
 
-	renderedTemplate: _.template($('#guest-headerbar-template').text()),
+    renderedTemplate: _.template($('#guest-headerbar-template').text()),
 
-	events: {
-		'click .js-login': 'logIn'
-	},
+    events: {
+        'click .js-login': 'logIn'
+    },
 
-	initialize: function () {
-		$('.header').html(this.el)
-		this.render()
-	},
+    initialize: function() {
+        $('.header').html(this.el)
+        this.render()
+    },
 
-	render: function () {
-		this.$el.html(this.renderedTemplate())
-	},
+    render: function() {
+        this.$el.html(this.renderedTemplate())
+    },
 
-	logIn: function(){
-		Parse.User.logIn($('.js-login-username').val(), $('.js-login-password').val(), {
-		  success: function(user) {
-				new CoachDashboard()
-		  },
-		  error: function(user, error) {
-		  	alert("Error: " + error.code + " " + error.message);
-		  }
-		})
-	}
+    logIn: function() {
+        Parse.User.logIn($('.js-login-username').val(), $('.js-login-password').val(), {
+            success: function(user) {
+                new CoachDashboard()
+            },
+            error: function(user, error) {
+                alert("Error: " + error.code + " " + error.message);
+            }
+        })
+    }
 })
 
 var UserHeaderBar = Parse.View.extend({
-	className: 'container',
+    className: 'container',
 
-	renderedTemplate: _.template($('#user-headerbar-template').text()),
+    renderedTemplate: _.template($('#user-headerbar-template').text()),
 
-	events: {
-		'click .js-logout': 'logOut'
-	},
+    events: {
+        'click .js-logout': 'logOut'
+    },
 
-	initialize: function () {
-		$('.header').html(this.el)
-		this.render()
-	},
+    initialize: function() {
+        $('.header').html(this.el)
+        this.render()
+    },
 
-	render: function () {
-		this.$el.html(this.renderedTemplate())
-	},
+    render: function() {
+        this.$el.html(this.renderedTemplate())
+    },
 
-	logOut: function(){
-		Parse.User.logOut();
-		new AppView()
-	}
+    logOut: function() {
+        Parse.User.logOut();
+        new AppView()
+    }
 })
 
 var MarketingView = Parse.View.extend({
-	className: 'container',
+    className: 'container',
 
-	renderedTemplate: _.template($('#marketing-template').text()),
+    renderedTemplate: _.template($('#marketing-template').text()),
 
-	initialize: function () {
-		$('.marketing').html(this.el)
-		this.render()
-	},
+    initialize: function() {
+        $('.marketing').html(this.el)
+        this.render()
+    },
 
-	render: function () {
-		this.$el.html(this.renderedTemplate())
-	}
+    render: function() {
+        this.$el.html(this.renderedTemplate())
+    }
 })
 
+//////////////////////////////////////////
 var AppView = Parse.View.extend({
 
-	className: 'container',
+    className: 'container',
 
-	renderedTemplate: _.template($('#appview-template').text()),
+    renderedTemplate: _.template($('#appview-template').text()),
 
-	events: {
-		"click .js-signup": "newsignUpView"
-	},
+    events: {
+        "click .js-signup": "newsignUpView"
+    },
 
-	initialize: function () {
-		$('.jumbotron').html(this.el)
-		this.render()
-	},
+    initialize: function() {
+        $('.jumbotron').html(this.el)
+        this.render()
+    },
 
-	render: function () {
-		this.$el.html(this.renderedTemplate())
-		new MarketingView()
-		new GuestHeaderBar()
-	},
+    render: function() {
+        this.$el.html(this.renderedTemplate())
+        new MarketingView()
+        new GuestHeaderBar()
+    },
 
-	newsignUpView: function () {
-		new SignUpView()
-	}
+    newsignUpView: function() {
+        new SignUpView()
+    }
 })
 
-
-// main view above ------------------------------
-
+//////////////////////////////////////////
 var SignUpView = Parse.View.extend({
-	
-	className: 'signup-tainer col-xs-12',
 
-	renderedtemplate: _.template($('#signup-template').text()),
+    className: 'signup-tainer col-xs-12',
 
-	events: {
-		"click .js-create-team": "newCoach"
-	},
+    renderedtemplate: _.template($('#signup-template').text()),
 
-	initialize: function () {
-		$('.inputtainer').html(this.el)
-		this.render()
-	},
+    events: {
+        "click .js-create-team": "newCoach"
+    },
 
-	render: function () {
-		this.$el.html(this.renderedtemplate()) 
-	},
+    initialize: function() {
+        $('.inputtainer').html(this.el)
+        this.render()
+    },
 
-	newCoach: function(){
-		var coach = new Parse.User();
+    render: function() {
+        this.$el.html(this.renderedtemplate())
+    },
 
-		coach.set('username', $('.js-coach-username').val());
-		coach.set('password', $('.js-coach-password').val());
-		coach.set('email', $('.js-coach-username').val());
+    newCoach: function() {
+        var coach = new Parse.User();
 
-		coach.signUp(null, {
-			success: function(coach) {
-				// I think this will create a user database for me :) please work
-				new CoachDashboard()
-			},
-			error: function(coach, error) {
-				alert("Error: " + error.code + " " + error.message);
-			}
-		});
-	}
+        coach.set('username', $('.js-coach-username').val());
+        coach.set('password', $('.js-coach-password').val());
+        coach.set('email', $('.js-coach-username').val());
+
+        coach.signUp(null, {
+            success: function(coach) {
+                // I think this will create a user database for me :) please work
+                var team = new Team()
+
+                team.set('teamname', $('.js-teamname').val());
+                team.set('sport', $('.js-team-sport').val());
+                team.set('user', coach)
+
+                team.save(null, {
+                    success: function(team) {}
+                })
+                new CoachDashboard()
+            },
+            error: function(coach, error) {
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
+    }
 })
 
+//////////////////////////////////////////
 var CoachDashboard = Parse.View.extend({
-	className: 'container',
+    className: 'container',
 
-	renderedtemplate: _.template($('#coach-dashboard').text()),
+    renderedtemplate: _.template($('#coach-dashboard').text()),
 
-	initialize: function () {
-		$('.jumbotron').html(this.el)
-		this.render()
-		new TeamSnapshot()
-		new UserHeaderBar()
-		$('.marketing').empty()
-	},
+    initialize: function() {
+        $('.jumbotron').html(this.el)
+        this.render()
+        new UserHeaderBar()
+        $('.marketing').empty()
+        var user = Parse.User.current();
 
-	render: function () {
-		this.$el.html(this.renderedtemplate()) 
-	}
+        var query = new Parse.Query(Team);
+        query.equalTo("user", user);
+        query.find({
+            success: function(usersTeams) {
+                console.log(usersTeams)
+                _.each(usersTeams, function(team) {
+                    new TeamSnapshot({
+                        model: team
+                    })
+                })
+            }
+        });
+    },
+
+    render: function() {
+        this.$el.html(this.renderedtemplate())
+    }
 })
 
+//////////////////////////////////////////
 var TeamSnapshot = Parse.View.extend({
-	className: 'col-sm-6 col-xs-12 section',
+    className: 'col-sm-6 col-xs-12 section',
 
-	renderedtemplate: _.template($('#team-snapshot').text()),
+    renderedtemplate: _.template($('#team-snapshot').text()),
 
-	initialize: function () {
-		$('.maincontent').html(this.el)
-		this.render()
-	},
+    initialize: function() {
+        $('.maincontent').append(this.el)
+        this.render()
+    },
 
-	render: function () {
-		this.$el.html(this.renderedtemplate()) 
-	},
+    render: function() {
+        this.$el.html(this.renderedtemplate())
+    },
 
-	events: {
-		"click .js-team": "teamDashboard"
-	},
+    events: {
+        "click .js-team": "teamDashboard"
+    },
 
-	teamDashboard: function(){
-		new TeamDashboard()
-	}
+    teamDashboard: function() {
+        new TeamDashboard()
+    }
 })
 
+//////////////////////////////////////////
 var TeamDashboard = Parse.View.extend({
-	className: 'container',
+    className: 'container',
 
-	renderedtemplate: _.template($('#team-dashboard').text()),
+    renderedtemplate: _.template($('#team-dashboard').text()),
 
-	initialize: function () {
-		$('.jumbotron').html(this.el)
-		this.render()
-	},
+    initialize: function() {
+        $('.jumbotron').html(this.el)
+        this.render()
+    },
 
-	render: function () {
-		this.$el.html(this.renderedtemplate()) 
-	}
+    render: function() {
+        this.$el.html(this.renderedtemplate())
+    }
 })
-
-// signup view above ------------------------------
-
-// var FindView = Parse.View.extend({
-	
-// 	className: 'findtainer',
-
-// 	renderedtemplate: _.template($('#find-template').text()),
-
-// 	initialize: function () {
-// 		$('.inputtainer').html(this.el)
-// 		this.render()
-// 	},
-
-// 	render: function () {
-// 		this.$el.html(this.renderedtemplate()) 
-// 	}
-// })
-
-// find view above ------------------------------

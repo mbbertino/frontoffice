@@ -6,5 +6,4 @@ $(function(){
 	} else {
 		new AppView()
 	}
-
 })
