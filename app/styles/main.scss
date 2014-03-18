@@ -10,6 +10,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 $brandbkgd: #ecf0f1;
+$brandbkgdtwo: #fff;
 $brandpop: #27ae60;
 $fontcolor: #fff;
 $brandmain: #2f2f33;
@@ -88,21 +89,28 @@ body {
     
     .js-dashboard {
         position: relative;
-        background: $brandsecond;
         overflow: hidden;
 
         .header-level-2 {
             overflow: hidden;
-            background: $brandpop;
-            border-top: 1px solid #fff;
-            border-bottom: 1px solid #fff;
-            padding: 0 10px;
+            margin-top: 25px;
+            padding: 0 25px;
+            color: $brandmain;
+
+            h2 {
+                display: inline-block;
+                margin-right: 30px;
+                margin-bottom: 0px;
+            }
 
             button {
+                display: inline-block;
                 background: $brandpop;
                 border: none;
+                border-radius: 0px;
                 color: #fff;
-                margin-top: 10px;
+                margin-top: 20px;
+                margin-right: 10%;
             }
         }
 
@@ -112,12 +120,15 @@ body {
             .section {
                 margin-bottom: 30px;
 
-                .hello {
-                    background: $brandbkgd;
-                    border: 1px solid #fff;
+                .board-title {
+                    background: $brandpop;
+                    color: #fff;
+                }
+                .board {
                     height: 300px;
-                    border-radius: 10px;   
-                    color: $brandmain;
+                    background: $brandbkgdtwo;
+                    border-radius: 0 0 20px 20px;
+                    overflow: hidden;
                 }
             }
         }
@@ -126,6 +137,7 @@ body {
     .inputtainer {
         border-radius: 10px;
         margin: 20px 0;
+        color: $brandmain;
 
         .signup-button {
             background: $brandpop;
@@ -136,10 +148,13 @@ body {
         
         .signup-tainer {
             overflow: hidden;
-            // background: $brandbkgd;
-            border-radius: 10px;
-            // margin-top: 50px;
+            position: relative;
+            text-align: center;
 
+            .centered {
+                float: none;
+                margin: 0 auto;
+            }
             select {
                 width: 100%;
                 @include inputgen;
@@ -166,6 +181,7 @@ body {
 /* Supporting marketing content */
 .marketing {
     color: $brandmain;
+    background: $brandbkgd;
     margin: 40px 0;
     p + h4 {
         margin-top: 28px;

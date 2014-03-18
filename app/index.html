@@ -29,7 +29,7 @@
 
         <div class="header">
             <div class="container">
-                <h2 class="pull-left">FRONTOFFICE</h2>
+                <h2 class="pull-left">FRONT OFFICE</h2>
                 <button class="button btn btn-inverse pull-right">LOGIN</button>
             </div>
         </div>
@@ -37,40 +37,8 @@
         <!-- create a couple buttons -->
 
         <div class="jumbotron">
-            <div class="container">
-                <div class="js-dashboard row">
-                    
-                </div>
-            </div>
         </div>
 
-        <script type="text/template" id="coach-dashboard">
-            <div class="header-level-2">
-                <h4 class="pull-left">Coach Dashboard</h4>
-                <button class="button btn-xs pull-right">Add Team</button>
-            </div>
-            <div class="maincontent col-xs-12">
-                 <div class="col-sm-6 col-xs-12 section">
-                    <div class="col-xs-12 hello">Team A</div>  
-                </div>   
-            </div>
-        </script>
-
-        <script type="text/template" id="team-dashboard">
-            <div class="header-level-2">
-                <h4 class="pull-left">Coach Dashboard</h4>
-                <button class="button btn-xs pull-right">Add Team</button>
-            </div>
-            <div class="col-sm-6 col-xs-12 section">
-                <div class="col-xs-12 hello">Schedule</div> 
-            </div>                        
-            <div class="col-sm-6 col-xs-12 section">
-                <div class="col-xs-12 hello">Players</div>
-            </div>
-            <div class="col-sm-6 col-xs-12 section">
-                <div class="col-xs-12 hello">Coaches</div> 
-            </div>
-        </script>
         
         <div class="row marketing">
             <div class="container">
@@ -86,7 +54,52 @@
         <!-- Below are all my templates -->
         <!-- ////////////////////////// -->
 
+<!-- Coach Dashboard Template -->
+        <script type="text/template" id="coach-dashboard">
+            <div class="js-dashboard row">
+                <div class="header-level-2">
+                    <h2 class="">Coach Dashboard</h2>
+                    <button class="button btn-sm pull-right">Add New Team</button>
+                </div>
+                <div class="maincontent col-xs-12">
+                </div>
+            </div>
+        </script>
 
+<!-- Coach TeamSnapshot Template -->
+        <script type="text/template" id="team-snapshot">
+            <div class="col-xs-12 board-title">Team A</div>
+            <div class="col-xs-12 board js-team"></div>  
+        </script>
+
+<!-- Team Dashboard Template -->
+        <script type="text/template" id="team-dashboard">
+            <div class="js-dashboard row">
+                <div class="header-level-2">
+                    <h2 class="">Team Dashboard</h2>
+                </div>
+                <div class="maincontent col-xs-12">
+                    <div class="col-sm-6 col-xs-12 section">
+                        <div class="col-xs-12 board-title">Schedule</div>
+                        <div class="col-xs-12 board"></div>
+                    </div>                        
+                    <div class="col-sm-6 col-xs-12 section">
+                        <div class="col-xs-12 board-title">Players</div>
+                        <div class="col-xs-12 board"></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 section">
+                        <div class="col-xs-12 board-title">Coaches</div>
+                        <div class="col-xs-12 board"></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 section">
+                        <div class="col-xs-12 board-title">Messages</div>
+                        <div class="col-xs-12 board"></div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+<!-- Main App View Template -->
         <script type="text/template" id="appview-template">
             <div class="col-xs-12 inputtainer">
                 <h1>FrontOffice</h1>
@@ -97,14 +110,16 @@
             </div>
         </script>
 
+<!-- Find Team Template -->
         <script type="text/template" id="find-template">
             <input placeholder="Teamname???" class="search"></input>
             <button class="button btn btn-inverse js-find-team">Find Team</button>
         </script>
 
+<!-- Signup template -->
         <script type="text/template" id="signup-template">
-            <div class="col-xs-3"></div>
-            <div class="col-xs-6">
+            <div class="col-xs-6 centered">
+                <h2>Create Your Team Below!</h2>
                 <input value="Enfuego" placeholder="Teamname"class="username js-teamname"></input>
                 <select>
                     <option value="Baseball">Baseball</option>
@@ -117,9 +132,8 @@
                 <input value="bertman45@gmail.com" placeholder="Email"class="email js-coach-email"></input>
                 <input value="1234" placeholder="Password"class="password js-coach-password"></input>
                 <!-- this email address will also be the username -->
-                <button class="button btn btn-inverse js-create-team">Create Team</button>
+                <button class="button btn btn-inverse js-create-team">Create</button>
             </div>
-            <div class="col-xs-3"></div>
         </script>
 
         <!-- ////////////////////////// -->

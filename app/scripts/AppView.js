@@ -51,7 +51,46 @@ var SignUpView = Parse.View.extend({
 var CoachDashboard = Parse.View.extend({
 	className: 'container',
 
-	renderedtemplate: _.template($('#').text()),
+	renderedtemplate: _.template($('#coach-dashboard').text()),
+
+	initialize: function () {
+		$('.jumbotron').html(this.el)
+		this.render()
+		new TeamSnapshot()
+	},
+
+	render: function () {
+		this.$el.html(this.renderedtemplate()) 
+	}
+})
+
+var TeamSnapshot = Parse.View.extend({
+	className: 'col-sm-6 col-xs-12 section',
+
+	renderedtemplate: _.template($('#team-snapshot').text()),
+
+	initialize: function () {
+		$('.maincontent').html(this.el)
+		this.render()
+	},
+
+	render: function () {
+		this.$el.html(this.renderedtemplate()) 
+	},
+
+	events: {
+		"click .js-team": "teamDashboard"
+	},
+
+	teamDashboard: function(){
+		new TeamDashboard()
+	}
+})
+
+var TeamDashboard = Parse.View.extend({
+	className: 'container',
+
+	renderedtemplate: _.template($('#team-dashboard').text()),
 
 	initialize: function () {
 		$('.jumbotron').html(this.el)
@@ -60,9 +99,7 @@ var CoachDashboard = Parse.View.extend({
 
 	render: function () {
 		this.$el.html(this.renderedtemplate()) 
-	},
-
-
+	}
 })
 
 // signup view above ------------------------------
