@@ -123,7 +123,6 @@ var SignUpView = Parse.View.extend({
 
         coach.signUp(null, {
             success: function(coach) {
-                // I think this will create a user database for me :) please work
                 var team = new Team()
 
                 team.set('teamname', $('.js-teamname').val());
@@ -149,7 +148,9 @@ var CoachDashboard = Parse.View.extend({
     renderedtemplate: _.template($('#coach-dashboard').text()),
 
     events: {
-        'click .js-add-team-toggle': 'toggleAddTeam'
+        'click .js-add-team-toggle': 'toggleAddTeam',
+        'click .js-add-team': 'createTeam'
+
     },
 
     initialize: function() {
@@ -179,7 +180,25 @@ var CoachDashboard = Parse.View.extend({
     toggleAddTeam: function() {
         this.$el.find($('.js-add-team-toggle')).toggleClass('hidden')
         this.$el.find($('.js-create-team-form')).toggleClass('hidden')
+    },
 
+    createTeam: function() {
+        var user = Parse.User.current();
+        var team = new Team()
+
+        team.set('teamname', $('.js-form-teamname').val());
+        team.set('sport', $('.js-form-team-sport').val());
+        team.set('user', user)
+
+        team.save(null, {
+            success: function(team) {
+                new TeamSnapshot({
+                    model: team
+                })
+            }
+        })
+        this.$el.find($('.js-create-team-form')).toggleClass('hidden')
+        this.$el.find($('.js-add-team-toggle')).toggleClass('hidden')
     }
 })
 
@@ -189,6 +208,10 @@ var TeamSnapshot = Parse.View.extend({
 
     renderedtemplate: _.template($('#team-snapshot').text()),
 
+    events: {
+        "click .js-team": "teamDashboard"
+    },
+
     initialize: function() {
         $('.maincontent').append(this.el)
         this.render()
@@ -196,10 +219,6 @@ var TeamSnapshot = Parse.View.extend({
 
     render: function() {
         this.$el.html(this.renderedtemplate())
-    },
-
-    events: {
-        "click .js-team": "teamDashboard"
     },
 
     teamDashboard: function() {
