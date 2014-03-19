@@ -2,13 +2,6 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import "sass-bootstrap/lib/bootstrap";
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
 $brandbkgd: #ecf0f1;
 $brandbkgdtwo: white;
 $brandpop: #2980b9;
@@ -28,6 +21,7 @@ $brandsecond: #37373c;
 }
 
 /* Space out content a bit */
+
 body {
     color: $fontcolor;
     background: $brandbkgd;
@@ -53,6 +47,7 @@ body {
     padding: 0 0;
     background: $brandpop;
     h2 {
+        font-family: 'Permanent Marker', cursive;
         margin-left: 10px;
     }
     input {
@@ -87,7 +82,11 @@ body {
         padding: 14px 24px;
     }
     h1 {
+        font-family: 'Permanent Marker', cursive;
         margin-top: 61px;
+    }
+    p {        
+        font-family: 'Permanent Marker', cursive;
     }
     // ////////////////////////////
     // this is the section for the dashboard
@@ -194,6 +193,10 @@ body {
     margin: 40px 0;
     p + h4 {
         margin-top: 28px;
+    }
+
+    h3 {
+        font-family: 'Permanent Marker', cursive;
     }
 }
 

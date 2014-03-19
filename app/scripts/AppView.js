@@ -163,7 +163,6 @@ var CoachDashboard = Parse.View.extend({
         query.equalTo("user", user);
         query.find({
             success: function(usersTeams) {
-                console.log(usersTeams)
                 _.each(usersTeams, function(team) {
                     new TeamSnapshot({
                         model: team
