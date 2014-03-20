@@ -62,11 +62,14 @@ body {
     padding: 0 0;
     background: $brandpop;
 
-    h2 {
-        font-family: 'Permanent Marker', cursive;
-        margin-left: 10px;
-        text-shadow: 5px 5px 0px #000; 
-        margin-top: 13px;
+    a {
+        color: #fff;
+        h2 {
+            font-family: 'Permanent Marker', cursive;
+            margin-left: 10px;
+            text-shadow: 5px 5px 0px #000; 
+            margin-top: 13px;
+        }
     }
 
 

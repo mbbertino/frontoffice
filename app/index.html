@@ -41,10 +41,11 @@
         <!-- ////////////////////////// -->
         <!-- Below are all my templates -->
         <!-- ////////////////////////// -->
-
 <!-- Guest header templates -->
         <script type="text/template" id="guest-headerbar-template">
-            <h2 class="pull-left">FRONT OFFICE</h2>
+            <a href="">
+                <h2 class="pull-left">FRONT OFFICE</h2>
+            </a>
             <div class="head-login-form">
                 <input value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
                 <input value="bertman45@gmail.com" placeholder="Username"class="email js-login-username pull-right"></input>
@@ -81,7 +82,7 @@
                 </select>
                 <input placeholder="Email"class="col-xs-12 email js-coach-username"></input>
                 <input placeholder="Password"class="col-xs-12 password js-coach-password"></input>
-                <button class="col-xs-12 button btn js-create-team">Create</button>
+                    <button class="col-xs-12 button btn js-create-team">Create</button>
             </div>
         </script>
 
@@ -100,15 +101,17 @@
                 </div>
         </script>
 
-
 <!-- Coach header template -->
         <script type="text/template" id="user-headerbar-template">
-            <h2 class="pull-left">Dashboard</h2>
+                <a href="">
+                    <h2 class="pull-left">Dashboard</h2>
+                </a>
             <div class="head-login-form">
-                <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>               
+                <a href="">
+                    <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>
+                </a>
             </div>
         </script>
-
 <!-- Coach Dashboard Template -->
         <script type="text/template" id="coach-dashboard">
             <div class="js-dashboard row">
@@ -135,25 +138,30 @@
                 <button class="button btn js-add-team">ADD TEAM</button>
             </div>
         </script>
+
 <!-- TeamSnapshot Template -->
         <script type="text/template" id="team-snapshot">
             <div class="col-xs-12 board-title"><%= this.model.get('sport') %> - <%= this.model.get('teamname') %>
                 <img src="images/settings.png" class="pull-right settings-icon">
             </div>
             <div class="col-xs-12 board js-team">
+                <li>Record: <%= this.model.get('numWins')%> : <%= this.model.get('numWins')%></li>
                 <li>Players: <%= this.model.get('numPlayers')%></li>
                 <li>Coaches: <%= this.model.get('numCoaches')%></li>
-                <li>Unread Messages: <%= this.model.get('numMessages')%> - <%= this.model.get('numReadMessages')%></li>
+                <li>Unread Messages: <%= this.model.get('numMessages') - this.model.get('numReadMessages')%></li>
                 <li>Next Event: </li>
 
             </div> 
         </script>
-
 <!-- Team header template -->
         <script type="text/template" id="team-headerbar-template">
-            <h2 class="pull-left">Team Dashboard</h2>
+                <a href="">
+                    <h2 class="pull-left">Team Dashboard</h2>
+                </a>
             <div class="head-login-form">
-                <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>               
+                <a href="">
+                    <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>               
+                </a>
             </div>
         </script>
         
@@ -171,7 +179,9 @@
                     </div>
                     <div class="col-sm-6 col-xs-12 section">
                         <div class="col-xs-12 board-title">Players</div>
-                        <div class="col-xs-12 board"></div>
+                        <div class="col-xs-12 board players">
+                              
+                        </div>
                     </div>
                     <div class="col-sm-6 col-xs-12 section">
                         <div class="col-xs-12 board-title">Coaches</div>
@@ -181,6 +191,11 @@
             </div>
         </script>
 
+<!-- This is the player listview template -->
+        <script type="text/template" id="player-list">
+                <span><%= this.model.get('first_name') + this.model.get('last_name')%></span>
+                <span><%= this.model.get('position')%></span>
+        </script>
 
 
         <!-- ////////////////////////// -->
@@ -224,9 +239,18 @@
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/router.js"></script>
         <script src="scripts/model.js"></script>
         <script src="scripts/main.js"></script>
-        <script src="scripts/AppView.js"></script>
+        <script src="scripts/views/appview.js"></script>
+        <script src="scripts/views/headerviews.js"></script>
+        <script src="scripts/views/marketingview.js"></script>
+        <script src="scripts/views/signupview.js"></script>
+        <script src="scripts/views/addteambuttonview.js"></script>
+        <script src="scripts/views/coachdashboardview.js"></script>
+        <script src="scripts/views/teamsnapshotview.js"></script>
+        <script src="scripts/views/teamdashboardview.js"></script>
+        <script src="scripts/views/playerlistview.js"></script>
         <!-- endbuild -->
 </body>
 </html>
