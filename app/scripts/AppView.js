@@ -52,6 +52,30 @@ var UserHeaderBar = Parse.View.extend({
     }
 })
 
+var TeamHeaderBar = Parse.View.extend({
+    className: 'container',
+
+    renderedTemplate: _.template($('#team-headerbar-template').text()),
+
+    events: {
+        'click .js-logout': 'logOut'
+    },
+
+    initialize: function() {
+        $('.header').html(this.el)
+        this.render()
+    },
+
+    render: function() {
+        this.$el.html(this.renderedTemplate())
+    },
+
+    logOut: function() {
+        Parse.User.logOut();
+        new AppView()
+    }
+})
+
 var MarketingView = Parse.View.extend({
     className: 'container',
 
@@ -70,7 +94,7 @@ var MarketingView = Parse.View.extend({
 //////////////////////////////////////////
 var AppView = Parse.View.extend({
 
-    className: 'container',
+    className: 'landingtainer',
 
     renderedTemplate: _.template($('#appview-template').text()),
 
@@ -128,6 +152,7 @@ var SignUpView = Parse.View.extend({
                 team.set('teamname', $('.js-teamname').val());
                 team.set('sport', $('.js-team-sport').val());
                 team.set('user', coach)
+                console.log(coach)
 
                 team.save(null, {
                     success: function(team) {}
@@ -141,47 +166,24 @@ var SignUpView = Parse.View.extend({
     }
 })
 
-//////////////////////////////////////////
-var CoachDashboard = Parse.View.extend({
-    className: 'container',
+var AddTeamButton = Parse.View.extend({
+    className: 'add-team-container',
 
-    renderedtemplate: _.template($('#coach-dashboard').text()),
+    renderedtemplate: _.template($('#add-team-button-template').text()),
 
     events: {
-        'click .js-add-team-toggle': 'toggleAddTeam',
-        'click .js-add-team': 'createTeam'
-
+        'click .js-add-team': 'createTeam',
+        'click .js-add-team-toggle': 'toggleAddTeam'
     },
 
     initialize: function() {
-        $('.jumbotron').html(this.el)
+        $('.head-login-form').append(this.el)
         this.render()
-        new UserHeaderBar()
-        $('.marketing').empty()
-        var user = Parse.User.current();
-
-        var query = new Parse.Query(Team);
-        query.equalTo("user", user);
-        query.find({
-            success: function(usersTeams) {
-                _.each(usersTeams, function(team) {
-                    new TeamSnapshot({
-                        model: team
-                    })
-                })
-            }
-        });
     },
 
     render: function() {
         this.$el.html(this.renderedtemplate())
     },
-
-    toggleAddTeam: function() {
-        this.$el.find($('.js-add-team-toggle')).toggleClass('hidden')
-        this.$el.find($('.js-create-team-form')).toggleClass('hidden')
-    },
-
     createTeam: function() {
         var user = Parse.User.current();
         var team = new Team()
@@ -199,6 +201,42 @@ var CoachDashboard = Parse.View.extend({
         })
         this.$el.find($('.js-create-team-form')).toggleClass('hidden')
         this.$el.find($('.js-add-team-toggle')).toggleClass('hidden')
+    },
+
+    toggleAddTeam: function() {
+        this.$el.find($('.js-add-team-toggle')).toggleClass('hidden')
+        this.$el.find($('.js-create-team-form')).toggleClass('hidden')
+    }
+})
+
+//////////////////////////////////////////
+var CoachDashboard = Parse.View.extend({
+    className: 'container',
+
+    renderedtemplate: _.template($('#coach-dashboard').text()),
+
+    initialize: function() {
+        $('.jumbotron').html(this.el)
+        this.render()
+        new UserHeaderBar()
+        new AddTeamButton()
+        $('.marketing').empty()
+
+        var userTeamQuery = new Parse.Query(Team);
+        userTeamQuery.equalTo("user", Parse.User.current());
+        userTeamQuery.find({
+            success: function(usersTeams) {
+                _.each(usersTeams, function(team) {
+                    new TeamSnapshot({
+                        model: team
+                    })
+                })
+            }
+        });
+    },
+
+    render: function() {
+        this.$el.html(this.renderedtemplate())
     }
 })
 
@@ -215,6 +253,15 @@ var TeamSnapshot = Parse.View.extend({
     initialize: function() {
         $('.maincontent').append(this.el)
         this.render()
+
+        var teamPlayerQuery = new Parse.Query(Player);
+        teamPlayerQuery.equalTo('parent', this.model)
+        teamPlayerQuery.find({
+            success: function(teamPlayers) {
+                var numPlayers = teamPlayers.length
+            }
+        });
+        // this will grab me the teams id to query for # of players, coaches, next event, and latest message
     },
 
     render: function() {
@@ -223,6 +270,7 @@ var TeamSnapshot = Parse.View.extend({
 
     teamDashboard: function() {
         new TeamDashboard()
+        new TeamHeaderBar()
     }
 })
 

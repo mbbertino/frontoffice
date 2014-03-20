@@ -18,6 +18,7 @@
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <!-- endbuild -->
         <script src="bower_components/modernizr/modernizr.js"></script>
 
@@ -41,95 +42,46 @@
         <!-- Below are all my templates -->
         <!-- ////////////////////////// -->
 
-<!-- This is the Marketing Template -->
-        <script type="text/template" id="marketing-template">
-                <div class="service col-xs-12">
-                    <!-- <img src=""> need to add in a calander here for an image -->
-                    <h3>Scheduling</h3>
-                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
-                </div>
-        </script>
-
-<!-- These are the two header templates -->
+<!-- Guest header templates -->
         <script type="text/template" id="guest-headerbar-template">
             <h2 class="pull-left">FRONT OFFICE</h2>
-            <button class="button btn btn-inverse pull-right js-login">LOGIN</button>
-            <input value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
-            <input value="bertman45@gmail.com" placeholder="Username"class="email js-login-username pull-right"></input>
-        </script>
-
-        <script type="text/template" id="user-headerbar-template">
-            <h2 class="pull-left">FRONT OFFICE</h2>
-            <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>
-        </script>
-
-<!-- Coach Dashboard Template -->
-        <script type="text/template" id="coach-dashboard">
-            <div class="js-dashboard row">
-                <div class="header-level-2">
-                    <h2 class="pull-left">Dashboard</h2>
-                    <div class="pull-right add-team-toggle js-add-team-toggle">
-                        <button class="button btn">Add Team</button>
-                    </div>
-                    <div class="create-team-form hidden pull-right js-create-team-form">
-                        <input value="Enfuego" placeholder="Teamname"class="username js-form-teamname"></input>
-                        <select class="js-form-team-sport">
-                            <option value="" disabled selected>Select Sport</option>
-                            <option value="Baseball">Baseball</option>
-                            <option value="Football">Football</option>
-                            <option value="Soccer">Soccer</option>
-                            <option value="Basketball">Basketball</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <button class="button btn js-add-team">Add Team</button>
-                    </div>
-                </div>
-                <div class="maincontent col-xs-12">
-                </div>
-            </div>
-        </script>
-
-<!-- Coach TeamSnapshot Template -->
-        <script type="text/template" id="team-snapshot">
-            <div class="col-xs-12 board-title"><%= this.model.get('sport') %> -  <%= this.model.get('teamname') %></div>
-            <div class="col-xs-12 board js-team"></div>  
-        </script>
-
-<!-- Team Dashboard Template -->
-        <script type="text/template" id="team-dashboard">
-            <div class="js-dashboard row">
-                <div class="header-level-2">
-                    <h2 class="">Team Dashboard</h2>
-                </div>
-                <div class="maincontent col-xs-12">
-                    <div class="col-sm-6 col-xs-12 section">
-                        <div class="col-xs-12 board-title">Schedule</div>
-                        <div class="col-xs-12 board"></div>
-                    </div>                        
-                    <div class="col-sm-6 col-xs-12 section">
-                        <div class="col-xs-12 board-title">Players</div>
-                        <div class="col-xs-12 board"></div>
-                    </div>
-                    <div class="col-sm-6 col-xs-12 section">
-                        <div class="col-xs-12 board-title">Coaches</div>
-                        <div class="col-xs-12 board"></div>
-                    </div>
-                    <div class="col-sm-6 col-xs-12 section">
-                        <div class="col-xs-12 board-title">Messages</div>
-                        <div class="col-xs-12 board"></div>
-                    </div>
-                </div>
+            <div class="head-login-form">
+                <input value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
+                <input value="bertman45@gmail.com" placeholder="Username"class="email js-login-username pull-right"></input>
+                <button class="button btn btn-inverse pull-right js-login">LOGIN</button>
             </div>
         </script>
 
 <!-- Main App View Template -->
         <script type="text/template" id="appview-template">
-            <div class="col-xs-12 inputtainer">
-                <h1>Front Office</h1>
-                <p class="lead">A Sports Team Management Software</p>
-                <div class="col-xs-12">
-                    <button class="signup-button js-signup">Create A Team</button>
+            <img src="images/Landing.jpg" class="landing-img img-responsive" alt="Responsive image">
+            <div class="container">
+                <div class="col-xs-12 inputtainer">
+                    <h1>Front Office</h1>
+                    <p class="lead">A Sports Team Management Software</p>
+                    <div class="col-xs-12">
+                        <button class="signup-button js-signup">Create A Team</button>
+                    </div>
                 </div>
+            </div>
+        </script>
+
+<!-- Signup template -->
+        <script type="text/template" id="signup-template">
+            <div class="col-xs-12 col-md-6 centered">
+                <h2>Create Your Team Below!</h2>
+                <input placeholder="Team Name"class="col-xs-12 username js-teamname"></input>
+                <select class="col-xs-12 js-team-sport">
+                    <option value="" disabled selected>Select Sport</option>
+                    <option value="Baseball">Baseball</option>
+                    <option value="Football">Football</option>
+                    <option value="Soccer">Soccer</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input placeholder="Email"class="col-xs-12 email js-coach-username"></input>
+                <input placeholder="Password"class="col-xs-12 password js-coach-password"></input>
+                <button class="col-xs-12 button btn js-create-team">Create</button>
             </div>
         </script>
 
@@ -139,12 +91,40 @@
             <button class="button btn btn-inverse js-find-team">Find Team</button>
         </script>
 
-<!-- Signup template -->
-        <script type="text/template" id="signup-template">
-            <div class="col-xs-6 centered">
-                <h2>Create Your Team Below!</h2>
-                <input value="Enfuego" placeholder="Teamname"class="username js-teamname"></input>
-                <select class="js-team-sport">
+<!-- This is the Marketing Template -->
+        <script type="text/template" id="marketing-template">
+                <div class="service col-xs-12">
+                    <!-- <img src=""> need to add in a calander here for an image -->
+                    <h3>Scheduling</h3>
+                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+                </div>
+        </script>
+
+
+<!-- Coach header template -->
+        <script type="text/template" id="user-headerbar-template">
+            <h2 class="pull-left">Dashboard</h2>
+            <div class="head-login-form">
+                <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>               
+            </div>
+        </script>
+
+<!-- Coach Dashboard Template -->
+        <script type="text/template" id="coach-dashboard">
+            <div class="js-dashboard row">
+                <div class="maincontent col-xs-12">
+                </div>
+            </div>
+        </script>
+
+<!-- Add team button on the coach dashboard -->
+        <script type="text/template" id="add-team-button-template">
+            <div class="pull-right add-team-toggle js-add-team-toggle">
+                <button class="button btn">ADD TEAM</button>
+            </div>
+            <div class="create-team-form hidden pull-right js-create-team-form">
+                <input value="Enfuego" placeholder="Teamname"class="username js-form-teamname"></input>
+                <select class="js-form-team-sport">
                     <option value="" disabled selected>Select Sport</option>
                     <option value="Baseball">Baseball</option>
                     <option value="Football">Football</option>
@@ -152,11 +132,56 @@
                     <option value="Basketball">Basketball</option>
                     <option value="Other">Other</option>
                 </select>
-                <input value="bertman45@gmail.com" placeholder="Email"class="email js-coach-username"></input>
-                <input value="1234" placeholder="Password"class="password js-coach-password"></input>
-                <button class="button btn js-create-team">Create</button>
+                <button class="button btn js-add-team">ADD TEAM</button>
             </div>
         </script>
+<!-- TeamSnapshot Template -->
+        <script type="text/template" id="team-snapshot">
+            <div class="col-xs-12 board-title"><%= this.model.get('sport') %> - <%= this.model.get('teamname') %>
+                <img src="images/settings.png" class="pull-right settings-icon">
+            </div>
+            <div class="col-xs-12 board js-team">
+                <li>Players: <%= this.model.get('numPlayers')%></li>
+                <li>Coaches: <%= this.model.get('numCoaches')%></li>
+                <li>Unread Messages: <%= this.model.get('numMessages')%> - <%= this.model.get('numReadMessages')%></li>
+                <li>Next Event: </li>
+
+            </div> 
+        </script>
+
+<!-- Team header template -->
+        <script type="text/template" id="team-headerbar-template">
+            <h2 class="pull-left">Team Dashboard</h2>
+            <div class="head-login-form">
+                <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>               
+            </div>
+        </script>
+        
+<!-- Team Dashboard Template -->
+        <script type="text/template" id="team-dashboard">
+            <div class="js-dashboard row">
+                <div class="maincontent col-xs-12">
+                    <div class="col-sm-6 col-xs-12 section">
+                        <div class="col-xs-12 board-title">Schedule</div>
+                        <div class="col-xs-12 board"></div>
+                    </div>                        
+                    <div class="col-sm-6 col-xs-12 section">
+                        <div class="col-xs-12 board-title">Messages</div>
+                        <div class="col-xs-12 board"></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 section">
+                        <div class="col-xs-12 board-title">Players</div>
+                        <div class="col-xs-12 board"></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 section">
+                        <div class="col-xs-12 board-title">Coaches</div>
+                        <div class="col-xs-12 board"></div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+
 
         <!-- ////////////////////////// -->
         <!-- End of my templates -->
