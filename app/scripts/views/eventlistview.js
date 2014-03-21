@@ -1,10 +1,10 @@
-var PlayerList = Parse.View.extend({
-    className: 'player-container col-xs-12',
+var EventList = Parse.View.extend({
+    className: 'event-container col-xs-12',
 
-    renderedtemplate: _.template($('#player-list').text()),
+    renderedtemplate: _.template($('#event-list').text()),
 
     initialize: function() {
-        $('.players').append(this.el)
+        $('.events').append(this.el)
         this.render()
 
         // this will grab me the teams id to query for # of players, coaches, next event, and latest message

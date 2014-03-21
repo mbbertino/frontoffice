@@ -17,7 +17,7 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
-        <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <!-- endbuild -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -156,7 +156,7 @@
 <!-- Team header template -->
         <script type="text/template" id="team-headerbar-template">
                 <a href="">
-                    <h2 class="pull-left">Team Dashboard</h2>
+                    <h2 class="pull-left"><%= this.model.get('teamname')%> Dashboard</h2>
                 </a>
             <div class="head-login-form">
                 <a href="">
@@ -164,28 +164,32 @@
                 </a>
             </div>
         </script>
-        
 <!-- Team Dashboard Template -->
         <script type="text/template" id="team-dashboard">
             <div class="js-dashboard row">
                 <div class="maincontent col-xs-12">
-                    <div class="col-sm-6 col-xs-12 section">
-                        <div class="col-xs-12 board-title">Schedule</div>
-                        <div class="col-xs-12 board"></div>
-                    </div>                        
-                    <div class="col-sm-6 col-xs-12 section">
-                        <div class="col-xs-12 board-title">Messages</div>
-                        <div class="col-xs-12 board"></div>
-                    </div>
-                    <div class="col-sm-6 col-xs-12 section">
-                        <div class="col-xs-12 board-title">Players</div>
-                        <div class="col-xs-12 board players">
-                              
+                    <div class="events-messages col-sm-9" style="padding: 0px;">
+                        <div class="col-xs-12 section">
+                            <div class="col-xs-12 board-title">Schedule</div>
+                            <div class="col-xs-12 board events"></div>
+                        </div>                        
+                        <div class="col-xs-12 section">
+                            <div class="col-xs-12 board-title">Messages</div>
+                            <div class="col-xs-12 board"></div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xs-12 section">
-                        <div class="col-xs-12 board-title">Coaches</div>
-                        <div class="col-xs-12 board"></div>
+                    <div class="events-messages col-sm-3" style="padding: 0px;">
+                        <div class="col-xs-12 section">
+                            <div class="col-xs-12 board-title">Rosters</div>
+                            <div class="col-xs-12 roster board">
+                                <div class="col-xs-12 players">
+                                    <span>Players</span>
+                                </div>                                
+                                <div class="col-xs-12 coaches">
+                                    <span>Coaches</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -193,10 +197,34 @@
 
 <!-- This is the player listview template -->
         <script type="text/template" id="player-list">
-                <span><%= this.model.get('first_name') + this.model.get('last_name')%></span>
-                <span><%= this.model.get('position')%></span>
+                <span><%= this.model.get('first_name')+' '+this.model.get('last_name')%></span>
         </script>
-
+<!-- this is the event list template -->
+        <script type="text/template" id="event-list">
+            <div class="col-xs-12 col-sm-10 inner-containers">
+                <div class="col-xs-3 date-container">
+                    <span class="col-xs-12"><%= moment(this.model.get('date')).format("h:mma")%></span>                
+                    <span class="col-xs-12"><%= moment(this.model.get('date')).format("MMM, D")%></span>                
+                </div>
+                <div class="col-xs-9 info-container">
+                    <span class="col-xs-12"><%= this.model.get('type')%></span>
+                    <span class="col-xs-12"><%= this.model.get('subject')%></span>
+                    <span class="col-xs-12">Location: <%= this.model.get('location')%></span>
+                </div>
+            </div>            
+            <div class="col-xs-12 col-sm-2 inner-containers">
+                <div class="col-xs-12 outcome-container">
+                    <select class="js-game-outcome col-xs-12">
+                        <option value="" disabled selected></option>
+                        <option value="W">W</option>
+                        <option value="L">L</option>
+                        <option value="T">T</option>
+                    </select>
+                    <input value="10" class="score-us js-score-us col-xs-6"></input>
+                    <input value="5" class="score-opp js-score-opp col-xs-6"></input>
+                </div>
+            </div>
+        </script>
 
         <!-- ////////////////////////// -->
         <!-- End of my templates -->
@@ -205,6 +233,7 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/momentjs/moment.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
         <!-- endbower -->
@@ -251,6 +280,7 @@
         <script src="scripts/views/teamsnapshotview.js"></script>
         <script src="scripts/views/teamdashboardview.js"></script>
         <script src="scripts/views/playerlistview.js"></script>
+        <script src="scripts/views/eventlistview.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -9,14 +9,23 @@ var TeamDashboard = Parse.View.extend({
 
         var playerQuery = new Parse.Query(Player);
         playerQuery.equalTo("team", this.model)
-        console.log(this)
-        console.log(this.model)
         playerQuery.find({
             success: function(players) {
-                console.log(players)
                 _.each(players, function(player) {
                     new PlayerList({
                         model: player
+                    })
+                })
+            }
+        });
+
+        var playerQuery = new Parse.Query(Event);
+        playerQuery.equalTo("team", this.model)
+        playerQuery.find({
+            success: function(events) {
+                _.each(events, function(event) {
+                    new EventList({
+                        model: event
                     })
                 })
             }

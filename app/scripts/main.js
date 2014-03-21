@@ -8,36 +8,38 @@ $(function() {
     //     new CoachDashboard();
     // } else {
     //     new AppView()
-    // }
+    // // }
+    // var query = new Parse.Query(Team);
+
+    // var myId = '0oJaBVbuE7';
+
+    // query.get(myId, {
+    //     success: function(object) {
+
+    //         var event = new Event()
+
+    //         var date = Date.now()
+    //         console.log(date)
+    //         event.set('date', date);
+    //         event.set('time', date);
+    //         event.set('type', 'Game');
+    //         event.set('subject', 'River Side Highschool');
+    //         event.set('location', 'River Side Highschool');
+    //         event.set('wlt', false);
+    //         event.set('team_score', false);
+    //         event.set('opp_score', false);
+    //         event.set('team', object);
+    //         event.set('coach', Parse.User.current());
+
+    //         event.save(null, {
+    //             success: function(event) {}
+    //         })
+    //     }
+    // });
 })
 
 // eventually I'll need to move this little section to the create player form submittion
 
-// var query = new Parse.Query(Team);
-
-// var myId = '0oJaBVbuE7';
-
-// query.get(myId, {
-//     success: function(object) {
-
-//         var player = new Player()
-
-//         player.set('first_name', 'James');
-//         player.set('last_name', 'Butt');
-//         player.set('address', '6649 N Blue Gum St');
-//         player.set('city', 'New Orleans');
-//         player.set('state', 'LA');
-//         player.set('zip', '70116');
-//         player.set('phone', '504-621-8927');
-//         player.set('email', 'elizbarr@gmail.com');
-//         player.set('team', object);
-//         player.set('coach', Parse.User.current());
-
-//         player.save(null, {
-//             success: function(player) {}
-//         })
-//     }
-// });
 
 // bertman45@gmail.com
 // katycampen@gmail.com

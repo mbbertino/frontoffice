@@ -3,7 +3,7 @@ var MainRouter = Backbone.Router.extend({
     routes: {
         "": "homePage",
         "team/:id": "teamDashboardPage",
-        "guest/:id": "guestDashboardPage",
+        // "guest/:id": "guestDashboardPage",
         // "about"					: "aboutPage",
 
         // # and / are assumed in backbone
@@ -21,8 +21,9 @@ var MainRouter = Backbone.Router.extend({
 
     teamDashboardPage: function(id) {
         if (Parse.User.current()) {
-            // need to add in a validation that the current user is the user of the team being populated
+
             var teamQuery = new Parse.Query(Team)
+
             teamQuery.get(id, {
                 success: function(object) {
                     if (object.user = Parse.User.current()) {
@@ -30,7 +31,9 @@ var MainRouter = Backbone.Router.extend({
                         new TeamDashboard({
                             model: object
                         })
-                        new TeamHeaderBar()
+                        new TeamHeaderBar({
+                            model: object
+                        })
                     } else {
                         new CoachDashboard()
                     }
@@ -42,6 +45,7 @@ var MainRouter = Backbone.Router.extend({
     },
 
     guestDashboardPage: function() {
+
 
     }
 
