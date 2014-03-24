@@ -1,0 +1,152 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js><!--<![endif]--><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>FO</title><meta name=description content=""><meta name=viewport content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/b4426949.main.css><script src=bower_components/modernizr/modernizr.js></script><body><!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]--><div class=header></div><div class=jumbotron></div><div class="row marketing"></div><!-- ////////////////////////// --><!-- Below are all my templates --><!-- ////////////////////////// --><!-- Guest header templates --><script type=text/template id=guest-headerbar-template><a href=""><h2 class="pull-left">FRONT OFFICE</h2></a>
+            <div class="head-login-form">
+                <input value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
+                <input value="bertman45@gmail.com" placeholder="Username"class="email js-login-username pull-right"></input>
+                <button class="button btn btn-inverse pull-right js-login">LOGIN</button>
+            </div></script><!-- Main App View Template --><script type=text/template id=appview-template><img src="images/41a99da1.Landing.jpg" class="landing-img img-responsive" alt="Responsive image">
+            <div class="container">
+                <div class="col-xs-12 inputtainer">
+                    <h1>Front Office</h1>
+                    <p class="lead">A Sports Team Management Software</p>
+                    <div class="col-xs-12">
+                        <button class="signup-button js-signup">Create A Team</button>
+                    </div>
+                </div>
+            </div></script><!-- Signup template --><script type=text/template id=signup-template><div class="col-xs-12 col-md-6 centered">
+                <h2>Create Your Team Below!</h2>
+                <input placeholder="Team Name"class="col-xs-12 username js-teamname"></input>
+                <select class="col-xs-12 js-team-sport">
+                    <option value="" disabled selected>Select Sport</option>
+                    <option value="Baseball">Baseball</option>
+                    <option value="Football">Football</option>
+                    <option value="Soccer">Soccer</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input placeholder="Email"class="col-xs-12 email js-coach-username"></input>
+                <input placeholder="Password"class="col-xs-12 password js-coach-password"></input>
+                    <button class="col-xs-12 button btn js-create-team">Create</button>
+            </div></script><!-- Find Team Template --><script type=text/template id=find-template><input placeholder="Teamname???" class="search"></input>
+            <button class="button btn btn-inverse js-find-team">Find Team</button></script><!-- This is the Marketing Template --><script type=text/template id=marketing-template><div class="service col-xs-6">
+                <!-- <img src=""> need to add in a calander here for an image -->
+                <h3>Scheduling</h3>
+                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+            </div> 
+            <div class="service col-xs-6">
+                <!-- <img src=""> need to add in a calander here for an image -->
+                <h3>Scheduling</h3>
+                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+            </div>
+            <div class="service col-xs-6">
+                <!-- <img src=""> need to add in a calander here for an image -->
+                <h3>Scheduling</h3>
+                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+            </div>
+            <div class="service col-xs-6">
+                <!-- <img src=""> need to add in a calander here for an image -->
+                <h3>Scheduling</h3>
+                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+            </div></script><!-- Coach header template --><script type=text/template id=user-headerbar-template><a href=""><h2 class="pull-left">Dashboard</h2></a>
+            <div class="head-login-form">
+                <a href="">
+                    <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>
+                </a>
+            </div></script><!-- Coach Dashboard Template --><script type=text/template id=coach-dashboard><div class="js-dashboard row">
+                <div class="maincontent col-xs-12">
+                <div class="col-xs-12 section manage">
+                        <div class="col-xs-12 board-title">
+                            <ul>
+                                <li class="col-xs-6"><a class="js-send-message-creation">Send Message</a></li>
+                                <li class="col-xs-6"><a class="js-create-new-team">Add Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 additions"></div>
+                    </div>     
+                </div>
+            </div></script><!-- TeamSnapshot Template --><script type=text/template id=team-snapshot><div class="col-xs-12 board-title">
+                <div class="col-xs-9 team-name"><%= this.model.get('teamname') %></div>                
+                <div class="col-xs-3 sport-name"><%= this.model.get('sport') %></div>                
+            </div>
+            <div class="col-xs-12 board js-team">
+                <div class="wins col-xs-6">
+                    <div class="col-xs-12" style="text-align: left;">Wins: <%= this.model.get('numWins') %></div>
+                </div>
+                <div class="losses col-xs-6">                
+                    <div class="col-xs-12" style="text-align: right;">Losses: <%= this.model.get('numLosses') %></div>
+                </div>
+                
+            </div></script><!-- Team header template --><script type=text/template id=team-headerbar-template><a href=""><h2 class="pull-left"><%= this.model.get('teamname')%> Dashboard</h2></a>
+            <div class="head-login-form">
+                <a href="">
+                    <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>               
+                </a>
+            </div></script><!-- Team Dashboard Template --><script type=text/template id=team-dashboard><div class="js-dashboard row">
+                <div class="maincontent col-xs-12">
+                    <div class="col-xs-12 section manage">
+                        <div class="col-xs-12 board-title">
+                            <ul>
+                                <li class="col-xs-3"><a class="js-send-message-creation">Send Message</a></li>
+                                <li class="col-xs-2"><a class="js-add-event-creation">Add Event</a></li>
+                                <li class="col-xs-2"><a class="js-add-player-creation">Add Player</a></li>
+                                <li class="col-xs-2"><a class="js-add-coach-creation">Add Coach</a></li>
+                                <li class="col-xs-3"><a class="js-team-settings">Team Settings</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 additions"></div>
+                    </div>      
+                    <div class="col-xs-12 section">
+                        <div class="col-xs-12 board-title">Messages</div>
+                        <div class="col-xs-12 board messages"></div>
+                    </div>                
+                    <div class="col-sm-9 section">
+                        <div class="col-xs-12 board-title">Schedule</div>
+                        <div class="col-xs-12 board events"></div>
+                    </div>                        
+                    <div class="col-sm-3 section">
+                        <div class="col-xs-12 board-title">Roster</div>
+                        <div class="col-xs-12 roster board">
+                            <span class="roster-section col-xs-12" >Players</span>
+                            <div class="col-xs-11 players"></div>                                
+                            <span class="roster-section col-xs-12" >Coaches</span>
+                            <div class="col-xs-11 coaches"></div>
+                        </div>
+                    </div>
+                </div>
+            </div></script><!-- This is the Player listview template --><script type=text/template id=player-list><div class="circle"></div>
+            <span><%= this.model.get('first_name')+' '+this.model.get('last_name')%></span></script><!-- This is the Coach listview template --><script type=text/template id=coach-list><div class="circle"></div>
+            <span><%= this.model.get('first_name')+' '+this.model.get('last_name')%></span></script><!-- This is the Message listview template --><script type=text/template id=message-list><span class="col-xs-8 subject"><%= this.model.get('subject')%></span>
+            <span class="col-xs-4 message-time"><%= moment(this.model.get('date')).format("MMM, D, h:mm a")%></span>
+            <p class="col-xs-12"><%= this.model.get('content')%></p></script><!-- This is the event list template --><script type=text/template id=event-list><div class="col-xs-2 type-container">
+                <span class="col-xs-12"><%= this.model.get('type')%></span>
+            </div>
+            <div class="col-xs-3 date-container">
+                <span class="col-xs-12"><%= moment(this.model.get('date')).format("MMM, D")%></span>                
+                <span class="col-xs-12"><%= moment(this.model.get('date')).format("h:mm a")%></span>                
+            </div>
+            <div class="col-xs-7 info-container">
+                <span class="col-xs-12"><%= this.model.get('subject')%></span>
+                <span class="col-xs-12 event-location">
+                    <a href=""><%= this.model.get('location')%></a>
+                </span>
+            </div></script><!-- These are the coach dashboard Additions Templates --><script type=text/template id=message-addition><select class="js-team-select-dropdown">
+                <option value="" disabled selected>Select A Team</option>
+            </select>
+            <input placeholder="Subject" class="js-msg-subject"></input>
+            <textarea placeholder="Content" class="js-msg-content"></textarea>
+            <button class="button btn js-send-message">Send</button></script><script type=text/template id=teamname-list-item><option><%= team.get('teamname') %></option></script><script type=text/template id=team-addition><input value="Enfuego" placeholder="Teamname"class="username js-form-teamname"></input>
+            <select class="js-form-team-sport">
+                <option value="" disabled selected>Select Sport</option>
+                <option value="Baseball">Baseball</option>
+                <option value="Football">Football</option>
+                <option value="Soccer">Soccer</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Other">Other</option>
+            </select>
+            <button class="button btn js-add-team">ADD TEAM</button></script><script type=text/template id=event-addition></script><script type=text/template id=player-addition></script><script type=text/template id=coach-addition></script><script type=text/template id=settings-addition></script><!-- ////////////////////////// --><!-- End of my templates --><!-- ////////////////////////// --><script src=scripts/2f0d785f.vendor.js></script><!-- this is the parse sdk --><script src=//www.parsecdn.com/js/parse-1.2.17.min.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/aaf74903.plugins.js></script><script src=scripts/54e632f5.main.js></script>
