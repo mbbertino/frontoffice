@@ -3,11 +3,11 @@ var EventList = Parse.View.extend({
 
     renderedtemplate: _.template($('#event-list').text()),
 
-    initialize: function() {
-        $('.events').append(this.el)
+    initialize: function(options) {
+        var $el = options.target || $('.events')
+        // the $ is for a reminder that it is a Jquery object
+        $el.append(this.el)
         this.render()
-
-        // this will grab me the teams id to query for # of players, coaches, next event, and latest message
     },
 
     render: function() {

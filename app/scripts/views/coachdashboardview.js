@@ -1,29 +1,42 @@
 var CoachDashboard = Parse.View.extend({
-    className: 'container',
+  className: 'container',
 
-    renderedtemplate: _.template($('#coach-dashboard').text()),
+  renderedtemplate: _.template($('#coach-dashboard').text()),
 
-    initialize: function() {
-        $('.jumbotron').html(this.el)
-        this.render()
-        new UserHeaderBar()
-        new AddTeamButton()
-        $('.marketing').empty()
+  events: {
+    'click .js-send-message-creation': 'sendMessageForm',
+    'click .js-create-new-team': 'addTeamForm'
+  },
 
-        var userTeamQuery = new Parse.Query(Team);
-        userTeamQuery.equalTo("user", Parse.User.current());
-        userTeamQuery.find({
-            success: function(usersTeams) {
-                _.each(usersTeams, function(team) {
-                    new TeamSnapshot({
-                        model: team
-                    })
-                })
-            }
-        });
-    },
+  sendMessageForm: function() {
+    new MessageForm()
+  },
 
-    render: function() {
-        this.$el.html(this.renderedtemplate())
-    }
+  addTeamForm: function() {
+    new TeamForm()
+  },
+
+  initialize: function() {
+    $('.jumbotron').html(this.el)
+    this.render()
+    new UserHeaderBar()
+    $('.marketing').empty()
+
+    var userTeamQuery = new Parse.Query(Team);
+    userTeamQuery.equalTo("user", Parse.User.current());
+    userTeamQuery.find({
+      success: function(usersTeams) {
+        _.each(usersTeams, function(team) {
+          new TeamSnapshot({
+            model: team
+          })
+        })
+      }
+    });
+  },
+
+  render: function() {
+    this.$el.html(this.renderedtemplate())
+  }
+
 })

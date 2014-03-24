@@ -44,9 +44,7 @@
 
 <!-- Guest header templates -->
         <script type="text/template" id="guest-headerbar-template">
-            <a href="">
-                <h2 class="pull-left">FRONT OFFICE</h2>
-            </a>
+            <a href=""><h2 class="pull-left">FRONT OFFICE</h2></a>
             <div class="head-login-form">
                 <input value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
                 <input value="bertman45@gmail.com" placeholder="Username"class="email js-login-username pull-right"></input>
@@ -119,15 +117,14 @@
 
 <!-- Coach header template -->
         <script type="text/template" id="user-headerbar-template">
-            <a href="">
-                <h2 class="pull-left">Dashboard</h2>
-            </a>
+            <a href=""><h2 class="pull-left">Dashboard</h2></a>
             <div class="head-login-form">
                 <a href="">
                     <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>
                 </a>
             </div>
         </script>
+
 <!-- Coach Dashboard Template -->
         <script type="text/template" id="coach-dashboard">
             <div class="js-dashboard row">
@@ -135,8 +132,8 @@
                 <div class="col-xs-12 section manage">
                         <div class="col-xs-12 board-title">
                             <ul>
-                                <li class="col-xs-6"><a href="#edits/message">Send Message</a></li>
-                                <li class="col-xs-6"><a href="">Add Team</a></li>
+                                <li class="col-xs-6"><a class="js-send-message-creation">Send Message</a></li>
+                                <li class="col-xs-6"><a class="js-create-new-team">Add Team</a></li>
                             </ul>
                         </div>
                         <div class="col-xs-12 additions"></div>
@@ -145,45 +142,26 @@
             </div>
         </script>
 
-<!-- Add team button on the coach dashboard -->
-        <script type="text/template" id="add-team-button-template">
-            <div class="pull-right add-team-toggle js-add-team-toggle">
-                <button class="button btn">ADD TEAM</button>
-            </div>
-            <div class="create-team-form hidden pull-right js-create-team-form">
-                <input value="Enfuego" placeholder="Teamname"class="username js-form-teamname"></input>
-                <select class="js-form-team-sport">
-                    <option value="" disabled selected>Select Sport</option>
-                    <option value="Baseball">Baseball</option>
-                    <option value="Football">Football</option>
-                    <option value="Soccer">Soccer</option>
-                    <option value="Basketball">Basketball</option>
-                    <option value="Other">Other</option>
-                </select>
-                <button class="button btn js-add-team">ADD TEAM</button>
-            </div>
-        </script>
-
 <!-- TeamSnapshot Template -->
         <script type="text/template" id="team-snapshot">
-            <div class="col-xs-12 board-title"><%= this.model.get('sport') %> - <%= this.model.get('teamname') %>
-                <img src="images/settings.png" class="pull-right settings-icon">
+            <div class="col-xs-12 board-title">
+                <div class="col-xs-9 team-name"><%= this.model.get('teamname') %></div>                
+                <div class="col-xs-3 sport-name"><%= this.model.get('sport') %></div>                
             </div>
             <div class="col-xs-12 board js-team">
-                <li>Record: <%= this.model.get('numWins')%> : <%= this.model.get('numWins')%></li>
-                <li>Players: <%= this.model.get('numPlayers')%></li>
-                <li>Coaches: <%= this.model.get('numCoaches')%></li>
-                <li>Unread Messages: <%= this.model.get('numMessages') - this.model.get('numReadMessages')%></li>
-                <li>Next Event: </li>
-
+                <div class="wins col-xs-6">
+                    <div class="col-xs-12" style="text-align: left;">Wins: <%= this.model.get('numWins') %></div>
+                </div>
+                <div class="losses col-xs-6">                
+                    <div class="col-xs-12" style="text-align: right;">Losses: <%= this.model.get('numLosses') %></div>
+                </div>
+                
             </div> 
         </script>
 
 <!-- Team header template -->
         <script type="text/template" id="team-headerbar-template">
-            <a href="">
-                <h2 class="pull-left"><%= this.model.get('teamname')%> Dashboard</h2>
-            </a>
+            <a href=""><h2 class="pull-left"><%= this.model.get('teamname')%> Dashboard</h2></a>
             <div class="head-login-form">
                 <a href="">
                     <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>               
@@ -198,11 +176,11 @@
                     <div class="col-xs-12 section manage">
                         <div class="col-xs-12 board-title">
                             <ul>
-                                <li class="col-xs-3"><a href="">Send Message</a></li>
-                                <li class="col-xs-2"><a href="">Add Event</a></li>
-                                <li class="col-xs-2"><a href="">Add Player</a></li>
-                                <li class="col-xs-2"><a href="">Add Coach</a></li>
-                                <li class="col-xs-2"><a href="">Team Settings</a></li>
+                                <li class="col-xs-3"><a class="js-send-message-creation">Send Message</a></li>
+                                <li class="col-xs-2"><a class="js-add-event-creation">Add Event</a></li>
+                                <li class="col-xs-2"><a class="js-add-player-creation">Add Player</a></li>
+                                <li class="col-xs-2"><a class="js-add-coach-creation">Add Coach</a></li>
+                                <li class="col-xs-3"><a class="js-team-settings">Team Settings</a></li>
                             </ul>
                         </div>
                         <div class="col-xs-12 additions"></div>
@@ -216,7 +194,7 @@
                         <div class="col-xs-12 board events"></div>
                     </div>                        
                     <div class="col-sm-3 section">
-                        <div class="col-xs-12 board-title">Rosters</div>
+                        <div class="col-xs-12 board-title">Roster</div>
                         <div class="col-xs-12 roster board">
                             <span class="roster-section col-xs-12" >Players</span>
                             <div class="col-xs-11 players"></div>                                
@@ -243,28 +221,60 @@
 
 <!-- This is the Message listview template -->
         <script type="text/template" id="message-list">
-                <span class="col-xs-8 subject"><%= this.model.get('subject')%></span>
-                <span class="col-xs-4 message-time"><%= moment(this.model.get('date')).format("MMM, D, h:mm a")%></span>
-                <p class="col-xs-12"><%= this.model.get('content')%></p>
+            <span class="col-xs-8 subject"><%= this.model.get('subject')%></span>
+            <span class="col-xs-4 message-time"><%= moment(this.model.get('date')).format("MMM, D, h:mm a")%></span>
+            <p class="col-xs-12"><%= this.model.get('content')%></p>
         </script>
 
 <!-- This is the event list template -->
         <script type="text/template" id="event-list">
-                <div class="col-xs-2 type-container">
-                    <span class="col-xs-12"><%= this.model.get('type')%></span>
-                </div>
-                <div class="col-xs-3 date-container">
-                    <span class="col-xs-12"><%= moment(this.model.get('date')).format("MMM, D")%></span>                
-                    <span class="col-xs-12"><%= moment(this.model.get('date')).format("h:mm a")%></span>                
-                </div>
-                <div class="col-xs-7 info-container">
-                    <span class="col-xs-12"><%= this.model.get('subject')%></span>
-                    <span class="col-xs-12 event-location">
-                        <a href=""><%= this.model.get('location')%></a>
-                    </span>
-                </div>
-
+            <div class="col-xs-2 type-container">
+                <span class="col-xs-12"><%= this.model.get('type')%></span>
+            </div>
+            <div class="col-xs-3 date-container">
+                <span class="col-xs-12"><%= moment(this.model.get('date')).format("MMM, D")%></span>                
+                <span class="col-xs-12"><%= moment(this.model.get('date')).format("h:mm a")%></span>                
+            </div>
+            <div class="col-xs-7 info-container">
+                <span class="col-xs-12"><%= this.model.get('subject')%></span>
+                <span class="col-xs-12 event-location">
+                    <a href=""><%= this.model.get('location')%></a>
+                </span>
+            </div>
         </script>
+
+<!-- These are the coach dashboard Additions Templates -->
+        <script type="text/template" id="message-addition">
+            <select class="js-team-select-dropdown">
+                <option value="" disabled selected>Select A Team</option>
+            </select>
+            <input placeholder="Subject" class="js-msg-subject"></input>
+            <textarea placeholder="Content" class="js-msg-content"></textarea>
+            <button class="button btn js-send-message">Send</button>
+        </script>
+
+        <script type="text/template" id="teamname-list-item">
+            <option><%= team.get('teamname') %></option>
+        </script>
+
+
+        <script type="text/template" id="team-addition">
+            <input value="Enfuego" placeholder="Teamname"class="username js-form-teamname"></input>
+            <select class="js-form-team-sport">
+                <option value="" disabled selected>Select Sport</option>
+                <option value="Baseball">Baseball</option>
+                <option value="Football">Football</option>
+                <option value="Soccer">Soccer</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Other">Other</option>
+            </select>
+            <button class="button btn js-add-team">ADD TEAM</button>
+        </script>
+
+        <script type="text/template" id="event-addition"></script>
+        <script type="text/template" id="player-addition"></script>
+        <script type="text/template" id="coach-addition"></script>
+        <script type="text/template" id="settings-addition"></script>
 
         <!-- ////////////////////////// -->
         <!-- End of my templates -->
@@ -311,18 +321,27 @@
         <script src="scripts/router.js"></script>
         <script src="scripts/model.js"></script>
         <script src="scripts/main.js"></script>
+        
         <script src="scripts/views/appview.js"></script>
-        <script src="scripts/views/coachlistview.js"></script>
-        <script src="scripts/views/messagelistview.js"></script>
         <script src="scripts/views/headerviews.js"></script>
         <script src="scripts/views/marketingview.js"></script>
         <script src="scripts/views/signupview.js"></script>
-        <script src="scripts/views/addteambuttonview.js"></script>
+
         <script src="scripts/views/coachdashboardview.js"></script>
         <script src="scripts/views/teamsnapshotview.js"></script>
+        
         <script src="scripts/views/teamdashboardview.js"></script>
+        <script src="scripts/views/coachlistview.js"></script>
+        <script src="scripts/views/messagelistview.js"></script>
         <script src="scripts/views/playerlistview.js"></script>
         <script src="scripts/views/eventlistview.js"></script>
+
+        <!-- // <script src="scripts/views/addteambuttonview.js"></script> -->
+        <script src="scripts/views/teamformview.js"></script>
+        <script src="scripts/views/messageformview.js"></script>
+        <script src="scripts/views/newplayerformview.js"></script>
+        <script src="scripts/views/newcoachformview.js"></script>
+        <script src="scripts/views/neweventformview.js"></script>
         <!-- endbuild -->
 </body>
 </html>

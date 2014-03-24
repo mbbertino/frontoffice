@@ -221,7 +221,7 @@ body {
                     }
 
                     .additions {
-                        height: 10px;
+                        min-height: 10px;
                         background: $brandbkgdtwo;
                         border-radius: 0 0 4px 4px;
                         overflow: hidden;
@@ -236,10 +236,12 @@ body {
                         display: inline-block;
 
                         a {
+                        cursor: pointer;
                             color: #fff;
                         }
                     }
                 }
+
                 .board-title {
                     background: $brandpop;
                     border-bottom: 3px solid darken($brandpop, 10%);
@@ -250,13 +252,19 @@ body {
                         border-radius: 0px;
                     }
 
+                    .team-name {
+                        text-align: left;
+                    }
+                    .sport-name {
+                        text-align: right;
+                    }
                 }
 
                 .settings-icon {
                     height: 45px;
                 }
                 .board {
-                    height: 300px;
+                    // height: 300px;
                     background: $brandbkgdtwo;
                     border-radius: 0 0 4px 4px;
                     overflow: hidden;
@@ -266,6 +274,10 @@ body {
 
                     @media screen and (max-width: $break-small) {
                         display: none;
+                    }
+
+                    .wins {
+                        border-right: 3px solid darken($brandpop, 10%);
                     }
 
                     &.events {
@@ -279,7 +291,7 @@ body {
 
                     &.roster {
                         height: auto;
-                        max-height: 675px;
+                        height: 675px;                        
                         overflow-y: scroll;
                         
 
@@ -303,7 +315,24 @@ body {
                         }
                     }
 
-                    
+                    .team-name {
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        text-align: left;
+                    }
+                    .sport-name {
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        text-align: right;
+                    }
+
+                    .upcoming-title {
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        background: lighten($brandpop, 20%);
+                        color: #fff;
+                    }
+
                     .event-container {
                         border-bottom: 1px solid $brandpop;
                         overflow: hidden;
