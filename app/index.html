@@ -41,6 +41,7 @@
         <!-- ////////////////////////// -->
         <!-- Below are all my templates -->
         <!-- ////////////////////////// -->
+
 <!-- Guest header templates -->
         <script type="text/template" id="guest-headerbar-template">
             <a href="">
@@ -94,18 +95,33 @@
 
 <!-- This is the Marketing Template -->
         <script type="text/template" id="marketing-template">
-                <div class="service col-xs-12">
-                    <!-- <img src=""> need to add in a calander here for an image -->
-                    <h3>Scheduling</h3>
-                    <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
-                </div>
+            <div class="service col-xs-6">
+                <!-- <img src=""> need to add in a calander here for an image -->
+                <h3>Scheduling</h3>
+                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+            </div> 
+            <div class="service col-xs-6">
+                <!-- <img src=""> need to add in a calander here for an image -->
+                <h3>Scheduling</h3>
+                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+            </div>
+            <div class="service col-xs-6">
+                <!-- <img src=""> need to add in a calander here for an image -->
+                <h3>Scheduling</h3>
+                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+            </div>
+            <div class="service col-xs-6">
+                <!-- <img src=""> need to add in a calander here for an image -->
+                <h3>Scheduling</h3>
+                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+            </div>
         </script>
 
 <!-- Coach header template -->
         <script type="text/template" id="user-headerbar-template">
-                <a href="">
-                    <h2 class="pull-left">Dashboard</h2>
-                </a>
+            <a href="">
+                <h2 class="pull-left">Dashboard</h2>
+            </a>
             <div class="head-login-form">
                 <a href="">
                     <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>
@@ -116,6 +132,15 @@
         <script type="text/template" id="coach-dashboard">
             <div class="js-dashboard row">
                 <div class="maincontent col-xs-12">
+                <div class="col-xs-12 section manage">
+                        <div class="col-xs-12 board-title">
+                            <ul>
+                                <li class="col-xs-6"><a href="#edits/message">Send Message</a></li>
+                                <li class="col-xs-6"><a href="">Add Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 additions"></div>
+                    </div>     
                 </div>
             </div>
         </script>
@@ -153,77 +178,92 @@
 
             </div> 
         </script>
+
 <!-- Team header template -->
         <script type="text/template" id="team-headerbar-template">
-                <a href="">
-                    <h2 class="pull-left"><%= this.model.get('teamname')%> Dashboard</h2>
-                </a>
+            <a href="">
+                <h2 class="pull-left"><%= this.model.get('teamname')%> Dashboard</h2>
+            </a>
             <div class="head-login-form">
                 <a href="">
                     <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>               
                 </a>
             </div>
         </script>
+
 <!-- Team Dashboard Template -->
         <script type="text/template" id="team-dashboard">
             <div class="js-dashboard row">
                 <div class="maincontent col-xs-12">
-                    <div class="events-messages col-sm-9" style="padding: 0px;">
-                        <div class="col-xs-12 section">
-                            <div class="col-xs-12 board-title">Schedule</div>
-                            <div class="col-xs-12 board events"></div>
-                        </div>                        
-                        <div class="col-xs-12 section">
-                            <div class="col-xs-12 board-title">Messages</div>
-                            <div class="col-xs-12 board"></div>
+                    <div class="col-xs-12 section manage">
+                        <div class="col-xs-12 board-title">
+                            <ul>
+                                <li class="col-xs-3"><a href="">Send Message</a></li>
+                                <li class="col-xs-2"><a href="">Add Event</a></li>
+                                <li class="col-xs-2"><a href="">Add Player</a></li>
+                                <li class="col-xs-2"><a href="">Add Coach</a></li>
+                                <li class="col-xs-2"><a href="">Team Settings</a></li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="events-messages col-sm-3" style="padding: 0px;">
-                        <div class="col-xs-12 section">
-                            <div class="col-xs-12 board-title">Rosters</div>
-                            <div class="col-xs-12 roster board">
-                                <div class="col-xs-12 players">
-                                    <span>Players</span>
-                                </div>                                
-                                <div class="col-xs-12 coaches">
-                                    <span>Coaches</span>
-                                </div>
-                            </div>
+                        <div class="col-xs-12 additions"></div>
+                    </div>      
+                    <div class="col-xs-12 section">
+                        <div class="col-xs-12 board-title">Messages</div>
+                        <div class="col-xs-12 board messages"></div>
+                    </div>                
+                    <div class="col-sm-9 section">
+                        <div class="col-xs-12 board-title">Schedule</div>
+                        <div class="col-xs-12 board events"></div>
+                    </div>                        
+                    <div class="col-sm-3 section">
+                        <div class="col-xs-12 board-title">Rosters</div>
+                        <div class="col-xs-12 roster board">
+                            <span class="roster-section col-xs-12" >Players</span>
+                            <div class="col-xs-11 players"></div>                                
+                            <span class="roster-section col-xs-12" >Coaches</span>
+                            <div class="col-xs-11 coaches"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </script>
 
-<!-- This is the player listview template -->
+<!-- This is the Player listview template -->
         <script type="text/template" id="player-list">
-                <span><%= this.model.get('first_name')+' '+this.model.get('last_name')%></span>
+            <div class="circle"></div>
+            <span><%= this.model.get('first_name')+' '+this.model.get('last_name')%></span>
         </script>
-<!-- this is the event list template -->
+
+<!-- This is the Coach listview template -->
+        <script type="text/template" id="coach-list">
+            <div class="circle"></div>
+            <span><%= this.model.get('first_name')+' '+this.model.get('last_name')%></span>
+        </script>
+
+
+<!-- This is the Message listview template -->
+        <script type="text/template" id="message-list">
+                <span class="col-xs-8 subject"><%= this.model.get('subject')%></span>
+                <span class="col-xs-4 message-time"><%= moment(this.model.get('date')).format("MMM, D, h:mm a")%></span>
+                <p class="col-xs-12"><%= this.model.get('content')%></p>
+        </script>
+
+<!-- This is the event list template -->
         <script type="text/template" id="event-list">
-            <div class="col-xs-12 col-sm-10 inner-containers">
-                <div class="col-xs-3 date-container">
-                    <span class="col-xs-12"><%= moment(this.model.get('date')).format("h:mma")%></span>                
-                    <span class="col-xs-12"><%= moment(this.model.get('date')).format("MMM, D")%></span>                
-                </div>
-                <div class="col-xs-9 info-container">
+                <div class="col-xs-2 type-container">
                     <span class="col-xs-12"><%= this.model.get('type')%></span>
+                </div>
+                <div class="col-xs-3 date-container">
+                    <span class="col-xs-12"><%= moment(this.model.get('date')).format("MMM, D")%></span>                
+                    <span class="col-xs-12"><%= moment(this.model.get('date')).format("h:mm a")%></span>                
+                </div>
+                <div class="col-xs-7 info-container">
                     <span class="col-xs-12"><%= this.model.get('subject')%></span>
-                    <span class="col-xs-12">Location: <%= this.model.get('location')%></span>
+                    <span class="col-xs-12 event-location">
+                        <a href=""><%= this.model.get('location')%></a>
+                    </span>
                 </div>
-            </div>            
-            <div class="col-xs-12 col-sm-2 inner-containers">
-                <div class="col-xs-12 outcome-container">
-                    <select class="js-game-outcome col-xs-12">
-                        <option value="" disabled selected></option>
-                        <option value="W">W</option>
-                        <option value="L">L</option>
-                        <option value="T">T</option>
-                    </select>
-                    <input value="10" class="score-us js-score-us col-xs-6"></input>
-                    <input value="5" class="score-opp js-score-opp col-xs-6"></input>
-                </div>
-            </div>
+
         </script>
 
         <!-- ////////////////////////// -->
@@ -272,6 +312,8 @@
         <script src="scripts/model.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/views/appview.js"></script>
+        <script src="scripts/views/coachlistview.js"></script>
+        <script src="scripts/views/messagelistview.js"></script>
         <script src="scripts/views/headerviews.js"></script>
         <script src="scripts/views/marketingview.js"></script>
         <script src="scripts/views/signupview.js"></script>

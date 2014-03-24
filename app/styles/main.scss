@@ -202,14 +202,54 @@ body {
         }
         .maincontent {
             padding-top: 20px;
+            position: relative;
 
             .section {
+                position: relative;
                 margin-bottom: 30px;
+                overflow: hidden;
+                
+                &.manage {
+                    overflow: hidden;
 
+                    @media screen and (max-width: $break-small) {                     
+                        display: none;
+                    }
+
+                    .board-title  {
+                        text-align: center;
+                    }
+
+                    .additions {
+                        height: 10px;
+                        background: $brandbkgdtwo;
+                        border-radius: 0 0 4px 4px;
+                        overflow: hidden;
+                        color: $brandmain;
+                    }
+                }
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        display: inline-block;
+
+                        a {
+                            color: #fff;
+                        }
+                    }
+                }
                 .board-title {
                     background: $brandpop;
-                    border-radius: 10px 10px 0 0;
+                    border-bottom: 3px solid darken($brandpop, 10%);
+                    text-align: left;
+                    border-radius: 4px 4px 0 0;
                     color: #fff;
+                    @media screen and (max-width: $break-small) {                     
+                        border-radius: 0px;
+                    }
+
                 }
 
                 .settings-icon {
@@ -218,25 +258,58 @@ body {
                 .board {
                     height: 300px;
                     background: $brandbkgdtwo;
-                    border-radius: 0 0 10px 10px;
+                    border-radius: 0 0 4px 4px;
                     overflow: hidden;
                     color: $brandmain;
                     padding-left: 0px;
                     padding-right: 0px;
 
-                    &.roster {
-                        height: auto;
+                    @media screen and (max-width: $break-small) {
+                        display: none;
                     }
 
+                    &.events {
+                        height: 675px;
+                        overflow-y: scroll; 
+                    }
 
-                    .player-container {}
+                    &.messages {
+                        overflow-y: scroll;                         
+                    }
+
+                    &.roster {
+                        height: auto;
+                        max-height: 675px;
+                        overflow-y: scroll;
+                        
+
+                        .roster-section {
+                            text-align: left;
+                            background: lighten($brandpop, 20%);
+                            color: #fff;
+                        }
+
+                        .players {
+                            margin: 0 auto;
+                            float: none;
+                            padding: 0px;
+                        }
+
+                        .coaches {
+                            margin: 0 auto;
+                            float: none;
+                            padding: 0px;
+
+                        }
+                    }
+
                     
                     .event-container {
-                        border-bottom: 1px solid blue;
+                        border-bottom: 1px solid $brandpop;
                         overflow: hidden;
                         font-size: 14px;
                         position: relative;
-                        height: 100px;
+                        height: 75px;
                         padding-left: 0px;
                         padding-right: 0px;
                         
@@ -250,13 +323,37 @@ body {
                         }                            
 
                         .date-container {
-                            padding-top: 18px;
                             height: 100%;
+                                                                                                         
+                            span {
+                                top: 16%;
+                                font-size: 12px;
+                                padding-right: 0px;
+                            }
                         }
+                        
+                        .type-container {
+                            height: 100%;
+                            background: lighten($brandpop, 20%);
+                            color: #fff;
+
+                            span {
+                                top: 30%;
+                            }
+                        }   
 
                         .info-container {
-                            text-align: left;
                             height: 100%;
+                            text-align: left;
+                            
+                            span {
+                                top: 10%;                                
+                            }
+
+                            a {
+                                color: #27ae60;
+                            }
+
                         }
 
                         .outcome-container {
@@ -269,6 +366,65 @@ body {
                             }
                         }
                     }
+
+                    .message-container {
+                        padding: 0px;
+                        border-bottom: 1px solid $brandpop;
+                        font-size: 16px;
+                        text-align: left;
+                        
+                        .subject {
+                            color: $brandpop;
+                            font-size: 16px;
+                        }
+                        .message-time {
+                            color: $brandpop;
+                            text-align: right;
+                            font-size: 16px;
+
+                            @media screen and (max-width: $break-small) {
+                                display: none;
+                            }
+                        }
+
+                        p {
+                         font-family: 'Open Sans Condensed', sans-serif;
+                         font-size: 12px;
+                        }
+                    }
+
+                    .player-container {
+                        text-align: left;
+                        font-size: 16px;
+
+                        .circle {
+                            height: 12px;
+                            width: 12px;
+                            background: $brandpop;
+                            border-radius: 12px;
+                            display: inline-block;
+                        }
+                        span {
+                            display: inline-block;
+                        }
+                    }
+
+                    .coach-container {
+                        text-align: left;
+                        font-size: 16px;
+
+                        .circle {
+                            height: 12px;
+                            width: 12px;
+                            background: $brandpop;
+                            border-radius: 12px;
+                            display: inline-block;
+                        }
+                        span {
+                            display: inline-block;
+                        }
+                    }
+                    
                 }
             }
         }

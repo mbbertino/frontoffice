@@ -4,45 +4,85 @@ $(function() {
     window.router = new MainRouter();
     Backbone.history.start();
 
-    // if (Parse.User.current()) {
-    //     new CoachDashboard();
-    // } else {
-    //     new AppView()
-    // // }
-    // var query = new Parse.Query(Team);
 
+    // Players
+    //     var playerQuery = new Parse.Query(Team);
+    //     var myId = '0oJaBVbuE7';
+    //     playerQuery.get(myId, {
+    //         success: function(object) {
+
+    //             var example = new Player()
+    //             example.set('first_name', 'Matt');
+    //             example.set('last_name', 'Bertino');
+    //             example.set('city', 'Jupiter');
+    //             example.set('state', 'FL');
+    //             example.set('zip', '33458');
+    //             example.set('address', '194 Jones Creek Dr');
+    //             example.set('email', 'bertman45@gmail.com');
+    //             example.set('phone', '561-543-7466');
+    //             example.set('team', object);
+    //             example.save(null, {
+    //                 success: function(example) {}
+    //             })
+    //         }
+    //     });
+
+    // Coaches
+    // var coachQuery = new Parse.Query(Team);
     // var myId = '0oJaBVbuE7';
-
-    // query.get(myId, {
+    // coachQuery.get(myId, {
     //     success: function(object) {
+    //         var example = new Coach()
+    //         example.set('first_name', 'Matt');
+    //         example.set('last_name', 'Bertino');
+    //         example.set('city', 'Jupiter');
+    //         example.set('state', 'FL');
+    //         example.set('zip', '33458');
+    //         example.set('address', '194 Jones Creek Dr');
+    //         example.set('email', 'bertman45@gmail.com');
+    //         example.set('phone', '561-543-7466');
+    //         example.set('team', object);
+    //         example.save(null, {
+    //             success: function(example) {}
+    //         })
+    //     }
+    // });
 
-    //         var event = new Event()
 
+    // Messages
+    // var messageQuery = new Parse.Query(Team);
+    // var myId = '0oJaBVbuE7';
+    // messageQuery.get(myId, {
+    //     success: function(object) {
+    //         var example = new Message()
     //         var date = Date.now()
-    //         console.log(date)
-    //         event.set('date', date);
-    //         event.set('time', date);
-    //         event.set('type', 'Game');
-    //         event.set('subject', 'River Side Highschool');
-    //         event.set('location', 'River Side Highschool');
-    //         event.set('wlt', false);
-    //         event.set('team_score', false);
-    //         event.set('opp_score', false);
-    //         event.set('team', object);
-    //         event.set('coach', Parse.User.current());
+    //         example.set('date', date);
+    //         example.set('subject', 'River Side Highschool');
+    //         example.set('content', 'Shabby chic biodiesel dreamcatcher disrupt you probably haven\'t heard of them banh mi. Artisan Neutra polaroid shabby chic sriracha plaid fingerstache flannel, mlkshk Cosby sweater fashion axe Blue Bottle slow-carb Banksy. Wolf VHS skateboard occupy, keffiyeh art party mixtape. Pug Marfa cred narwhal direct trade. ');
+    //         example.set('team', object);
+    //         example.save(null, {
+    //             success: function(example) {}
+    //         })
+    //     }
+    // });
 
-    //         event.save(null, {
-    //             success: function(event) {}
+
+    // Event
+    // var eventQuery = new Parse.Query(Team);
+    // var myId = '0oJaBVbuE7'; //need to make this something like this.model.get(team)
+    // eventQuery.get(myId, {
+    //     success: function(object) {
+    //         var example = new Event()
+    //         var date = Date.now()
+    //         example.set('date', date);
+    //         example.set('type', 'Game');
+    //         example.set('subject', 'River Side Highschool');
+    //         example.set('location', 'River Side Highschool');
+    //         example.set('team', object);
+
+    //         example.save(null, {
+    //             success: function(example) {}
     //         })
     //     }
     // });
 })
-
-// eventually I'll need to move this little section to the create player form submittion
-
-
-// bertman45@gmail.com
-// katycampen@gmail.com
-// eespaderos@gmail.com
-// elizbarr@gmail.com
-// jmiller6128@gmail.com
