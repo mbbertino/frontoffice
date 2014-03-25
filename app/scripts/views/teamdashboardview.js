@@ -12,7 +12,7 @@ var TeamDashboard = Parse.View.extend({
   },
 
   sendMessageForm: function() {
-    new MessageForm()
+    new TeamMessageForm()
   },
 
   addEventForm: function() {
@@ -74,7 +74,7 @@ var TeamDashboard = Parse.View.extend({
 
     var messageQuery = new Parse.Query(Message);
     messageQuery.equalTo("team", this.model)
-    messageQuery.descending("date")
+    messageQuery.ascending("date")
     messageQuery.find({
       success: function(messages) {
         _.each(messages, function(message) {

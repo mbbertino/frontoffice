@@ -1,13 +1,13 @@
 var TeamSnapshot = Parse.View.extend({
 
-  tagName: 'a',
 
-  className: 'col-sm-6 col-xs-12 section',
+
+  className: 'col-sm-4 col-xs-12 section snapshot',
 
   renderedtemplate: _.template($('#team-snapshot').text()),
 
   initialize: function() {
-    $('.maincontent').append(this.el)
+    $('.js-team-snapshot-container').prepend(this.el)
     this.setHref();
     this.render()
 
@@ -19,10 +19,12 @@ var TeamSnapshot = Parse.View.extend({
 
   setHref: function() {
     var id = this.model.id;
-    var link = '#/team/' + id;
-    this.$el.attr({
-      href: link
-    });
+    this.link = '#/team/' + id;
+    // console.log(this.$el.find('.js-manage-team'))
+    // console.log(this.$el.find($('.js-manage-team')))
+    // this.$el.find('.js-manage-team').attr({
+    //   href: link
+    // });
   }
 })
 

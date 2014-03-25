@@ -4,7 +4,6 @@ $(function() {
   window.router = new MainRouter();
   Backbone.history.start();
 
-
   // Players
   //     var playerQuery = new Parse.Query(Team);
   //     var myId = '0oJaBVbuE7';

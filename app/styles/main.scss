@@ -208,6 +208,14 @@ body {
                 position: relative;
                 margin-bottom: 30px;
                 overflow: hidden;
+
+                a {
+                    color: #fff; 
+                }
+
+                &.snapshot {
+                    font-size: 16px;
+                }
                 
                 &.manage {
                     overflow: hidden;
@@ -320,6 +328,7 @@ body {
                         padding-right: 0px;
                         text-align: left;
                     }
+
                     .sport-name {
                         padding-left: 0px;
                         padding-right: 0px;
@@ -381,17 +390,6 @@ body {
 
                             a {
                                 color: #27ae60;
-                            }
-
-                        }
-
-                        .outcome-container {
-                            padding-top: 22px;
-                            height: 100%;
-                            input {
-                                text-align: center;
-                                padding-left: 0px;
-                                padding-right: 0px;
                             }
                         }
                     }

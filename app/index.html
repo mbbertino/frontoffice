@@ -117,7 +117,7 @@
 
 <!-- Coach header template -->
         <script type="text/template" id="user-headerbar-template">
-            <a href=""><h2 class="pull-left">Dashboard</h2></a>
+            <a href=""><h2 class="pull-left">Front Office Dashboard</h2></a>
             <div class="head-login-form">
                 <a href="">
                     <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>
@@ -129,7 +129,7 @@
         <script type="text/template" id="coach-dashboard">
             <div class="js-dashboard row">
                 <div class="maincontent col-xs-12">
-                <div class="col-xs-12 section manage">
+                    <div class="col-xs-12 section manage">
                         <div class="col-xs-12 board-title">
                             <ul>
                                 <li class="col-xs-6"><a class="js-send-message-creation">Send Message</a></li>
@@ -138,6 +138,7 @@
                         </div>
                         <div class="col-xs-12 additions"></div>
                     </div>     
+                    <div class="js-team-snapshot-container"></div>
                 </div>
             </div>
         </script>
@@ -145,8 +146,11 @@
 <!-- TeamSnapshot Template -->
         <script type="text/template" id="team-snapshot">
             <div class="col-xs-12 board-title">
-                <div class="col-xs-9 team-name"><%= this.model.get('teamname') %></div>                
-                <div class="col-xs-3 sport-name"><%= this.model.get('sport') %></div>                
+                <div class="col-xs-12 team-name">
+                    <a class="js-manage-team" href=<%= this.link %>>
+                        <%= this.model.get('teamname')+': '+this.model.get('sport') %>
+                    </a>
+                </div>
             </div>
             <div class="col-xs-12 board js-team">
                 <div class="wins col-xs-6">
@@ -155,10 +159,10 @@
                 <div class="losses col-xs-6">                
                     <div class="col-xs-12" style="text-align: right;">Losses: <%= this.model.get('numLosses') %></div>
                 </div>
-                
             </div> 
         </script>
 
+        
 <!-- Team header template -->
         <script type="text/template" id="team-headerbar-template">
             <a href=""><h2 class="pull-left"><%= this.model.get('teamname')%> Dashboard</h2></a>
@@ -253,11 +257,30 @@
             <button class="button btn js-send-message">Send</button>
         </script>
 
+<!-- this is the add message form while in the team dashboard -->
+        <script type="text/template" id="team-message-addition">
+            <input placeholder="Subject" class="js-msg-subject"></input>
+            <textarea placeholder="Content" class="js-msg-content"></textarea>
+            <button class="button btn js-send-message">Send</button>
+        </script>
+<!-- below is the select player option that can be implemented in phase 2 -->
+<!--        <select class="js-player-select-dropdown">
+                <option value="" disabled selected>Select A Player</option>
+                <option value="All">All</option>
+            </select> -->
+<!-- ///////////////////////////////////////// -->
+
+<!-- Select Team Template -->
         <script type="text/template" id="teamname-list-item">
-            <option><%= team.get('teamname') %></option>
+            <option><%= result.get('teamname') %></option>
         </script>
 
+<!-- Select Player Template -->
+        <!-- <script type="text/template" id="playername-list-item"> -->
+            <!-- <option> result.get('first_name')+''+result.get('last_name')</option> -->
+        <!-- </script> -->
 
+<!-- Add Team Form -->
         <script type="text/template" id="team-addition">
             <input value="Enfuego" placeholder="Teamname"class="username js-form-teamname"></input>
             <select class="js-form-team-sport">
@@ -336,7 +359,6 @@
         <script src="scripts/views/playerlistview.js"></script>
         <script src="scripts/views/eventlistview.js"></script>
 
-        <!-- // <script src="scripts/views/addteambuttonview.js"></script> -->
         <script src="scripts/views/teamformview.js"></script>
         <script src="scripts/views/messageformview.js"></script>
         <script src="scripts/views/newplayerformview.js"></script>
