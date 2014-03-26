@@ -3,9 +3,6 @@ var MainRouter = Backbone.Router.extend({
   routes: {
     "": "homePage",
     "team/:id": "teamDashboardPage",
-    // "guest/:id": "guestDashboardPage",
-    // "about"					: "aboutPage",
-
     // # and / are assumed in backbone
   },
 
@@ -27,7 +24,6 @@ var MainRouter = Backbone.Router.extend({
       teamQuery.get(id, {
         success: function(object) {
           if (object.user = Parse.User.current()) {
-            var currTeam = object
             new TeamDashboard({
               model: object,
               teamId: id

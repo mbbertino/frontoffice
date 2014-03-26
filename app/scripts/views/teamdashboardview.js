@@ -36,7 +36,7 @@ var TeamDashboard = Parse.View.extend({
   },
 
   teamSettingsForm: function() {
-    new TeamSettings({
+    new NewTeamSettingsForm({
       teamId: this.teamId
     })
   },
@@ -46,7 +46,7 @@ var TeamDashboard = Parse.View.extend({
     $('.jumbotron').html(this.el)
     this.render()
 
-    var playerQuery = new Parse.Query(Player);
+    var playerQuery = new Parse.Query('Player');
     playerQuery.equalTo("team", this.model)
     playerQuery.find({
       success: function(players) {
@@ -58,7 +58,7 @@ var TeamDashboard = Parse.View.extend({
       }
     });
 
-    var coachQuery = new Parse.Query(Coach);
+    var coachQuery = new Parse.Query('Coach');
     coachQuery.equalTo("team", this.model)
     coachQuery.find({
       success: function(coaches) {
@@ -70,7 +70,7 @@ var TeamDashboard = Parse.View.extend({
       }
     });
 
-    var eventQuery = new Parse.Query(Event);
+    var eventQuery = new Parse.Query('Event');
     eventQuery.equalTo("team", this.model)
     eventQuery.descending("date")
     eventQuery.find({
@@ -83,7 +83,7 @@ var TeamDashboard = Parse.View.extend({
       }
     });
 
-    var messageQuery = new Parse.Query(Message);
+    var messageQuery = new Parse.Query('Message');
     messageQuery.equalTo("team", this.model)
     messageQuery.ascending("date")
     messageQuery.find({

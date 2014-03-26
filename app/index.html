@@ -17,9 +17,10 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="bower_components/hideShowPassword/css/example.minimal.css">
+        <link rel="stylesheet" href="bower_components/pickadate/lib/themes/default.time.css">
         <link rel="stylesheet" href="bower_components/pickadate/lib/themes/default.css">
         <link rel="stylesheet" href="bower_components/pickadate/lib/themes/default.date.css">
-        <link rel="stylesheet" href="bower_components/pickadate/lib/themes/default.time.css">
         <link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <!-- endbuild -->
@@ -49,7 +50,7 @@
         <script type="text/template" id="guest-headerbar-template">
             <a href=""><h2 class="pull-left">FRONT OFFICE</h2></a>
             <div class="head-login-form">
-                <input value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
+                <input id="password" type="password" value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
                 <input value="bertman45@gmail.com" placeholder="Username"class="email js-login-username pull-right"></input>
                 <button class="button btn btn-inverse pull-right js-login">LOGIN</button>
             </div>
@@ -83,7 +84,7 @@
                     <option value="Other">Other</option>
                 </select>
                 <input placeholder="Email"class="col-xs-12 email js-coach-username"></input>
-                <input placeholder="Password"class="col-xs-12 password js-coach-password"></input>
+                <input id="password" type="password" placeholder="Password"class="col-xs-12 password js-coach-password"></input>
                     <button class="col-xs-12 button btn js-create-team">Create</button>
             </div>
         </script>
@@ -120,13 +121,13 @@
 
 <!-- Coach header template -->
         <script type="text/template" id="user-headerbar-template">
-            <a href=""><h2 class="pull-left">Front Office Dashboard</h2></a>
+            <a href=""><h2 class="pull-left">Manager Dashboard</h2></a>
             <div class="head-login-form">
                 <a href="">
                     <button class="button btn btn-inverse pull-right js-logout">LOGOUT</button>
                 </a>
             </div>
-        </script>
+        </script>`
 
 <!-- Coach Dashboard Template -->
         <script type="text/template" id="coach-dashboard">
@@ -379,7 +380,19 @@
             </select>
             <button class="button btn js-add-coach">Add Coach</button>
         </script>
-        <script type="text/template" id="settings-addition"></script>
+
+        <script type="text/template" id="settings-addition">
+            <input value="Ice" placeholder="Teamname" class=" js-form-teamset-name"></input>
+            <select class="js-form-teamset-sport">
+                <option value="Baseball">Baseball</option>
+                <option value="Football">Football</option>
+                <option value="Soccer">Soccer</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Other">Other</option>
+            </select>
+            <button class="button btn js-teamset-edit">Save Team Edits</button>
+            <button class="button btn js-teamset-delete">Delete Team</button>
+        </script>
 
         <!-- ////////////////////////// -->
         <!-- End of my templates -->
@@ -394,6 +407,7 @@
         <script src="bower_components/pickadate/lib/picker.js"></script>
         <script src="bower_components/pickadate/lib/picker.date.js"></script>
         <script src="bower_components/pickadate/lib/picker.time.js"></script>
+        <script src="bower_components/hideShowPassword/hideShowPassword.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
         
@@ -445,11 +459,12 @@
         <script src="scripts/views/eventlistview.js"></script>
 
         <script src="scripts/views/teamformview.js"></script>
-        <script src="scripts/views/messageformview.js"></script>
+        <!-- // <script src="scripts/views/messageformview.js"></script> -->
         <script src="scripts/views/teammessageformview.js"></script>
+        <script src="scripts/views/neweventformview.js"></script>
         <script src="scripts/views/newplayerformview.js"></script>
         <script src="scripts/views/newcoachformview.js"></script>
-        <script src="scripts/views/neweventformview.js"></script>
+        <script src="scripts/views/newteamsettingsview.js"></script>
         <!-- endbuild -->
 </body>
 </html>

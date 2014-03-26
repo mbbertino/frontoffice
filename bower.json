@@ -8,7 +8,8 @@
     "backbone": "~1.1.2",
     "momentjs": "~2.5.1",
     "bootstrap": "~3.1.1",
-    "pickadate": "~3.4.0"
+    "pickadate": "~3.4.0",
+    "hideShowPassword": "~2.0.1"
   },
   "devDependencies": {}
 }

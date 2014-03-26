@@ -11,8 +11,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 $brandbkgd: #ECF0F1; // light grey background
 $brandbkgdtwo: #BDC3C7; // secondary bkgd
-$brandpop: #16A085;  // main color call to action
-$fontcolor: #ECF0F1;   // font color / also the offset the main color
+// $brandpop: #16A085;  // main color call to action
+$brandpop: #AC5043;  // Alternative1 red winner so far :)
+// $brandpop: #088DD3;  // Alternative2 lighter blue looks pretty decent !
+$fontcolor: #fff;   // font color / also the offset the main color
 $brandmain: #2c3e50; //strong and sparse continuity
 
 $break-small: 600px;
@@ -49,13 +51,6 @@ body {
 .marketing,
 .footer {}
 
-.modal {
-    color: $brandmain;
-
-    .modal-content{
-        background: $brandbkgd;
-    }
-}
 /* Custom page header */
 .header {
     padding: 0 0;
@@ -171,7 +166,7 @@ body {
             overflow: hidden;
             margin-top: 25px;
             padding: 0 25px;
-            color: $brandmain;
+            color: $fontcolor;
         
             h2 {
                 display: inline-block;
@@ -459,7 +454,7 @@ body {
     .inputtainer {
         border-radius: 10px;
         margin: 20px 0;
-        color: $brandbkgdtwo;
+        color: $fontcolor;
         margin-bottom: 100px;
         
         h1 {
