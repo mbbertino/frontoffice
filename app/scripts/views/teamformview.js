@@ -5,7 +5,12 @@ var TeamForm = Parse.View.extend({
   renderedtemplate: _.template($('#team-addition').text()),
 
   events: {
-    'click .js-add-team': 'createTeam'
+    'click .js-add-team': 'createTeam',
+    'click .js-close-view': 'removeView'
+  },
+
+  removeView: function() {
+    this.remove()
   },
 
   createTeam: function() {

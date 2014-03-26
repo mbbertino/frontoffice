@@ -3,6 +3,11 @@ var NewPlayerForm = Parse.View.extend({
 
   events: {
     'click .js-add-player': 'addPlayer',
+    'click .js-close-view': 'removeView'
+  },
+
+  removeView: function() {
+    this.remove()
   },
 
   addPlayer: function() {

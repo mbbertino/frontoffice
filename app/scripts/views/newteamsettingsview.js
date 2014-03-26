@@ -4,6 +4,11 @@ var NewTeamSettingsForm = Parse.View.extend({
   events: {
     'click .js-teamset-edit': 'editTeam',
     'click .js-teamset-delete': 'deleteTeam',
+    'click .js-close-view': 'removeView'
+  },
+
+  removeView: function() {
+    this.remove()
   },
 
   editTeam: function() {

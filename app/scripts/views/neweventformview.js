@@ -6,7 +6,11 @@ var NewEventForm = Parse.View.extend({
     'click .js-time-from-picker': 'pickFromTime',
     'click .js-time-to-picker': 'pickToTime',
     'click .js-add-event': 'addEvent',
+    'click .js-close-view': 'removeView'
+  },
 
+  removeView: function() {
+    this.remove()
   },
 
   addEvent: function() {

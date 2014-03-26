@@ -5,7 +5,12 @@ var TeamMessageForm = Parse.View.extend({
   renderedtemplate: _.template($('#team-message-addition').text()),
 
   events: {
-    'click .js-send-message': 'sendMessage'
+    'click .js-send-message': 'sendMessage',
+    'click .js-close-view': 'removeView'
+  },
+
+  removeView: function() {
+    this.remove()
   },
 
   sendMessage: function() {

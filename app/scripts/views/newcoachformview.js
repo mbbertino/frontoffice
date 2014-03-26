@@ -6,6 +6,11 @@ var NewCoachForm = Parse.View.extend({
 
   events: {
     'click .js-add-coach': 'addCoach',
+    'click .js-close-view': 'removeView'
+  },
+
+  removeView: function() {
+    this.remove()
   },
 
   addCoach: function() {
