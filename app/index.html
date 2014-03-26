@@ -17,6 +17,9 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="bower_components/pickadate/lib/themes/default.css">
+        <link rel="stylesheet" href="bower_components/pickadate/lib/themes/default.date.css">
+        <link rel="stylesheet" href="bower_components/pickadate/lib/themes/default.time.css">
         <link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <!-- endbuild -->
@@ -72,7 +75,7 @@
                 <h2>Create Your Team Below!</h2>
                 <input placeholder="Team Name"class="col-xs-12 username js-teamname"></input>
                 <select class="col-xs-12 js-team-sport">
-                    <option value="" disabled selected>Select Sport</option>
+                    <option value="" disabled selected>Sport</option>
                     <option value="Baseball">Baseball</option>
                     <option value="Football">Football</option>
                     <option value="Soccer">Soccer</option>
@@ -132,8 +135,7 @@
                     <div class="col-xs-12 section manage">
                         <div class="col-xs-12 board-title">
                             <ul>
-                                <li class="col-xs-6"><a class="js-send-message-creation">Send Message</a></li>
-                                <li class="col-xs-6"><a class="js-create-new-team">Add Team</a></li>
+                                <li class="col-xs-12"><a class="js-create-new-team">Add Team</a></li>
                             </ul>
                         </div>
                         <div class="col-xs-12 additions"></div>
@@ -213,13 +215,13 @@
 <!-- This is the Player listview template -->
         <script type="text/template" id="player-list">
             <div class="circle"></div>
-            <span><%= this.model.get('first_name')+' '+this.model.get('last_name')%></span>
+            <span><%= this.model.get('firstName')+' '+this.model.get('lastName')%></span>
         </script>
 
 <!-- This is the Coach listview template -->
         <script type="text/template" id="coach-list">
             <div class="circle"></div>
-            <span><%= this.model.get('first_name')+' '+this.model.get('last_name')%></span>
+            <span><%= this.model.get('firstName')+' '+this.model.get('lastName')%></span>
         </script>
 
 
@@ -233,11 +235,12 @@
 <!-- This is the event list template -->
         <script type="text/template" id="event-list">
             <div class="col-xs-2 type-container">
+                <span class="col-xs-12"><%= moment(this.model.get('date')).format("MMM, D")%></span>              
                 <span class="col-xs-12"><%= this.model.get('type')%></span>
             </div>
             <div class="col-xs-3 date-container">
-                <span class="col-xs-12"><%= moment(this.model.get('date')).format("MMM, D")%></span>                
-                <span class="col-xs-12"><%= moment(this.model.get('date')).format("h:mm a")%></span>                
+                <span class="col-xs-12">From: <%= this.model.get('startTime')%></span>                
+                <span class="col-xs-12">To: <%= this.model.get('endTime')%></span>                
             </div>
             <div class="col-xs-7 info-container">
                 <span class="col-xs-12"><%= this.model.get('subject')%></span>
@@ -248,14 +251,13 @@
         </script>
 
 <!-- These are the coach dashboard Additions Templates -->
-        <script type="text/template" id="message-addition">
-            <select class="js-team-select-dropdown">
-                <option value="" disabled selected>Select A Team</option>
-            </select>
-            <input placeholder="Subject" class="js-msg-subject"></input>
-            <textarea placeholder="Content" class="js-msg-content"></textarea>
-            <button class="button btn js-send-message">Send</button>
-        </script>
+      <!-- // <script type="text/template" id="message-addition"></script> -->
+      <!--     <select class="js-team-select-dropdown">
+        //         <option value="" disabled selected>Select A Team</option>
+        //     </select>
+        //     <input placeholder="Subject" class="js-msg-subject"></input>
+        //     <textarea placeholder="Content" class="js-msg-content"></textarea>
+        //     <button class="button btn js-send-message">Send</button> -->
 
 <!-- this is the add message form while in the team dashboard -->
         <script type="text/template" id="team-message-addition">
@@ -284,19 +286,99 @@
         <script type="text/template" id="team-addition">
             <input value="Enfuego" placeholder="Teamname"class="username js-form-teamname"></input>
             <select class="js-form-team-sport">
-                <option value="" disabled selected>Select Sport</option>
+                <option value="" disabled selected>Sport</option>
                 <option value="Baseball">Baseball</option>
                 <option value="Football">Football</option>
                 <option value="Soccer">Soccer</option>
                 <option value="Basketball">Basketball</option>
                 <option value="Other">Other</option>
             </select>
-            <button class="button btn js-add-team">ADD TEAM</button>
+            <button class="button btn js-add-team">Add team</button>
         </script>
 
-        <script type="text/template" id="event-addition"></script>
-        <script type="text/template" id="player-addition"></script>
-        <script type="text/template" id="coach-addition"></script>
+        <script type="text/template" id="event-addition">
+            <input value="Greer High" placeholder="Subject/Opponent"class="username js-form-event-subject"></input>
+            <input value="Greer" placeholder="Location/Opponent"class="username js-form-event-location"></input>
+            <select class="js-form-event-type">
+                <option value="" disabled selected>Event Type</option>
+                <option value="Game">Game</option>
+                <option value="Practice">Practice</option>
+                <option value="Meetup">Meetup</option>
+            </select>
+            <input placeholder="Pick A Date"type='text' class='js-date-picker'>
+            <input placeholder="From: Time"type="text" class="js-time-from-picker">
+            <input placeholder="To: Time "type="text" class="js-time-to-picker">            
+            <button class="button btn js-add-event">Add Event</button>
+        </script>
+        
+        <script type="text/template" id="player-addition">
+            <input value="Matt" placeholder="first name" class=" js-form-player-firstname"></input>
+            <input value="Bertino" placeholder="last name" class=" js-form-player-lastname"></input>
+            <input value="bertman45@gmail.com" placeholder="email" class=" js-form-player-email"></input>
+            <input value="561" placeholder="" class=" js-form-player-phone-acode"></input>
+            <input value="543" placeholder="" class=" js-form-player-phone-three"></input>
+            <input value="7466" placeholder="" class=" js-form-player-phone-four"></input>
+            <input value="194 Jones Creek Dr" placeholder="address" class=" js-form-player-address"></input>
+            <input value="Jupiter" placeholder="city" class=" js-form-player-city"></input>
+            <input value="FL" placeholder="state" class=" js-form-player-state"></input>
+            <input value="33458" placeholder="zip" class=" js-form-player-zip"></input>
+            <select class="js-form-player-position-primary">
+                <option value="" disabled selected>Primary Position</option>
+                <option value="P">P</option>
+                <option value="C">C</option>
+                <option value="1B">1B</option>
+                <option value="2B">2B</option>
+                <option value="SS">SS</option>
+                <option value="3B">3B</option>
+                <option value="RF">RF</option>
+                <option value="CF">CF</option>
+                <option value="LF">LF</option>
+                <option value="DH">DH</option>
+                <option value="U">U</option>
+                <option value="Other">Other</option>
+            </select>
+            <select class="js-form-player-position-secondary">
+                <option value="" disabled selected>Secondary Position</option>
+                <option value="P">P</option>
+                <option value="C">C</option>
+                <option value="1B">1B</option>
+                <option value="2B">2B</option>
+                <option value="SS">SS</option>
+                <option value="3B">3B</option>
+                <option value="RF">RF</option>
+                <option value="CF">CF</option>
+                <option value="LF">LF</option>
+                <option value="DH">DH</option>
+                <option value="U">U</option>
+                <option value="Other">Other</option>
+            </select>
+            <button class="button btn js-add-player">Add Player</button>
+        </script>
+        
+        <script type="text/template" id="coach-addition">
+            <input value="Matt" placeholder="first name" class=" js-form-coach-firstname"></input>
+            <input value="Bertino" placeholder="last name" class=" js-form-coach-lastname"></input>
+            <input value="bertman45@gmail.com" placeholder="email" class=" js-form-coach-email"></input>
+            <input value="561" placeholder="" class=" js-form-coach-phone-acode"></input>
+            <input value="543" placeholder="" class=" js-form-coach-phone-three"></input>
+            <input value="7466" placeholder="" class=" js-form-coach-phone-four"></input>
+            <input value="194 Jones Creek Dr" placeholder="address" class=" js-form-coach-address"></input>
+            <input value="Jupiter" placeholder="city" class=" js-form-coach-city"></input>
+            <input value="FL" placeholder="state" class=" js-form-coach-state"></input>
+            <input value="33458" placeholder="zip" class=" js-form-coach-zip"></input>
+            <select class="js-form-coach-position-role">
+                <option value="" disabled selected>Primary Role</option>
+                <option value="Batting">Batting</option>
+                <option value="Pitching">Pitching</option>
+                <option value="General">General</option>
+                <option value="Outfield">Outfield</option>
+                <option value="Infield">Infield</option>
+                <option value="Catching">Catching</option>
+                <option value="Conditioning">Conditioning</option>
+                <option value="Strength">Strength</option>
+            </select>
+            <button class="button btn js-add-coach">Add Coach</button>
+        </script>
         <script type="text/template" id="settings-addition"></script>
 
         <!-- ////////////////////////// -->
@@ -309,6 +391,9 @@
         <script src="bower_components/momentjs/moment.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/pickadate/lib/picker.js"></script>
+        <script src="bower_components/pickadate/lib/picker.date.js"></script>
+        <script src="bower_components/pickadate/lib/picker.time.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
         
@@ -361,6 +446,7 @@
 
         <script src="scripts/views/teamformview.js"></script>
         <script src="scripts/views/messageformview.js"></script>
+        <script src="scripts/views/teammessageformview.js"></script>
         <script src="scripts/views/newplayerformview.js"></script>
         <script src="scripts/views/newcoachformview.js"></script>
         <script src="scripts/views/neweventformview.js"></script>

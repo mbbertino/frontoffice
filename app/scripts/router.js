@@ -29,7 +29,8 @@ var MainRouter = Backbone.Router.extend({
           if (object.user = Parse.User.current()) {
             var currTeam = object
             new TeamDashboard({
-              model: object
+              model: object,
+              teamId: id
             })
             new TeamHeaderBar({
               model: object

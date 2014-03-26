@@ -1,14 +1,55 @@
 var NewEventForm = Parse.View.extend({
-
-  className: '',
-
   renderedtemplate: _.template($('#event-addition').text()),
 
   events: {
+    'click .js-date-picker': 'pickADate',
+    'click .js-time-from-picker': 'pickFromTime',
+    'click .js-time-to-picker': 'pickToTime',
+    'click .js-add-event': 'addEvent',
 
   },
 
-  initialize: function() {
+  addEvent: function() {
+    var that = this
+    var event = new Event()
+    event.set('date', $('.js-date-picker').val());
+    event.set('startTime', $('.js-time-from-picker').val());
+    event.set('endTime', $('.js-time-to-picker').val());
+    event.set('type', $('.js-form-event-type').val());
+    event.set('subject', $('.js-form-event-subject').val());
+    event.set('location', $('.js-form-event-location').val());
+    event.set('team', this.team);
+    event.save(null, {
+      success: function(results) {
+        new EventList({
+          model: results
+        })
+        that.$el.remove()
+      }
+    })
+  },
+
+  pickADate: function() {
+    $('.js-date-picker').pickadate()
+  },
+
+  pickFromTime: function() {
+    $('.js-time-from-picker').pickatime()
+  },
+
+  pickToTime: function() {
+    $('.js-time-to-picker').pickatime()
+  },
+
+  initialize: function(options) {
+    var that = this
+    var teamQuery = new Parse.Query(Team)
+    teamQuery.get(options.teamId, {
+      success: function(team) {
+        that.team = team
+      }
+    })
+
     $('.additions').html(this.el)
     this.render()
 

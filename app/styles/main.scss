@@ -9,12 +9,11 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     padding: 0.2em 0;
 }
 
-$brandbkgd: #ecf0f1;
-$brandbkgdtwo: white;
-$brandpop: #2980b9;
-$fontcolor: white;
-$brandmain: #2f2f33;
-$brandsecond: #37373c;
+$brandbkgd: #ECF0F1; // light grey background
+$brandbkgdtwo: #BDC3C7; // secondary bkgd
+$brandpop: #16A085;  // main color call to action
+$fontcolor: #ECF0F1;   // font color / also the offset the main color
+$brandmain: #2c3e50; //strong and sparse continuity
 
 $break-small: 600px;
 
@@ -28,7 +27,7 @@ $break-small: 600px;
     font-size: 18px;
     height: 60px;
     background: #fff;
-    color: $brandsecond;
+    color: $brandmain;
     text-align: left;
     line-height: 60px;
 }
@@ -226,11 +225,12 @@ body {
 
                     .board-title  {
                         text-align: center;
+                        background: $brandmain;
                     }
 
                     .additions {
                         min-height: 10px;
-                        background: $brandbkgdtwo;
+                        background: #fff;
                         border-radius: 0 0 4px 4px;
                         overflow: hidden;
                         color: $brandmain;
@@ -251,8 +251,8 @@ body {
                 }
 
                 .board-title {
-                    background: $brandpop;
-                    border-bottom: 3px solid darken($brandpop, 10%);
+                    background: $brandmain;
+                    border-bottom: 3px solid $brandpop;
                     text-align: left;
                     border-radius: 4px 4px 0 0;
                     color: #fff;
@@ -272,8 +272,7 @@ body {
                     height: 45px;
                 }
                 .board {
-                    // height: 300px;
-                    background: $brandbkgdtwo;
+                    background: #fff;
                     border-radius: 0 0 4px 4px;
                     overflow: hidden;
                     color: $brandmain;
@@ -294,6 +293,7 @@ body {
                     }
 
                     &.messages {
+                        max-height: 400px;
                         overflow-y: scroll;                         
                     }
 
@@ -376,7 +376,7 @@ body {
                             color: #fff;
 
                             span {
-                                top: 30%;
+                                top: 10%;
                             }
                         }   
 

@@ -12,26 +12,37 @@ var TeamDashboard = Parse.View.extend({
   },
 
   sendMessageForm: function() {
-    new TeamMessageForm()
+    new TeamMessageForm({
+      teamId: this.teamId
+    })
   },
 
   addEventForm: function() {
-    new NewEventForm()
+    new NewEventForm({
+      teamId: this.teamId
+    })
   },
 
   addPlayerForm: function() {
-    new NewPlayerForm()
+    new NewPlayerForm({
+      teamId: this.teamId
+    })
   },
 
   addCoachForm: function() {
-    new NewCoachForm()
+    new NewCoachForm({
+      teamId: this.teamId
+    })
   },
 
   teamSettingsForm: function() {
-    new TeamSettings()
+    new TeamSettings({
+      teamId: this.teamId
+    })
   },
 
-  initialize: function() {
+  initialize: function(options) {
+    this.teamId = options.teamId
     $('.jumbotron').html(this.el)
     this.render()
 
@@ -61,7 +72,7 @@ var TeamDashboard = Parse.View.extend({
 
     var eventQuery = new Parse.Query(Event);
     eventQuery.equalTo("team", this.model)
-    eventQuery.ascending("date")
+    eventQuery.descending("date")
     eventQuery.find({
       success: function(events) {
         _.each(events, function(event) {
