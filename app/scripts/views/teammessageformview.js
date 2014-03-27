@@ -1,6 +1,6 @@
 var TeamMessageForm = Parse.View.extend({
 
-  className: '',
+  className: 'modal-bkgd',
 
   renderedtemplate: _.template($('#team-message-addition').text()),
 
@@ -39,7 +39,7 @@ var TeamMessageForm = Parse.View.extend({
       }
     })
 
-    $('.additions').html(this.el)
+    $('body').append(this.el)
     this.render()
   },
 
@@ -47,36 +47,3 @@ var TeamMessageForm = Parse.View.extend({
     this.$el.html(this.renderedtemplate())
   }
 })
-
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-// Lets add this feature in phase 2
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-
-
-// selectPlayerTemaplate: _.template($('#playername-list-item').text()),
-
-// 'blur .js-team-select-dropdown': 'populatePlayers'
-
-// populatePlayers: function() {
-//   var that = this
-//   var teamQuery = new Parse.Query(Team)
-//   teamQuery.equalTo('teamname', $('.js-team-select-dropdown').val())
-//   teamQuery.find({
-//     success: function(team) {
-//       var userPlayerQuery = new Parse.Query(Player);
-//       userPlayerQuery.equalTo("team", team[0]);
-//       userPlayerQuery.find({
-//         success: function(players) {
-//           _.each(players, function(result) {
-//             console.log(result)
-//             $('.js-player-select-dropdown').append(that.selectPlayerTemaplate({
-//               result: result
-//             }))
-//           })
-//         }
-//       });
-//     }
-//   })
-// },

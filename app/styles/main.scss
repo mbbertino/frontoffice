@@ -34,10 +34,55 @@ $break-small: 600px;
     line-height: 60px;
 }
 
+.modal-bkgd {
+	position: fixed;
+	top: 0;
+	background: rgba(0, 0, 0, 0.32);
+	width: 100%;
+	height: 100%;
+
+	.modal-container {
+		background: #fff;
+		border-radius: 4px;
+		width: 600px;
+		height: auto;
+		color: black; 
+		overflow: hidden;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -300px;
+		margin-top: -height/2 ;
+
+
+		@media screen and (max-width: $break-small) {
+			width: 100%;
+		}
+
+		.modal-head {
+			overflow: hidden;
+		}
+
+		.modal-body{
+			overflow: hidden;
+			padding: 10px;
+			position: relative;
+
+			.player-avatar {
+				height: 100%;
+				width: auto;
+				background: blue;
+				border-radius: 4px;
+			}
+		}
+	}
+}
+
+
 /* Space out content a bit */
 
 body {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
     color: $fontcolor;
     background: $brandbkgd;
@@ -59,7 +104,8 @@ body {
     a {
         color: #fff;
         h2 {
-            font-family: 'Walter Turncoat', cursive;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
             margin-left: 10px;
             margin-top: 13px;
         }
@@ -83,36 +129,28 @@ body {
 
             }
         }
-        select {
-            height: 100%;
-        }
-        .add-team-container {
-            @media screen and (max-width: $break-small) {
-                display: none;
-
-
-            }
-        }
         button {
-            background: $brandpop;
-            color: #fff;
-            margin-top: 14px;
-            font-size: 20px;
+      		width: auto;                		
+      		height: 30px;
+      		font-size: 12px;
+        	background: #fff;
+        	padding: 0px;
+        	border: 1px solid $brandpop;
+        	margin: 18px 0;
 
-            @media screen and (max-width: $break-small) {
-                position: relative;
-                display: block;
-                width: 100%;
-
+        		@media screen and (max-width: $break-small) {                     
+              display: none;
             }
-        }
 
-        .create-team-form {
-            button {
-                margin-top: -1px;
-            }
-        }
+        	a {
+        		padding: 5px;
+        		color: $brandmain;
 
+        		&:hover{
+        			color: $brandpop;
+        		}
+        	}
+        }
     }
 }
 
@@ -149,11 +187,11 @@ body {
         padding: 14px 24px;
     }
     h1 {
-        font-family: 'Walter Turncoat', cursive;
+        font-family: 'Open Sans', sans-serif;
         margin-top: 61px;
     }
     p {        
-        font-family: 'Walter Turncoat', cursive;
+        font-family: 'Open Sans', sans-serif;
     }
     // ////////////////////////////
     // this is the section for the dashboard
@@ -194,260 +232,300 @@ body {
                 @include inputgen;
             }
         }
+
         .maincontent {
-            padding-top: 20px;
+            padding-top: 60px;
             position: relative;
+
 
             .section {
                 position: relative;
-                margin-bottom: 30px;
+                margin-bottom: 60px;
                 overflow: hidden;
 
-                a {
-                    color: #fff; 
-                }
+                &.team-snapshot {
+                  font-size: 16px;
 
-                &.snapshot {
-                    font-size: 16px;
-                }
-                
-                &.manage {
-                    overflow: hidden;
+                  .board-title {
 
-                    @media screen and (max-width: $break-small) {                     
-                        display: none;
-                    }
+                  	.team-title-info{
 
-                    .board-title  {
-                        text-align: center;
-                        background: $brandmain;
-                    }
+                  		.team-name {
+	                        text-align: left;
+	                    }
+	                    .sport-name {
+	                        text-align: right;
+	                    }
+                  	}	
 
-                    .additions {
-                        min-height: 10px;
-                        background: #fff;
-                        border-radius: 0 0 4px 4px;
-                        overflow: hidden;
-                        color: $brandmain;
-                    }
-                }
+                  	.team-logo {
+                  		margin-top: 4px;
+                  		height: 90px;
+                  		width: 90px;
+                  		border-radius: 90px;
+                  		border: 2px solid $brandpop;
+                  		background: #fff;
+                  	}
+                  }
 
-                ul {
-                    list-style: none;
+                  .board {
 
-                    li {
-                        display: inline-block;
+                  	h4 {
+                  		padding-left: 45px;
+                  		text-align: left;
 
-                        a {
-                        cursor: pointer;
-                            color: #fff;
-                        }
-                    }
+                    	a {
+                    		color: $brandmain;	
+                    		cursor: pointer;       
+
+                    		&:hover {
+                    			color: $brandpop;
+                    		}            
+                    	}
+                  	}
+                  }
                 }
 
                 .board-title {
-                    background: $brandmain;
-                    border-bottom: 3px solid $brandpop;
-                    text-align: left;
-                    border-radius: 4px 4px 0 0;
-                    color: #fff;
-                    @media screen and (max-width: $break-small) {                     
-                        border-radius: 0px;
-                    }
+                  background: $brandmain;
+                  border-bottom: 3px solid $brandpop;
+                  text-align: left;
+                  border-radius: 4px 4px 0 0;
+                  color: #fff;
+                  
+                  h3 {
+	                  font-family: 'Open Sans', sans-serif;
+	                  font-weight: 400;
+	                }
 
-                    .team-name {
-                        text-align: left;
-                    }
-                    .sport-name {
-                        text-align: right;
-                    }
-                }
+                  @media screen and (max-width: $break-small) {                     
+                      border-radius: 0px;
+                  }
 
-                .settings-icon {
-                    height: 45px;
-                }
-                .board {
-                    background: #fff;
-                    border-radius: 0 0 4px 4px;
-                    overflow: hidden;
-                    color: $brandmain;
-                    padding-left: 0px;
-                    padding-right: 0px;
+                  button {
+                		width: auto;                		
+                		height: 30px;
+                		font-size: 12px;
+                  	background: #fff;
+                  	padding: 0px;
+                  	border: 1px solid $brandpop;
+                  	margin: 18px 0;
 
-                    @media screen and (max-width: $break-small) {
+                  		@media screen and (max-width: $break-small) {                     
                         display: none;
-                    }
+	                    }
 
-                    .wins {
-                        border-right: 3px solid darken($brandpop, 10%);
-                    }
+                  	a {
+                  		padding: 5px;
+                  		color: $brandmain;
 
-                    &.events {
-                        height: 675px;
-                        overflow-y: scroll; 
-                    }
+                  		&:hover{
+                  			color: $brandpop;
+                  		}
+                  	}
+                  }
+                }
 
-                    &.messages {
-                        max-height: 400px;
-                        overflow-y: scroll;                         
-                    }
+                .board {
+                	background: #fff;
+                  border-radius: 0 0 4px 4px;
+                  overflow: hidden;
+                  color: $brandmain;
+                  padding-left: 0px;
+                  padding-right: 0px;
 
-                    &.roster {
-                        height: auto;
-                        height: 675px;                        
-                        overflow-y: scroll;
-                        
+                  @media screen and (max-width: $break-small) {
+                      display: none;
+                  }
 
-                        .roster-section {
-                            text-align: left;
-                            background: lighten($brandpop, 20%);
-                            color: #fff;
+                  button {
+                		width: auto;
+                		height: 30px;
+                  	background: #fff;
+                  	padding: 0px;
+                  	border: 1px solid $brandpop;
+                  	margin: 5px 5px;
+
+                  		@media screen and (max-width: $break-small) {                     
+                        display: none;
+	                    }
+
+                  	a {
+                  		padding: 5px;
+	                  	text-align: center;
+	                		font-size: 16px;
+                  		color: $brandmain;
+                  		cursor: pointer;
+
+                  		&:hover{
+                  			color: $brandpop;
+                  		}
+                  	}
+                  }
+
+
+                  .events {
+                    height: 490px;
+                    overflow: hidden;
+
+	                  .event-container {
+                      border-bottom: 1px solid $brandpop;
+                      font-size: 16px;
+                      text-align: left;
+
+                      .event-info {
+                    		text-align: center;
+
+                      	@media screen and (max-width: $break-small) {
+                          display: none;
                         }
 
-                        .players {
-                            margin: 0 auto;
-                            float: none;
-                            padding: 0px;
-                        }
+                      	.event-type {
+                      		border-radius: 4px;
+                      		background: $brandpop;
+                      		color: #fff;
+                      		
+                      		h4 {
+	                      		padding: 5px;	
+                      		}
+                      	}
 
-                        .coaches {
-                            margin: 0 auto;
-                            float: none;
-                            padding: 0px;
+                      	.cal-top {
+                      		border-radius: 4px 4px 0 0; 
+                      		background: $brandmain;                      	
+                      		color: #fff;
 
-                        }
-                    }
+                      		.event-mon{
+                      			margin: 2px 0; 
+                      		}
+                      	}
 
-                    .team-name {
-                        padding-left: 0px;
-                        padding-right: 0px;
-                        text-align: left;
-                    }
+                      	.cal-bot {  
+                      		border-radius: 0 0 4px 4px;
+                      		background: #fff;
+                      		border: 1px solid $brandmain;
+                      		margin-bottom: 10px;
+                      		padding-top: 2px; 
 
-                    .sport-name {
-                        padding-left: 0px;
-                        padding-right: 0px;
-                        text-align: right;
-                    }
+                      		.event-time {
+                      			margin: 0; 
+	                      		padding: 2px;	
+                      			color: $brandmain;                      
+                      		}
+                      	}                      
+                      }
+                      
+                      .event-content-info {
+                      	position: relative;
 
-                    .upcoming-title {
-                        padding-left: 0px;
-                        padding-right: 0px;
-                        background: lighten($brandpop, 20%);
-                        color: #fff;
-                    }
+	                      .subject {
+	                      	margin-top: 10px;
+	                      	text-transform: uppercase; 
+                          color: $brandmain;
+                          margin-bottom: 6px;
+	                      }
 
-                    .event-container {
-                        border-bottom: 1px solid $brandpop;
-                        overflow: hidden;
-                        font-size: 14px;
-                        position: relative;
-                        height: 75px;
-                        padding-left: 0px;
-                        padding-right: 0px;
-                        
-                        .inner-containers {
-                            height: 100%;
-                            padding-left: 0px;
-                            padding-right: 0px;
-                        }
-                        span {
-                            padding-left: 0px;
-                        }                            
+	                      .content {
+	                      	height: 87px;
+	                        font-family: 'Open Sans Condensed', sans-serif;
+	                        font-size: 16px;
+	                        border-radius: 4px;
+	                        margin-bottom: 0px;
+	                        margin-top: 3px;	                       
+	                      }
+                      }
+	                  }	                
+                  }
 
-                        .date-container {
-                            height: 100%;
-                                                                                                         
-                            span {
-                                top: 16%;
-                                font-size: 12px;
-                                padding-right: 0px;
-                            }
-                        }
-                        
-                        .type-container {
-                            height: 100%;
-                            background: lighten($brandpop, 20%);
-                            color: #fff;
+                  .messages {
+                  	height: 305px;
+                    overflow: hidden;
 
-                            span {
-                                top: 10%;
-                            }
-                        }   
+                  	.message-container {
+                      border-bottom: 1px solid $brandpop;
+                      font-size: 16px;
+                      text-align: left;
+                      padding-top: 5px; 
+                      
+                      .msg-content-info {
+                      	position: relative;
+                      	padding: 0px;
 
-                        .info-container {
-                            height: 100%;
-                            text-align: left;
-                            
-                            span {
-                                top: 10%;                                
-                            }
+                        h3 {
+                          font-family: 'Open Sans', sans-serif;
+                          font-weight: 400;
+                          text-transform: uppercase;	                          
+                        	margin: 0px;
+                        	margin-top: 5px;
+                        }         
 
-                            a {
-                                color: #27ae60;
-                            }
-                        }
-                    }
+                        h6 {
+                          font-family: 'Open Sans', sans-serif;
+                        	font-size: 12px;
+                        	color: #fff;
+                    			color: $brandmain;  
+                    			text-align: right;                    
 
-                    .message-container {
-                        padding: 0px;
-                        border-bottom: 1px solid $brandpop;
-                        font-size: 16px;
-                        text-align: left;
-                        
-                        .subject {
-                            color: $brandpop;
-                            font-size: 16px;
-                        }
-                        .message-time {
-                            color: $brandpop;
-                            text-align: right;
-                            font-size: 16px;
-
-                            @media screen and (max-width: $break-small) {
-                                display: none;
-                            }
-                        }
+                        }              
 
                         p {
-                         font-family: 'Open Sans Condensed', sans-serif;
-                         font-size: 12px;
+                        	word-break: break-all;
+                          font-family: 'Open Sans', sans-serif;
+                        	font-weight: 300;
                         }
+	                      .content {
+	                        font-size: 16px;
+	                        margin-bottom: 0px;
+	                        margin-top: 3px;
+                          font-family: 'Open Sans', sans-serif;
+                          font-weight: 400;
+                          height: 100px;
+                          overflow: hidden;
+                          margin-bottom: 10px;
+	                      }
+                      }
+	                  }
+	                }
+
+                  &.roster {
+                    height: 1013px;                                         
+
+                    .roster-section {
+                        text-align: left;
+                        background: lighten($brandpop, 20%);
+                        color: #fff;	
+                        padding-left: 30px;
                     }
 
-                    .player-container {
+                    .players {
+                      margin: 0 auto;
+                      float: none;
+
+                      .player-container {
                         text-align: left;
                         font-size: 16px;
 
-                        .circle {
-                            height: 12px;
-                            width: 12px;
-                            background: $brandpop;
-                            border-radius: 12px;
-                            display: inline-block;
+                        a {
+                          cursor: pointer;
                         }
-                        span {
-                            display: inline-block;
-                        }
+	                    }
                     }
 
-                    .coach-container {
-                        text-align: left;
-                        font-size: 16px;
+                    .coaches {
+                        margin: 0 auto;
+                        float: none;
 
-                        .circle {
-                            height: 12px;
-                            width: 12px;
-                            background: $brandpop;
-                            border-radius: 12px;
-                            display: inline-block;
+                        .coach-container {
+	                        text-align: left;
+	                        font-size: 16px;
+
+	                        a {
+                          cursor: pointer;
                         }
-                        span {
-                            display: inline-block;
-                        }
+		                    }
                     }
-                    
-                }
+                  }
+                }              
             }
         }
     }

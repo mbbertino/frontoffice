@@ -34,8 +34,14 @@ var UserHeaderBar = Parse.View.extend({
   renderedTemplate: _.template($('#user-headerbar-template').text()),
 
   events: {
-    'click .js-logout': 'logOut'
+    'click .js-logout': 'logOut',
+    'click .js-create-new-team': 'addTeamForm'
   },
+
+  addTeamForm: function() {
+    new TeamForm()
+  },
+
 
   initialize: function() {
     $('.header').html(this.el)
@@ -58,15 +64,30 @@ var TeamHeaderBar = Parse.View.extend({
   renderedTemplate: _.template($('#team-headerbar-template').text()),
 
   events: {
-    'click .js-logout': 'logOut'
+    'click .js-logout': 'logOut',
+    'click .js-team-settings': 'teamSettingsForm'
   },
 
-  initialize: function() {
+  teamSettingsForm: function() {
+    new NewTeamSettingsForm({
+      model: this.team
+    })
+  },
+
+  initialize: function(options) {
+    var that = this
+    var teamQuery = new Parse.Query(Team)
+    teamQuery.get(options.teamId, {
+      success: function(team) {
+        that.team = team
+      }
+    })
     $('.header').html(this.el)
     this.render()
   },
 
   render: function() {
+
     this.$el.html(this.renderedTemplate())
   },
 

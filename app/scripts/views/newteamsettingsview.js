@@ -1,4 +1,6 @@
 var NewTeamSettingsForm = Parse.View.extend({
+  className: 'modal-bkgd',
+
   renderedtemplate: _.template($('#settings-addition').text()),
 
   events: {
@@ -12,9 +14,9 @@ var NewTeamSettingsForm = Parse.View.extend({
   },
 
   editTeam: function() {
-    this.team.set('teamname', $('.js-form-teamset-name').val())
-    this.team.set('sport', $('.js-form-teamset-sport').val())
-    this.team.save({
+    this.model.set('teamname', $('.js-form-teamset-name').val())
+    this.model.set('sport', $('.js-form-teamset-sport').val())
+    this.model.save({
       success: function(team) {
         location.reload()
       }
@@ -25,28 +27,28 @@ var NewTeamSettingsForm = Parse.View.extend({
     var that = this
 
     var deletePlayerQuery = new Parse.Query('Player');
-    deletePlayerQuery.equalTo("team", this.team)
+    deletePlayerQuery.equalTo("team", this.model)
     deletePlayerQuery.find({
       success: function(results) {
         Parse.Object.destroyAll(results)
       }
     });
     var deleteEventQuery = new Parse.Query('Event');
-    deleteEventQuery.equalTo("team", this.team)
+    deleteEventQuery.equalTo("team", this.model)
     deleteEventQuery.find({
       success: function(results) {
         Parse.Object.destroyAll(results)
       }
     });
     var deleteCoachQuery = new Parse.Query('Coach');
-    deleteCoachQuery.equalTo("team", this.team)
+    deleteCoachQuery.equalTo("team", this.model)
     deleteCoachQuery.find({
       success: function(results) {
         Parse.Object.destroyAll(results)
       }
     });
     var deleteMessageQuery = new Parse.Query('Message');
-    deleteMessageQuery.equalTo("team", this.team)
+    deleteMessageQuery.equalTo("team", this.model)
     deleteMessageQuery.find({
       success: function(results) {
         Parse.Object.destroyAll(results)
@@ -62,15 +64,7 @@ var NewTeamSettingsForm = Parse.View.extend({
   },
 
   initialize: function(options) {
-    var that = this
-    var teamQuery = new Parse.Query(Team)
-    teamQuery.get(options.teamId, {
-      success: function(team) {
-        that.team = team
-      }
-    })
-    $('.additions').html(this.el)
-    // this.setHref(options.teamId);
+    $('body').append(this.el)
     this.render()
   },
 

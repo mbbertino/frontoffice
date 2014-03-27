@@ -6,7 +6,7 @@ var EventList = Parse.View.extend({
   initialize: function(options) {
     var $el = options.target || $('.events')
     // the $ is for a reminder that it is a Jquery object
-    $el.prepend(this.el)
+    $el.append(this.el)
     this.render()
   },
 

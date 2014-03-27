@@ -1,6 +1,6 @@
 var TeamForm = Parse.View.extend({
 
-  className: '',
+  className: 'modal-bkgd',
 
   renderedtemplate: _.template($('#team-addition').text()),
 
@@ -32,7 +32,7 @@ var TeamForm = Parse.View.extend({
   },
 
   initialize: function() {
-    $('.additions').html(this.el)
+    $('body').append(this.el)
     this.render()
 
   },

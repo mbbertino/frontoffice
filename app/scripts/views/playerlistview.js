@@ -1,17 +1,25 @@
 var PlayerList = Parse.View.extend({
-    className: 'player-container col-xs-12',
+  className: 'player-container col-xs-12',
 
-    renderedtemplate: _.template($('#player-list').text()),
+  renderedtemplate: _.template($('#player-list').text()),
 
-    initialize: function() {
-        $('.players').append(this.el)
-        this.render()
+  events: {
+    'click .js-person-expand': 'expandPerson'
+  },
 
-        // this will grab me the teams id to query for # of players, coaches, next event, and latest message
-    },
+  expandPerson: function() {
+    new PlayerCardView({
+      model: this.model
+    })
+  },
 
-    render: function() {
-        this.$el.html(this.renderedtemplate())
-    }
+  initialize: function() {
+    $('.players').append(this.el)
+    this.render()
+  },
+
+  render: function() {
+    this.$el.html(this.renderedtemplate())
+  }
 
 })

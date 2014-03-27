@@ -29,7 +29,8 @@ var MainRouter = Backbone.Router.extend({
               teamId: id
             })
             new TeamHeaderBar({
-              model: object
+              model: object,
+              teamId: id
             })
           } else {
             new CoachDashboard()

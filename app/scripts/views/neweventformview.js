@@ -1,4 +1,6 @@
 var NewEventForm = Parse.View.extend({
+  className: 'modal-bkgd',
+
   renderedtemplate: _.template($('#event-addition').text()),
 
   events: {
@@ -54,7 +56,7 @@ var NewEventForm = Parse.View.extend({
       }
     })
 
-    $('.additions').html(this.el)
+    $('body').append(this.el)
     this.render()
 
   },

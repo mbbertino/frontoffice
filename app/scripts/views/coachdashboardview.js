@@ -4,13 +4,8 @@ var CoachDashboard = Parse.View.extend({
   renderedtemplate: _.template($('#coach-dashboard').text()),
 
   events: {
-    // 'click .js-send-message-creation': 'sendMessageForm',
     'click .js-create-new-team': 'addTeamForm'
   },
-
-  // sendMessageForm: function() {
-  //   new MessageForm()
-  // },
 
   addTeamForm: function() {
     new TeamForm()
