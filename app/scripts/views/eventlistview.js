@@ -15,3 +15,32 @@ var EventList = Parse.View.extend({
   }
 
 })
+
+var FullEventList = Parse.View.extend({
+  className: 'event-container col-xs-12',
+
+  renderedtemplate: _.template($('#full-event-list').text()),
+
+  events: {
+    'click .js-delete-msg': 'deleteEvent'
+  },
+
+  deleteEvent: function() {
+    var that = this
+    this.model.destroy({
+      success: function(myObject) {
+        that.remove()
+      }
+    })
+  },
+
+  initialize: function(options) {
+    $('.events').prepend(this.el)
+    this.render()
+  },
+
+  render: function() {
+    this.$el.html(this.renderedtemplate())
+  }
+
+})

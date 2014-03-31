@@ -5,10 +5,7 @@ var TeamDashboard = Parse.View.extend({
 
   events: {
     'click .js-send-message-creation': 'sendMessageForm',
-    'click .js-add-event-creation': 'addEventForm',
-    // 'click .js-add-player-creation': 'addPlayerForm',
-    // 'click .js-add-coach-creation': 'addCoachForm',
-    // 'click .js-team-settings': 'teamSettingsForm'
+    'click .js-add-event-creation': 'addEventForm'
   },
 
   sendMessageForm: function() {
@@ -23,17 +20,6 @@ var TeamDashboard = Parse.View.extend({
     })
   },
 
-  addPlayerForm: function() {
-    new NewPlayerForm({
-      teamId: this.teamId
-    })
-  },
-
-  addCoachForm: function() {
-    new NewCoachForm({
-      teamId: this.teamId
-    })
-  },
 
   teamSettingsForm: function() {
     new NewTeamSettingsForm({
@@ -69,14 +55,17 @@ var TeamDashboard = Parse.View.extend({
         })
       }
     });
-
+    var now = Date.now()
+    console.log(now)
     var eventQuery = new Parse.Query('Event');
     eventQuery.equalTo("team", this.model)
+    // eventQuery.greaterThan("date", now)
     eventQuery.descending("date")
     eventQuery.limit("3")
     eventQuery.find({
       success: function(events) {
         _.each(events, function(event) {
+          console.log(event.get('date'))
           new EventList({
             model: event
           })

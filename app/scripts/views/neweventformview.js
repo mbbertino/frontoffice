@@ -24,10 +24,11 @@ var NewEventForm = Parse.View.extend({
     event.set('type', $('.js-form-event-type').val());
     event.set('subject', $('.js-form-event-subject').val());
     event.set('location', $('.js-form-event-location').val());
+    event.set('content', $('.js-form-event-notes').val());
     event.set('team', this.team);
     event.save(null, {
       success: function(results) {
-        new EventList({
+        new FullEventList({
           model: results
         })
         that.$el.remove()

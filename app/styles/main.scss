@@ -9,10 +9,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     padding: 0.2em 0;
 }
 
-$brandbkgd: #ECF0F1; // light grey background
+$brandbkgd: #E8DDCB; // light grey background
 $brandbkgdtwo: #BDC3C7; // secondary bkgd
 // $brandpop: #16A085;  // main color call to action
-$brandpop: #AC5043;  // Alternative1 red winner so far :)
+$brandpop: #2c3e50;  // Alternative1 red winner so far :)
 // $brandpop: #088DD3;  // Alternative2 lighter blue looks pretty decent !
 $fontcolor: #fff;   // font color / also the offset the main color
 $brandmain: #2c3e50; //strong and sparse continuity
@@ -245,6 +245,8 @@ body {
 
                 &.team-snapshot {
                   font-size: 16px;
+                  padding-left: 30px;
+                  padding-right: 30px;
 
                   .board-title {
 
@@ -338,6 +340,11 @@ body {
                       display: none;
                   }
 
+                  .full-pages {
+                  	height: 1000px;
+                  	overflow-y: scroll;
+                  }	
+                  
                   button {
                 		width: auto;
                 		height: 30px;
@@ -363,10 +370,7 @@ body {
                   	}
                   }
 
-
                   .events {
-                    height: 490px;
-                    overflow: hidden;
 
 	                  .event-container {
                       border-bottom: 1px solid $brandpop;
@@ -438,8 +442,6 @@ body {
                   }
 
                   .messages {
-                  	height: 305px;
-                    overflow: hidden;
 
                   	.message-container {
                       border-bottom: 1px solid $brandpop;
@@ -479,7 +481,6 @@ body {
 	                        margin-top: 3px;
                           font-family: 'Open Sans', sans-serif;
                           font-weight: 400;
-                          height: 100px;
                           overflow: hidden;
                           margin-bottom: 10px;
 	                      }
@@ -488,7 +489,7 @@ body {
 	                }
 
                   &.roster {
-                    height: 1013px;                                         
+										min-height: 865px;
 
                     .roster-section {
                         text-align: left;

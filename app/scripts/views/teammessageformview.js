@@ -22,7 +22,7 @@ var TeamMessageForm = Parse.View.extend({
     message.set('team', this.team);
     message.save(null, {
       success: function(results) {
-        new MessageList({
+        new FullMessageList({
           model: results
         })
         that.$el.remove()
