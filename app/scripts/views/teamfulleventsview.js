@@ -19,9 +19,11 @@ var TeamFullEvents = Parse.View.extend({
     $('.jumbotron').html(this.el)
     this.render()
 
+    var now = Date.now().toString()
     var eventsQuery = new Parse.Query(Event);
     eventsQuery.equalTo("team", this.model);
-    eventsQuery.ascending('date')
+    eventsQuery.greaterThan("timestamp", now)
+    eventsQuery.descending("timestamp")
     eventsQuery.find({
       success: function(events) {
         _.each(events, function(event) {

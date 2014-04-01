@@ -19,6 +19,7 @@ var NewEventForm = Parse.View.extend({
     var that = this
     var event = new Event()
     event.set('date', $('.js-date-picker').val());
+    event.set('timestamp', moment($('.js-date-picker').val()).format('X'))
     event.set('startTime', $('.js-time-from-picker').val());
     event.set('endTime', $('.js-time-to-picker').val());
     event.set('type', $('.js-form-event-type').val());

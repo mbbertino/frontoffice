@@ -55,11 +55,11 @@ var TeamDashboard = Parse.View.extend({
         })
       }
     });
-    var now = Date.now()
+    var now = Date.now().toString()
     var eventQuery = new Parse.Query('Event');
     eventQuery.equalTo("team", this.model)
-    // eventQuery.greaterThan("date", now)
-    eventQuery.descending("date")
+    eventQuery.greaterThan("timestamp", now)
+    eventQuery.ascending("timestamp")
     eventQuery.limit("3")
     eventQuery.find({
       success: function(events) {

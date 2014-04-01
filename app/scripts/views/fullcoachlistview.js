@@ -1,5 +1,5 @@
 var FullCoachList = Parse.View.extend({
-  className: 'coach-container col-xs-12',
+  className: 'coach-container-parent col-xs-6',
 
   renderedtemplate: _.template($('#full-coach-list').text()),
 

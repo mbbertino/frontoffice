@@ -10,7 +10,7 @@
     "bootstrap": "~3.1.1",
     "pickadate": "~3.4.0",
     "hideShowPassword": "~2.0.1",
-    "dreamerslab-jquery.center": "~1.1.0"
+    "ionicons": "~1.4.1"
   },
   "devDependencies": {}
 }

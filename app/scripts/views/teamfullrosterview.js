@@ -14,6 +14,8 @@ var TeamFullRoster = Parse.View.extend({
 
   popPlayers: function() {
     $('.players').empty()
+    $('.full-pages').append('<h2>Players</h2>')
+    $('.js-players').addClass('active')
     var playerQuery = new Parse.Query(Player);
     playerQuery.equalTo("team", this.model);
     playerQuery.find({
@@ -29,6 +31,7 @@ var TeamFullRoster = Parse.View.extend({
 
   popCoaches: function() {
     $('.players').empty()
+    $('.full-pages').append('<h2>Coaches</h2>')
     var coachQuery = new Parse.Query(Coach);
     coachQuery.equalTo("team", this.model);
     coachQuery.find({
@@ -57,6 +60,8 @@ var TeamFullRoster = Parse.View.extend({
   initialize: function() {
     $('.jumbotron').html(this.el)
     this.render()
+
+    $('.full-pages').append('<h2>Players</h2>')
 
     var playerQuery = new Parse.Query(Player);
     playerQuery.equalTo("team", this.model);

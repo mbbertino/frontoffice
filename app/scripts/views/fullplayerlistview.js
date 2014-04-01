@@ -1,5 +1,5 @@
 var FullPlayerList = Parse.View.extend({
-  className: 'player-container col-xs-12',
+  className: 'player-container-parent col-xs-6',
 
   renderedtemplate: _.template($('#full-player-list').text()),
 

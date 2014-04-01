@@ -9,12 +9,13 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     padding: 0.2em 0;
 }
 
-$brandbkgd: #DBDBDB; // light grey background
-$brandbkgdtwo: #EFEFF7; // secondary bkgd
+$brandbkgd: #EEEEEE; // light grey background
+$brandbkgdtwo: #FCFFF5; // secondary bkgd
 $brandbkgdthree: #fff; // secondary bkgd
-$brandpop: #ca171b;  // Alternative1 red winner so far :)
-$brandmain: #424242; //strong and sparse continuity
+$brandpop: #34495e;  // Alternative1 red winner so far :)
+$brandmain: #444344; //strong and sparse continuity
 $fontcolor: #fff;   // font color / also the offset the main color
+$fontcolordark: #3e606f;   // font color / also the offset the main color
 
 $break-small: 600px;
 
@@ -62,6 +63,23 @@ $break-small: 600px;
 			padding: 10px;
 			position: relative;
 			font-size: 16px;
+			color: $fontcolordark;
+			
+			h3 {
+				font-family: 'Open Sans', sans-serif;
+			}
+
+			h5 {
+				font-family: 'Open Sans', sans-serif;
+			}
+
+			.portrait {
+				width: 100%;
+				height: 300px;
+				background: $brandpop;
+				border-radius: 4px;
+				text-align: center;
+			}
 
 			input {
 				width: 98.2%;
@@ -69,6 +87,9 @@ $break-small: 600px;
 				border-radius: 4px;
 				margin-left: 5px;
 
+				&.sm-input {
+					width: 31%;
+				}
 				&.sm-time-input {				
 					width: 32%;
 				}
@@ -92,13 +113,12 @@ $break-small: 600px;
 			}
 
 			.modal-head-container {
-				background: $brandmain;
+				background: $brandpop;
 				margin-left: -20px;
 				margin-right: -20px;
 				margin-top: -20px;
 				padding-top: 20px;
 				padding-bottom: 10px;
-				border-bottom: 8px solid $brandpop;
 
 				h3 {
 					color: $fontcolor;
@@ -124,22 +144,19 @@ $break-small: 600px;
               display: none;
             }
 
+        	&:hover{
+	    			background: $brandpop;
+	    		}
+
         	a {
         		padding: 5px;
-        		color: $brandmain;
+        		color: $fontcolordark;
 
         		&:hover{
-        			color: $brandpop;
-        		}
-        	}
+		    			color: $fontcolor;
+		    		}
+	      	}
         }
-
-			.player-avatar {
-				height: 100%;
-				width: auto;
-				background: blue;
-				border-radius: 4px;
-			}
 		}
 	}
 }
@@ -165,22 +182,34 @@ body {
 /* Custom page header */
 .header {
     padding: 0 0;
-    background: $brandmain;
+    border-bottom: 1px solid $brandmain;
+    background: $brandbkgdthree;
+
 
     .container{
     	padding-left: 45px;
-    	padding-right: 45px;
+    	padding-right: 60px;
+      color: $fontcolordark;
+    }
+    a{
+    	color: $fontcolordark;
+    	cursor: pointer;
+
+    	&:hover {
+    		color: $brandpop;
+    	}
+	    .ion-home{
+	    	font-size: 30px;
+	    	margin: 15px 5px;
+	    }
     }
 
-    a {
-        color: #fff;
         h2 {
             font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
+            font-weight: 400;
             margin-left: 10px;
             margin-top: 13px;
         }
-    }
 
 
     .head-login-form {
@@ -190,7 +219,7 @@ body {
         }
         
         input {
-            margin-top: 13px;
+            margin-top: 15px;
             height: 30px;
             border-radius: 4px;
             margin-right: 5px;
@@ -207,25 +236,29 @@ body {
       		width: auto;                		
       		height: 30px;
       		font-size: 16px;
-        	background: $brandbkgdthree;
         	padding: 0px;
         	margin: 15px 0;
         	margin-left: 5px;
         	margin-right: 5px;
+        	background: none;
 
-        		@media screen and (max-width: $break-small) {                     
-              display: none;
-            }
+      		@media screen and (max-width: $break-small) {                     
+            display: none;
+          }        
+
+	    		&:hover{
+	    			background: $brandpop;
+	    		}
 
         	a {
         		padding: 5px;
-        		color: $brandmain;
+        		color: $fontcolordark;
 
         		&:hover{
-        			color: $brandpop;
-        		}
-        	}
-        }
+		    			color: $fontcolor;
+		    		}
+	      	}
+	      }
     }
 }
 
@@ -243,7 +276,7 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
     text-align: center;
-    background: $brandbkgd;
+    // background: black;
     padding: 0;
     overflow: hidden;
 
@@ -326,6 +359,8 @@ body {
                   	padding-top: 20px;
                   	padding-bottom: 20px;
                   	padding-right: 30px;
+                  	background: $brandbkgdthree;
+                  	color: $fontcolordark;
 
                   	.team-title-info{                  	
                   		padding-left: 0px;
@@ -333,11 +368,13 @@ body {
                   		h2 {
 		                  	font-family: 'Open Sans', sans-serif;
                   			margin-top: 0px;
+                  			padding-left: 0px;
                   		}
 
                   		h5 {
 		                  	font-family: 'Open Sans', sans-serif;
-                  			margin-top: 30px;
+                  			padding-left: 0px;
+                  			margin-top: 0px;
                   			margin-bottom: 0px;
                   		}
 
@@ -348,19 +385,13 @@ body {
 	                        text-align: right;
 	                    }
                   	}	
-
-                  	.team-logo {                  	
-                  		height: 90px;
-                  		width: 90px;
-                  		border-radius: 4px;
-                  		background: #fff;
-                  	}
                   }
 
                   .board {
                   	font-family: 'Open Sans', sans-serif;
                   	padding-top: 10px;
                   	padding-bottom: 10px;
+                  	background: $brandpop;
 
                   	h4 {
 	                  	font-family: 'Open Sans', sans-serif;
@@ -368,11 +399,11 @@ body {
                   		text-align: left;
 
                     	a {
-                    		color: $brandmain;	
+                    		color: $brandbkgdthree;	
                     		cursor: pointer;       
 
                     		&:hover {
-                    			color: $brandpop;
+                    			color: $brandbkgd;
                     		}            
                     	}
                   	}
@@ -380,19 +411,18 @@ body {
                 }
 
                 .board-title {
-                  background: $brandmain;
+                  background: $brandpop;
                   text-align: left;
                   border-radius: 4px 4px 0 0;
-                  color: $brandbkgdthree;
-                  border-bottom: 8px solid $brandpop;
-
-                  .roster-title {
-                  	margin-bottom: 20px;
-                  }
+                  color: $fontcolor;
+                  border: 1px solid $brandpop;
+                  padding-left: 30px;
+                  padding-right: 30px;
                   
                   h3 {
 	                  font-family: 'Open Sans', sans-serif;
 	                  font-weight: 400;
+	                  padding-left: 0px;
 	                }
 
                   @media screen and (max-width: $break-small) {                     
@@ -405,31 +435,37 @@ body {
                 		font-size: 16px;
                   	background: #fff;
                   	padding: 0px;
-                  	border: 1px solid $brandmain;
-                  	margin: 18px 0;
+                  	border: 1px solid $brandpop;
+                  	margin: 10px 0 20px;
 
                   		@media screen and (max-width: $break-small) {                     
                         display: none;
 	                    }
 
-                  	a {
-                  		padding: 5px;
-                  		color: $brandmain;
+                  	&:hover{
+						    			background: $brandpop;
+						    			border: 1px solid $brandbkgdthree;
+						    		}
 
-                  		&:hover{
-                  			color: $brandpop;
-                  		}
-                  	}
+					        	a {
+					        		padding: 5px;
+					        		color: $fontcolordark;
+
+					        		&:hover{
+							    			color: $fontcolor;
+							    		}
+						      	}
                   }
                 }
 
                 .board {
-                	background: $brandbkgdthree;
-                  border-radius: 0 0 4px 4px;
+                	// background: $brandpop;
+                  border-radius: 0px 0px 4px 4px;
                   overflow: hidden;
-                  color: $brandmain;
+                  color: $fontcolordark;
                   padding-left: 0px;
                   padding-right: 0px;
+                  border: 1px solid $brandmain;
 
                   @media screen and (max-width: $break-small) {
                       display: none;
@@ -442,6 +478,43 @@ body {
                   	.sm-input {
                   		width: 60px;
                   	}
+
+                  	.event-container {
+                  		padding-left: 0px;
+                  		padding-right: 0px;
+                  	}
+
+                  	.message-container {
+                  		padding-left: 0px;
+                  		padding-right: 0px;	
+                  	}
+
+                  	.player-container {
+                  		border: 1px solid $brandpop;
+                  		border-radius: 4px;
+                  		padding-bottom: 15px; 
+                  		h3 {
+                  			border-bottom: 1px solid $brandpop;
+                  			padding-bottom: 5px;
+                  		}
+
+                  		h5 {
+                  			margin: 3px 0;
+                  		}
+                  	}
+                  	.coach-container {
+                  		border: 1px solid $brandpop;
+                  		border-radius: 4px;
+                  		padding-bottom: 15px; 
+                  		h3 {
+                  			border-bottom: 1px solid $brandpop;
+                  			padding-bottom: 5px;
+                  		}
+
+                  		h5 {
+                  			margin: 3px 0;
+                  		}
+                  	}
                   }	
                   
                   button {
@@ -449,27 +522,34 @@ body {
                 		height: 30px;
                   	background: #fff;
                   	padding: 0px;
-                  	border: 1px solid $brandmain;
+                  	border: 1px solid $brandpop;
                   	margin: 5px 5px;
 
                   		@media screen and (max-width: $break-small) {                     
                         display: none;
 	                    }
 
-                  	a {
+	                    &:hover{
+							    			background: $brandpop;
+							    			border: 1px solid $brandbkgdthree;
+							    		}
+
+									   	a {
                   		padding: 5px;
 	                  	text-align: center;
 	                		font-size: 16px;
-                  		color: $brandmain;
+                  		color: $fontcolordark;
                   		cursor: pointer;
 
                   		&:hover{
-                  			color: $brandpop;
+                  			color: $fontcolor;
                   		}
                   	}
                   }
 
                   .events {
+                  	overflow: hidden;
+                  	background: $brandbkgdthree;
 
 	                  .event-container {
                       border-bottom: 1px solid $brandpop;
@@ -495,7 +575,7 @@ body {
 
                       	.cal-top {
                       		border-radius: 4px 4px 0 0; 
-                      		background: $brandmain;                      	
+                      		background: $brandpop;                      	
                       		color: #fff;
 
                       		.event-mon{
@@ -536,17 +616,34 @@ body {
 	                        margin-bottom: 0px;
 	                        margin-top: 3px;	                       
 	                      }
+
+	                      a {
+	                      	color: green;
+	                      }
+
+	                      button {
+	                      	a{
+	                      		color: $brandpop;
+
+	                      		&:hover {
+	                      			color: $fontcolor;
+	                      		}
+	                      	}
+	                      }
                       }
 	                  }	                
                   }
 
                   .messages {
+                  	overflow: hidden;
+                  	background: $brandbkgdthree;
 
                   	.message-container {
                       border-bottom: 1px solid $brandpop;
                       font-size: 16px;
                       text-align: left;
                       padding-top: 5px; 
+                      color: $fontcolordark;
                       
                       .msg-content-info {
                       	position: relative;
@@ -563,8 +660,7 @@ body {
                         h6 {
                           font-family: 'Open Sans', sans-serif;
                         	font-size: 12px;
-                        	color: #fff;
-                    			color: $brandmain;  
+                        	color: $fontcolordark; 
                     			text-align: right;                    
 
                         }              
@@ -588,12 +684,15 @@ body {
 	                }
 
                   &.roster {
-										min-height: 865px;
+                  	overflow: hidden;
+                  	background: $brandbkgdthree;
+										min-height: 820px;
 
                     .roster-section {
                         text-align: left;
-                        background: lighten($brandmain, 10%);
-                        color: #fff;	
+                        background: none;
+                        // background: lighten($brandmain, 10%);
+                        color: $brandmain;	
                         padding-left: 30px;
                     }
 
@@ -607,6 +706,7 @@ body {
 
                         a {
                           cursor: pointer;
+                          color: $brandpop;
                         }
 	                    }
                     }
@@ -621,7 +721,8 @@ body {
 
 	                        a {
                           cursor: pointer;
-                        }
+                          color: $brandpop;
+	                        }
 		                    }
                     }
                   }
@@ -672,25 +773,80 @@ body {
     }
 }
 
+// icons
+
+.ion-gear-a{
+	font-size: 18px;
+	margin-right: 8px;   
+}
+
+.ion-android-data {
+	font-size: 18px;
+	margin-right: 5px;   
+}
+
+.ion-clipboard {
+	font-size: 18px;
+	margin-right: 8px;   
+}
+
+.ion-plus-round {
+	font-size: 18px;
+	margin-right: 8px;
+}
+
+.ion-person-stalker{
+	font-size: 25px;
+	margin-right: 10px;
+}
+
+.ion-chatboxes {
+	font-size: 25px;
+	margin-right: 10px;	
+}
+
+.ion-ios7-calendar{
+	font-size: 25px;
+	margin-right: 10px;	
+}
+
+.ion-person {
+	font-size: 300px;
+	color: $fontcolor;
+	text-align: center;		
+}
+
+.ion-ios7-location {
+	margin-right: 5px;		
+}
 /* Supporting marketing content */
 .marketing {
     position: relative;
-    color: $brandmain;
-    background: $brandbkgd;
-    margin: 40px 0;
+    color: $fontcolordark;
+    // background: $brandpop;
+    margin: 0 0;
+    margin-top: -30px;
+    padding: 20px 0;
+
     p + h4 {
-        margin-top: 28px;
+        
     }
 
     h3 {
         font-family: 'Walter Turncoat', cursive;
+    }
+
+    .team-search-bar {
+    	background: $brandpop;
+    	text-align: center;
+    	color: $fontcolor;
     }
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 960px;
+        width: 960px;
     }
     /* Remove the padding we set earlier */
     .header,
