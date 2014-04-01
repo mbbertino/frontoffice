@@ -9,13 +9,12 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     padding: 0.2em 0;
 }
 
-$brandbkgd: #E8DDCB; // light grey background
-$brandbkgdtwo: #BDC3C7; // secondary bkgd
-// $brandpop: #16A085;  // main color call to action
-$brandpop: #2c3e50;  // Alternative1 red winner so far :)
-// $brandpop: #088DD3;  // Alternative2 lighter blue looks pretty decent !
+$brandbkgd: #DBDBDB; // light grey background
+$brandbkgdtwo: #EFEFF7; // secondary bkgd
+$brandbkgdthree: #fff; // secondary bkgd
+$brandpop: #ca171b;  // Alternative1 red winner so far :)
+$brandmain: #424242; //strong and sparse continuity
 $fontcolor: #fff;   // font color / also the offset the main color
-$brandmain: #2c3e50; //strong and sparse continuity
 
 $break-small: 600px;
 
@@ -42,18 +41,13 @@ $break-small: 600px;
 	height: 100%;
 
 	.modal-container {
+		box-shadow: 0px 0px 30px black;
 		background: #fff;
 		border-radius: 4px;
-		width: 600px;
+		width: 500px;
 		height: auto;
 		color: black; 
 		overflow: hidden;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin-left: -300px;
-		margin-top: -height/2 ;
-
 
 		@media screen and (max-width: $break-small) {
 			width: 100%;
@@ -67,6 +61,78 @@ $break-small: 600px;
 			overflow: hidden;
 			padding: 10px;
 			position: relative;
+			font-size: 16px;
+
+			input {
+				width: 98.2%;
+				margin: 10px 0;
+				border-radius: 4px;
+				margin-left: 5px;
+
+				&.sm-time-input {				
+					width: 32%;
+				}
+
+				&.xs-time-input {
+					width: 32%;
+				}
+			}
+
+			select {
+				margin: 10px 0;
+				width: 98.2%;
+				margin-left: 5px;			
+			}
+
+			textarea {
+				margin: 10px 0;
+				width: 98.2%;
+				border-radius: 4px;
+				margin-left: 5px;		
+			}
+
+			.modal-head-container {
+				background: $brandmain;
+				margin-left: -20px;
+				margin-right: -20px;
+				margin-top: -20px;
+				padding-top: 20px;
+				padding-bottom: 10px;
+				border-bottom: 8px solid $brandpop;
+
+				h3 {
+					color: $fontcolor;
+					text-align: center;
+					float: none;
+					margin: 0 auto;
+					text-transform: uppercase;
+				}
+			}
+
+			button {
+      		width: auto;                		
+      		height: 30px;
+      		font-size: 16px;
+        	background: $brandbkgdthree;
+        	border: 1px solid $brandmain;
+        	padding: 0px;
+        	margin: 14px 0;
+        	margin-left: 5px;
+        	margin-right: 5px;
+
+        		@media screen and (max-width: $break-small) {                     
+              display: none;
+            }
+
+        	a {
+        		padding: 5px;
+        		color: $brandmain;
+
+        		&:hover{
+        			color: $brandpop;
+        		}
+        	}
+        }
 
 			.player-avatar {
 				height: 100%;
@@ -81,13 +147,13 @@ $break-small: 600px;
 
 /* Space out content a bit */
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 1px;
-    color: $fontcolor;
-    background: $brandbkgd;
-    // padding-top: 20px;
-    padding-bottom: 20px;
+body {	
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+  color: $fontcolor;
+  background: $brandbkgd;
+  // padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -99,7 +165,12 @@ body {
 /* Custom page header */
 .header {
     padding: 0 0;
-    background: $brandpop;
+    background: $brandmain;
+
+    .container{
+    	padding-left: 45px;
+    	padding-right: 45px;
+    }
 
     a {
         color: #fff;
@@ -119,8 +190,11 @@ body {
         }
         
         input {
-            margin-top: 22px;
-            // height: 100%;
+            margin-top: 13px;
+            height: 30px;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-left: 5px;
 
             @media screen and (max-width: $break-small) {
                 position: relative;
@@ -132,11 +206,12 @@ body {
         button {
       		width: auto;                		
       		height: 30px;
-      		font-size: 12px;
-        	background: #fff;
+      		font-size: 16px;
+        	background: $brandbkgdthree;
         	padding: 0px;
-        	border: 1px solid $brandpop;
-        	margin: 18px 0;
+        	margin: 15px 0;
+        	margin-left: 5px;
+        	margin-right: 5px;
 
         		@media screen and (max-width: $break-small) {                     
               display: none;
@@ -169,7 +244,6 @@ body {
 .jumbotron {
     text-align: center;
     background: $brandbkgd;
-    border-bottom: 1px solid $brandbkgd;
     padding: 0;
     overflow: hidden;
 
@@ -249,8 +323,23 @@ body {
                   padding-right: 30px;
 
                   .board-title {
+                  	padding-top: 20px;
+                  	padding-bottom: 20px;
+                  	padding-right: 30px;
 
-                  	.team-title-info{
+                  	.team-title-info{                  	
+                  		padding-left: 0px;
+
+                  		h2 {
+		                  	font-family: 'Open Sans', sans-serif;
+                  			margin-top: 0px;
+                  		}
+
+                  		h5 {
+		                  	font-family: 'Open Sans', sans-serif;
+                  			margin-top: 30px;
+                  			margin-bottom: 0px;
+                  		}
 
                   		.team-name {
 	                        text-align: left;
@@ -260,20 +349,22 @@ body {
 	                    }
                   	}	
 
-                  	.team-logo {
-                  		margin-top: 4px;
+                  	.team-logo {                  	
                   		height: 90px;
                   		width: 90px;
-                  		border-radius: 90px;
-                  		border: 2px solid $brandpop;
+                  		border-radius: 4px;
                   		background: #fff;
                   	}
                   }
 
                   .board {
+                  	font-family: 'Open Sans', sans-serif;
+                  	padding-top: 10px;
+                  	padding-bottom: 10px;
 
                   	h4 {
-                  		padding-left: 45px;
+	                  	font-family: 'Open Sans', sans-serif;
+                  		padding-left: 30px;
                   		text-align: left;
 
                     	a {
@@ -290,10 +381,14 @@ body {
 
                 .board-title {
                   background: $brandmain;
-                  border-bottom: 3px solid $brandpop;
                   text-align: left;
                   border-radius: 4px 4px 0 0;
-                  color: #fff;
+                  color: $brandbkgdthree;
+                  border-bottom: 8px solid $brandpop;
+
+                  .roster-title {
+                  	margin-bottom: 20px;
+                  }
                   
                   h3 {
 	                  font-family: 'Open Sans', sans-serif;
@@ -307,10 +402,10 @@ body {
                   button {
                 		width: auto;                		
                 		height: 30px;
-                		font-size: 12px;
+                		font-size: 16px;
                   	background: #fff;
                   	padding: 0px;
-                  	border: 1px solid $brandpop;
+                  	border: 1px solid $brandmain;
                   	margin: 18px 0;
 
                   		@media screen and (max-width: $break-small) {                     
@@ -329,7 +424,7 @@ body {
                 }
 
                 .board {
-                	background: #fff;
+                	background: $brandbkgdthree;
                   border-radius: 0 0 4px 4px;
                   overflow: hidden;
                   color: $brandmain;
@@ -343,6 +438,10 @@ body {
                   .full-pages {
                   	height: 1000px;
                   	overflow-y: scroll;
+
+                  	.sm-input {
+                  		width: 60px;
+                  	}
                   }	
                   
                   button {
@@ -350,7 +449,7 @@ body {
                 		height: 30px;
                   	background: #fff;
                   	padding: 0px;
-                  	border: 1px solid $brandpop;
+                  	border: 1px solid $brandmain;
                   	margin: 5px 5px;
 
                   		@media screen and (max-width: $break-small) {                     
@@ -493,7 +592,7 @@ body {
 
                     .roster-section {
                         text-align: left;
-                        background: lighten($brandpop, 20%);
+                        background: lighten($brandmain, 10%);
                         color: #fff;	
                         padding-left: 30px;
                     }

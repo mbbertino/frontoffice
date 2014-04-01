@@ -39,5 +39,10 @@ var TeamForm = Parse.View.extend({
 
   render: function() {
     this.$el.html(this.renderedtemplate())
+    $('.modal-container').css({
+      position: 'absolute',
+      left: ($(window).width() - $('.modal-container').outerWidth()) / 2,
+      top: ($(window).height() - $('.modal-container').outerHeight()) / 2
+    });
   }
 })

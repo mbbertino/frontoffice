@@ -56,7 +56,6 @@ var TeamDashboard = Parse.View.extend({
       }
     });
     var now = Date.now()
-    console.log(now)
     var eventQuery = new Parse.Query('Event');
     eventQuery.equalTo("team", this.model)
     // eventQuery.greaterThan("date", now)
@@ -65,7 +64,6 @@ var TeamDashboard = Parse.View.extend({
     eventQuery.find({
       success: function(events) {
         _.each(events, function(event) {
-          console.log(event.get('date'))
           new EventList({
             model: event
           })
