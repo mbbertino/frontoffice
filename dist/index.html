@@ -1,10 +1,10 @@
-<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js><!--<![endif]--><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>FO</title><meta name=description content=""><meta name=viewport content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/abc953fa.main.css><script src=bower_components/modernizr/modernizr.js></script><body><!--[if lt IE 10]>
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js><!--<![endif]--><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>FO</title><meta name=description content=""><meta name=viewport content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/fae656ea.main.css><script src=bower_components/modernizr/modernizr.js></script><body><!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]--><div class=header></div><div class=jumbotron></div><div class="row marketing"></div><!-- ////////////////////////// --><!-- Below are all my templates --><!-- ////////////////////////// --><!-- Guest header templates --><script type=text/template id=guest-headerbar-template><a href=""><h2 class="pull-left">FRONT OFFICE</h2></a>
             <div class="head-login-form">
                 <input id="password" type="password" value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
                 <input value="bertman45@gmail.com" placeholder="Username"class="email js-login-username pull-right"></input>
-                <button class="button btn btn-inverse pull-right js-login">LOGIN</button>
+                <button class="button btn btn-inverse pull-right js-login"><a>Login</a></button>
             </div></script><!-- Main App View Template --><script type=text/template id=appview-template><img src="images/41a99da1.Landing.jpg" class="landing-img img-responsive" alt="Responsive image">
             <div class="container">
                 <div class="col-xs-12 inputtainer">
@@ -50,7 +50,7 @@
             </div></script><!-- Coach header template --><script type=text/template id=user-headerbar-template><a href=""><h2 class="pull-left">Manager Dashboard</h2></a>
             <div class="head-login-form pull-right">
 			        <button class="button btn col-xs-7"><a class="js-create-new-team">Add Team</a></button>
-              <button class="button btn btn-inverse col-xs-5 js-logout"><a href="">LOGOUT 	</a></button>               
+              <button class="button btn btn-inverse col-xs-5 js-logout"><a href="">Logout</a></button>               
             </div></script><!-- Coach Dashboard Template --><script type=text/template id=coach-dashboard><div class="js-dashboard row">
                 <div class="maincontent col-xs-12">
                     <div class="js-team-snapshot-container"></div>
@@ -66,19 +66,16 @@
 							<h4 class="col-xs-12"><a class="js-manage-team" href='#/team/<%= this.link %>'>Team Dashboard</a></h4>
 							<h4 class="col-xs-12"><a class="js-manage-team-tryout" href='#/team/tryout/<%= this.link %>'>Manage Tryouts</a></h4>
 							<h4 class="col-xs-12"><a class="js-team-settings">Team Settings</a></h4>
-            </div></script><!-- need to add routes for team settings, and team tryout page
-        	also need to put an if statement wether or not the team has a logo
-         --><!-- Team header template --><script type=text/template id=team-headerbar-template><a href=""><h2 class="pull-left"><%= this.model.get('teamname')%> Dashboard</h2></a>
+            </div></script><!-- Team header template --><script type=text/template id=team-headerbar-template><a href=""><h2 class="pull-left"><%= this.model.get('teamname')%> Dashboard</h2></a>
             <div class="head-login-form pull-right">
 	            <button class="button btn col-xs-8"><a class="js-team-settings">Team Settings</a></button>  
-              <button class="button btn btn-inverse col-xs-4 js-logout"><a href="">LOGOUT</a></button>               
-            </div></script><!--// <li class="col-xs-3"><a class="js-add-player-creation">Add Player</a></li>
-    // <li class="col-xs-3"><a class="js-add-coach-creation">Add Coach</a></li> --><!-- Team Dashboard Template --><script type=text/template id=team-dashboard><div class="js-dashboard row">
+              <button class="button btn btn-inverse col-xs-4 js-logout"><a href="">Logout</a></button>               
+            </div></script><!-- Team Dashboard Template --><script type=text/template id=team-dashboard><div class="js-dashboard row">
                 <div class="maincontent col-xs-12">
                     <div class="col-xs-4 left-section">                    
 	                    <div class="col-sm-12 section">
 	                        <div class="col-xs-12 board-title">
-	                        	<h3 class="col-sm-12 col-xs-12">Roster</h3>
+	                        	<h3 class="col-sm-12 col-xs-12 roster-title">Roster</h3>
 	                        </div>
 	                        <div class="col-xs-12 roster board">	
                             <span class="roster-section col-xs-12" >Players</span>
@@ -117,11 +114,11 @@
                 <div class="col-xs-12 section">
                   <div class="col-xs-12 board-title">
                   	<h3 class="col-xs-12">Roster</h3>				            
-										<div class="head-login-form pull-left" >
+										<div class="head-login-form pull-left" style="padding-left: 15px;" >
 					            <button class="button btn js-players"><a>Players</a></button>  
 				              <button class="button btn js-coaches"><a>Coaches</a></button>
 				            </div>
-				            <div class="head-login-form pull-right" >  
+				            <div class="head-login-form pull-right" style="padding-right: 15px;">  
 				              <button class="button btn js-add-player"><a>Add Player</a></button>
 				              <button class="button btn js-add-coach"><a>Add Coach</a></button>
 				            </div>
@@ -159,50 +156,67 @@
                   </div>
                 </div>                
               </div>
-            </div></script><!-- This is the Player listview template --><script type=text/template id=player-list><a class="js-person-expand"><%= this.model.get('firstName')+' '+this.model.get('lastName')%></a></script><!-- This is the Player listview template --><script type=text/template id=full-player-list><input value="<%= this.model.get('firstName')%>" class=" js-form-player-firstname"></input>
-            <input value="<%= this.model.get('lastName')%>" class=" js-form-player-lastname"></input>
-            <input value="<%= this.model.get('email')%>" class=" js-form-player-email"></input>
-            <input value="<%= this.model.get('phoneAcode')%>" class=" js-form-player-phone-acode"></input>
-            <input value="<%= this.model.get('phoneThree')%>" class=" js-form-player-phone-three"></input>
-            <input value="<%= this.model.get('phoneFour')%>" class=" js-form-player-phone-four"></input>
-            <input value="<%= this.model.get('address')%>" class=" js-form-player-address"></input>
-            <input value="<%= this.model.get('city')%>" class=" js-form-player-city"></input>
-            <input value="<%= this.model.get('state')%>" class=" js-form-player-state"></input>
-            <input value="<%= this.model.get('zip')%>" class=" js-form-player-zip"></input>
-            <select class="js-form-player-position-primary">
-                <option value="<%= this.model.get('primaryPos')%>" selected><%= this.model.get('primaryPos')%></option>
-                <option value="P">P</option>
-                <option value="C">C</option>
-                <option value="1B">1B</option>
-                <option value="2B">2B</option>
-                <option value="SS">SS</option>
-                <option value="3B">3B</option>
-                <option value="RF">RF</option>
-                <option value="CF">CF</option>
-                <option value="LF">LF</option>
-                <option value="DH">DH</option>
-                <option value="U">U</option>
-                <option value="Other">Other</option>
-                <option value="" disabled >Primary Position</option>
-            </select>
-            <select class="js-form-player-position-secondary">
-                <option value="<%= this.model.get('secondaryPos')%>" selected><%= this.model.get('secondaryPos')%></option>
-                <option value="P">P</option>
-                <option value="C">C</option>
-                <option value="1B">1B</option>
-                <option value="2B">2B</option>
-                <option value="SS">SS</option>
-                <option value="3B">3B</option>
-                <option value="RF">RF</option>
-                <option value="CF">CF</option>
-                <option value="LF">LF</option>
-                <option value="DH">DH</option>
-                <option value="U">U</option>
-                <option value="Other">Other</option>
-                <option value="" disabled >Secondary Position</option>
-            </select>
-						<button class="button btn js-edit">Save Edits</button>
-            <button class="button btn js-delete">Delete Player</button></script><!-- This is the expanded PlayerCard view --><script type=text/template id=player-card-addition><div class="modal-container">
+            </div></script><!-- This is the Player listview template --><script type=text/template id=player-list><a class="js-person-expand"><%= this.model.get('firstName')+' '+this.model.get('lastName')%></a></script><script type=text/template id=full-player-list><span><%= this.model.get('firstName')%></span>
+          <span><%= this.model.get('lastName')%></span>
+          <span><%= this.model.get('email')%></span>
+          <span><%= this.model.get('phoneAcode')%></span> -
+          <span><%= this.model.get('phoneThree')%></span> -
+          <span><%= this.model.get('phoneFour')%></span>
+          <span><%= this.model.get('address')%></span>
+          <span><%= this.model.get('city')%></span>
+          <span><%= this.model.get('state')%></span>
+          <span><%= this.model.get('zip')%></span>
+          <span><%= this.model.get('primaryPos')%></span>
+          <span><%= this.model.get('secondaryPos')%></span>
+          <button class="button btn js-edit"><a>Edit</a></button></script><!-- This is the Player listview template --><script type=text/template id=full-player-list-modal><div class="modal-container">
+			  		<div class="col-xs-12 modal-body">	
+			        <input value="<%= this.model.get('firstName')%>" class=" js-form-player-firstname"></input>
+	            <input value="<%= this.model.get('lastName')%>" class=" js-form-player-lastname"></input>
+	            <input value="<%= this.model.get('email')%>" class=" js-form-player-email"></input>
+	            <input value="<%= this.model.get('phoneAcode')%>" class=" js-form-player-phone-acode"></input> -
+	            <input value="<%= this.model.get('phoneThree')%>" class=" js-form-player-phone-three"></input> -
+	            <input value="<%= this.model.get('phoneFour')%>" class=" js-form-player-phone-four"></input>
+	            <input value="<%= this.model.get('address')%>" class=" js-form-player-address"></input>
+	            <input value="<%= this.model.get('city')%>" class=" js-form-player-city"></input>
+	            <input value="<%= this.model.get('state')%>" class=" js-form-player-state"></input>
+	            <input value="<%= this.model.get('zip')%>" class=" js-form-player-zip"></input>
+	            <select class="js-form-player-position-primary">
+	                <option value="<%= this.model.get('primaryPos')%>" selected><%= this.model.get('primaryPos')%></option>
+	                <option value="P">P</option>
+	                <option value="C">C</option>
+	                <option value="1B">1B</option>
+	                <option value="2B">2B</option>
+	                <option value="SS">SS</option>
+	                <option value="3B">3B</option>
+	                <option value="RF">RF</option>
+	                <option value="CF">CF</option>
+	                <option value="LF">LF</option>
+	                <option value="DH">DH</option>
+	                <option value="U">U</option>
+	                <option value="Other">Other</option>
+	                <option value="" disabled >Primary Position</option>
+	            </select>
+	            <select class="js-form-player-position-secondary">
+	                <option value="<%= this.model.get('secondaryPos')%>" selected><%= this.model.get('secondaryPos')%></option>
+	                <option value="P">P</option>
+	                <option value="C">C</option>
+	                <option value="1B">1B</option>
+	                <option value="2B">2B</option>
+	                <option value="SS">SS</option>
+	                <option value="3B">3B</option>
+	                <option value="RF">RF</option>
+	                <option value="CF">CF</option>
+	                <option value="LF">LF</option>
+	                <option value="DH">DH</option>
+	                <option value="U">U</option>
+	                <option value="Other">Other</option>
+	                <option value="" disabled >Secondary Position</option>
+	            </select>
+							<button class="button btn js-save pull-left"><a>Save Edits</a></button>
+	            <button class="button btn js-delete pull-left"><a>Delete Player</a></button>
+	            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
+	          </div>
+			  	</div></script><!-- This is the expanded PlayerCard view --><script type=text/template id=player-card-addition><div class="modal-container">
 				  		<div class="col-xs-12 modal-body">		                     
 								<div class="portrait"></div>
 								<h3><%= this.model.get('firstName')+' '+this.model.get('lastName') %></h3>
@@ -212,31 +226,47 @@
 								<br>
 								<h6>Primary Position: <%= this.model.get('primaryPos')%></h6>
 								<h6>Secondary Position: <%= this.model.get('secondaryPos')%></h6>
-		            <button class="button btn js-close-view">Cancel</button>   
+		            <button class="button btn js-close-view"><a>Cancel</a></button>   
 				  		</div>
-				  	</div></script><!-- This is the Coach listview template --><script type=text/template id=coach-list><a class="js-person-expand"><%= this.model.get('firstName')+' '+this.model.get('lastName')%></a></script><!-- This is the Coach listview template --><script type=text/template id=full-coach-list><input value="<%= this.model.get('firstName')%>" class=" js-form-coach-firstname"></input>
-            <input value="<%= this.model.get('lastName')%>" class=" js-form-coach-lastname"></input>
-            <input value="<%= this.model.get('email')%>@gmail.com" class=" js-form-coach-email"></input>
-            <input value="<%= this.model.get('phoneAcode')%>" class=" js-form-coach-phone-acode"></input>
-            <input value="<%= this.model.get('phoneThree')%>" class=" js-form-coach-phone-three"></input>
-            <input value="<%= this.model.get('phoneFour')%>" class=" js-form-coach-phone-four"></input>
-            <input value="<%= this.model.get('address')%>" class=" js-form-coach-address"></input>
-            <input value="<%= this.model.get('city')%>" class=" js-form-coach-city"></input>
-            <input value="<%= this.model.get('state')%>" class=" js-form-coach-state"></input>
-            <input value="<%= this.model.get('zip')%>" class=" js-form-coach-zip"></input>
-            <select class="js-form-coach-position-role">
-                <option value="<%= this.model.get('role')%>" selected><%= this.model.get('role')%></option>
-                <option value="Batting">Batting</option>
-                <option value="Pitching">Pitching</option>
-                <option value="General">General</option>
-                <option value="Outfield">Outfield</option>
-                <option value="Infield">Infield</option>
-                <option value="Catching">Catching</option>
-                <option value="Conditioning">Conditioning</option>
-                <option value="Strength">Strength</option>
-            </select>
-						<button class="button btn js-edit">Save Edits</button>
-            <button class="button btn js-delete">Delete Coach</button></script><!-- This is the expanded PlayerCard view --><script type=text/template id=coach-card-addition><div class="modal-container">
+				  	</div></script><!-- This is the Coach listview template --><script type=text/template id=coach-list><a class="js-person-expand"><%= this.model.get('firstName')+' '+this.model.get('lastName')%></a></script><script type=text/template id=full-coach-list><span><%= this.model.get('firstName')%></span>
+	            <span><%= this.model.get('lastName')%></span>
+	            <span><%= this.model.get('email')%></span>
+	            <span><%= this.model.get('phoneAcode')%></span>
+	            <span><%= this.model.get('phoneThree')%></span>
+	            <span><%= this.model.get('phoneFour')%></span>
+	            <span><%= this.model.get('address')%></span>
+	            <span><%= this.model.get('city')%></span>
+	            <span><%= this.model.get('state')%></span>
+	            <span><%= this.model.get('zip')%></span>
+	            <span><%= this.model.get('role')%></span>
+							<button class="button btn js-edit"><a>Edit</a></button></script><!-- This is the Coach listview template --><script type=text/template id=full-coach-list-modal><div class="modal-container">
+			  		<div class="col-xs-12 modal-body">     
+							<input value="<%= this.model.get('firstName')%>" class=" js-form-coach-firstname"></input>
+	            <input value="<%= this.model.get('lastName')%>" class=" js-form-coach-lastname"></input>
+	            <input value="<%= this.model.get('email')%>" class=" js-form-coach-email"></input>
+	            <input value="<%= this.model.get('phoneAcode')%>" class=" js-form-coach-phone-acode"></input>
+	            <input value="<%= this.model.get('phoneThree')%>" class=" js-form-coach-phone-three"></input>
+	            <input value="<%= this.model.get('phoneFour')%>" class=" js-form-coach-phone-four"></input>
+	            <input value="<%= this.model.get('address')%>" class=" js-form-coach-address"></input>
+	            <input value="<%= this.model.get('city')%>" class=" js-form-coach-city"></input>
+	            <input value="<%= this.model.get('state')%>" class=" js-form-coach-state"></input>
+	            <input value="<%= this.model.get('zip')%>" class=" js-form-coach-zip"></input>
+	            <select class="js-form-coach-position-role">
+	                <option value="<%= this.model.get('role')%>" selected><%= this.model.get('role')%></option>
+	                <option value="Batting">Batting</option>
+	                <option value="Pitching">Pitching</option>
+	                <option value="General">General</option>
+	                <option value="Outfield">Outfield</option>
+	                <option value="Infield">Infield</option>
+	                <option value="Catching">Catching</option>
+	                <option value="Conditioning">Conditioning</option>
+	                <option value="Strength">Strength</option>
+	            </select>
+							<button class="button btn js-save pull-left"><a>Save Edits</a></button>
+	            <button class="button btn js-delete pull-left"><a>Delete Coach</a></button>
+	            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
+						</div>
+			  	</div></script><!-- This is the expanded PlayerCard view --><script type=text/template id=coach-card-addition><div class="modal-container">
 				  		<div class="col-xs-12 modal-body">		                     
 								<div class="portrait"></div>
 								<h3><%= this.model.get('firstName')+' '+this.model.get('lastName') %></h3>
@@ -295,54 +325,66 @@
 					  </div>
 					</div></script><!-- // <button class="button btn"><a class="js-edit-msg col-xs-12">Edit</a></button>  --><!-- this is the add message form while in the team dashboard --><script type=text/template id=team-message-addition><div class="modal-container">
 				  		<div class="col-xs-12 modal-body">
+					  		<div class="modal-head-container">
+						  		<h3>Send a new message!</h3>
+					  		</div>
 		            <input placeholder="Subject" class="js-msg-subject"></input>
-		            <textarea placeholder="Content" class="js-msg-content"></textarea>
-		            <button class="button btn js-send-message">Send</button>
-		            <button class="button btn js-close-view">Cancel</button>		          
+		            <textarea placeholder="Message" class="js-msg-content"></textarea>
+		            <button class="button btn js-send-message pull-left"><a>Send</a></button>
+		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>		          
 				  		</div>
 				  	</div></script><!-- Select Team Template --><script type=text/template id=teamname-list-item><option><%= result.get('teamname') %></option></script><!-- Add Team Form --><script type=text/template id=team-addition><div class="modal-container">
 				  		<div class="col-xs-12 modal-body">
-		            <input value="Enfuego" placeholder="Teamname"class="username js-form-teamname"></input>
+					  		<div class="modal-head-container">
+						  		<h3>Add a new team!</h3>
+					  		</div>
+		            <input placeholder="Teamname"class="username js-form-teamname"></input>
 	              <select class="js-form-team-sport">
-	                <option value="" disabled selected>Sport</option>
+	                <option value="" disabled selected>Pick A Sport</option>
 	                <option value="Baseball">Baseball</option>
 	                <option value="Football">Football</option>
 	                <option value="Soccer">Soccer</option>
 	                <option value="Basketball">Basketball</option>
 	                <option value="Other">Other</option>
 		            </select>
-		            <button class="button btn js-add-team">Add team</button>
-		            <button class="button btn js-close-view">Cancel</button>
+		            <button class="button btn js-add-team pull-left"><a>Add team</a></button>
+		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 				  		</div>
 				  	</div></script><script type=text/template id=event-addition><div class="modal-container">
 				  		<div class="col-xs-12 modal-body">
+					  		<div class="modal-head-container">
+					        <h3>Create a new event!</h3>
+					  		</div>
 		            <input placeholder="Subject/Opponent" class="username js-form-event-subject"></input>
-		            <input placeholder="Location/Opponent" class="username js-form-event-location"></input>
-								<textarea placeholder="notes" class="username js-form-event-notes"></textarea>
+		            <input placeholder="Location" class="username js-form-event-location"></input>
+								<textarea placeholder="Notes / Snack Duties / Have fun with it!" class="username js-form-event-notes"></textarea>
 		            <select class="js-form-event-type">
 		                <option value="" disabled selected>Event Type</option>
 		                <option value="Game">Game</option>
 		                <option value="Practice">Practice</option>
 		                <option value="Meetup">Meetup</option>
 		            </select>
-		            <input placeholder="Pick A Date"type='text' class='js-date-picker'>
-		            <input placeholder="From: Time"type="text" class="js-time-from-picker">
-		            <input placeholder="To: Time "type="text" class="js-time-to-picker">            
-		            <button class="button btn js-add-event">Add Event</button>
-		            <button class="button btn js-close-view">Cancel</button>
+		            <input placeholder="Pick A Date"type='text' class='xs-time-input col-xs-4 js-date-picker'>
+		            <input placeholder="From: Time"type="text" class="sm-time-input col-xs-4 js-time-from-picker">
+		            <input placeholder="To: Time "type="text" class="xs-time-input col-xs-4 js-time-to-picker">            
+		            <button class="button btn js-add-event pull-left"><a>Add Event</a></button>
+		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 		          </div>
 				  	</div></script><script type=text/template id=player-addition><div class="modal-container">
 				  		<div class="col-xs-12 modal-body">
-		            <input value="Matt" placeholder="first name" class=" js-form-player-firstname"></input>
-		            <input value="Bertino" placeholder="last name" class=" js-form-player-lastname"></input>
-		            <input value="bertman45@gmail.com" placeholder="email" class=" js-form-player-email"></input>
-		            <input value="561" placeholder="" class=" js-form-player-phone-acode"></input>
-		            <input value="543" placeholder="" class=" js-form-player-phone-three"></input>
-		            <input value="7466" placeholder="" class=" js-form-player-phone-four"></input>
-		            <input value="194 Jones Creek Dr" placeholder="address" class=" js-form-player-address"></input>
-		            <input value="Jupiter" placeholder="city" class=" js-form-player-city"></input>
-		            <input value="FL" placeholder="state" class=" js-form-player-state"></input>
-		            <input value="33458" placeholder="zip" class=" js-form-player-zip"></input>
+					  		<div class="modal-head-container">
+						  		<h3>Add a player!</h3>
+					  		</div>
+		            <input placeholder="first name" class=" js-form-player-firstname"></input>
+		            <input placeholder="last name" class=" js-form-player-lastname"></input>
+		            <input placeholder="email" class=" js-form-player-email"></input>
+		            <input placeholder="" class=" js-form-player-phone-acode"></input> -
+		            <input placeholder="" class=" js-form-player-phone-three"></input> - 
+		            <input placeholder="" class=" js-form-player-phone-four"></input>
+		            <input placeholder="address" class=" js-form-player-address"></input>
+		            <input placeholder="city" class=" js-form-player-city"></input>
+		            <input placeholder="state" class=" js-form-player-state"></input>
+		            <input placeholder="zip" class=" js-form-player-zip"></input>
 		            <select class="js-form-player-position-primary">
 		                <option value="" disabled selected>Primary Position</option>
 		                <option value="P">P</option>
@@ -373,11 +415,14 @@
 		                <option value="U">U</option>
 		                <option value="Other">Other</option>
 		            </select>
-		            <button class="button btn js-add-player">Add Player</button>
-		            <button class="button btn js-close-view">Cancel</button>
+		            <button class="button btn js-add-player pull-left"><a>Add Player</a></button>
+		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 	            </div>
 				  	</div></script><script type=text/template id=coach-addition><div class="modal-container">
 				  		<div class="col-xs-12 modal-body">
+				        <div class="modal-head-container">
+						  		<h3>add a new coach!</h3>
+				        </div>
 		            <input value="Matt" placeholder="first name" class=" js-form-coach-firstname"></input>
 		            <input value="Bertino" placeholder="last name" class=" js-form-coach-lastname"></input>
 		            <input value="bertman45@gmail.com" placeholder="email" class=" js-form-coach-email"></input>
@@ -399,26 +444,30 @@
 		                <option value="Conditioning">Conditioning</option>
 		                <option value="Strength">Strength</option>
 		            </select>
-		            <button class="button btn js-add-coach">Add Coach</button>
-		            <button class="button btn js-close-view">Cancel</button>
+		            <button class="button btn js-add-coach pull-left"><a>Add Coach</a></button>
+		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 		          </div>
 				  	</div></script><script type=text/template id=settings-addition><div class="modal-container">
 				  		<div class="col-xs-12 modal-body">
-		            <input value="Ice" placeholder="Teamname" class=" js-form-teamset-name"></input>
+					  		<div class="modal-head-container">
+						  		<h3>Edit your team</h3>
+					  		</div>
+		            <input value="<%= this.model.get('teamname')%>" class=" js-form-teamset-name"></input>
 		            <select class="js-form-teamset-sport">
+		            		<option value="<%= this.model.get('sport')%>" selected><%= this.model.get('sport')%></option>
 		                <option value="Baseball">Baseball</option>
 		                <option value="Football">Football</option>
 		                <option value="Soccer">Soccer</option>
 		                <option value="Basketball">Basketball</option>
 		                <option value="Other">Other</option>
 		            </select>
-		            <button class="button btn js-teamset-edit">Save Team Edits</button>
-		            <button class="button btn js-teamset-delete">Delete Team</button>
-		            <button class="button btn js-close-view">Cancel</button>		        
+		            <button class="button btn js-teamset-edit pull-left"><a>Save Team Edits</a></button>
+		            <button class="button btn js-teamset-delete pull-left"><a>Delete Team</a></button>
+		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>		        
 				  		</div>
 				  	</div></script><!-- ////////////////////////// --><!-- End of my templates --><!-- ////////////////////////// --><script src=scripts/9622796b.vendor.js></script><!-- this is the parse sdk --><script src=//www.parsecdn.com/js/parse-1.2.17.min.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/aaf74903.plugins.js></script><script src=scripts/f5f2f8af.main.js></script>
+            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/aaf74903.plugins.js></script><script src=scripts/bee5f41d.main.js></script>
