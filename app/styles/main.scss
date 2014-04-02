@@ -1,4 +1,4 @@
-$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+$icon-font-path: "/bower_components/ionicons/fonts/";
 
 @import "sass-bootstrap/lib/bootstrap";
 
@@ -147,7 +147,7 @@ $break-small: 600px;
       		font-size: 16px;
         	background: $brandbkgdthree;
         	border: 1px solid $brandmain;
-        	padding: 0px;
+        	padding: 0px 20px;
         	margin: 14px 0;
         	margin-left: 5px;
         	margin-right: 5px;
@@ -166,6 +166,7 @@ $break-small: 600px;
 
         		&:hover{
 		    			color: $fontcolor;
+		    			text-decoration: none;
 		    		}
 	      	}
         }
@@ -191,7 +192,7 @@ body {
 
 .wrapper {
 	min-height: 100%;
-	margin: 0 auto -301px;
+	margin: 0 auto -276px;
 
 	&:after {
 		content: '';
@@ -200,7 +201,7 @@ body {
 }
 
 .footer, .wrapper:after {
-	height: 301px;
+	height: 276px;
 }
 
 
@@ -228,6 +229,7 @@ body {
 
     	&:hover {
     		color: $brandpop;
+    		text-decoration: none;
     	}
 	    .ion-home{
 	    	text-align: center;
@@ -273,7 +275,7 @@ body {
       		width: auto;                		
       		height: 30px;
       		font-size: 16px;
-        	padding: 0px;
+        	padding: 0px 20px;
         	margin: 15px 0;
         	margin-left: 5px;
         	margin-right: 5px;
@@ -293,6 +295,7 @@ body {
 
         		&:hover{
 		    			color: $fontcolor;
+		    			text-decoration: none;
 		    		}
 	      	}
 	      }
@@ -307,12 +310,50 @@ body {
 		  border-top: 1px solid $brandpop;
 	    color: $fontcolordark;
     	background: $brandbkgdthree;
+    	padding: 20px 0;
+    	overflow: hidden;
+
+    	.fo-mission {
+    		border-right: 1px solid $fontcolordark;
+
+    		h3 {
+    			margin-top: 0px;
+    		} 
+
+    		p {
+    			margin-bottom: 0px;
+    			font-size: 12px;
+    		}
+    	}
+
+    	.fo-team {
+    		h3 {
+    			font-family: 'Open Sans', sans-serif;
+    			margin-top: 0px;
+    		} 
+
+    		p {
+    			font-family: 'Open Sans', sans-serif;
+    			margin-top: 33px;
+    			margin-bottom: 0px;
+    			font-size: 12px;
+    		}
+    	}
     }
 
-    .footer-bot {
+    .footer-bot {    	
+    	text-align: center;
 			background: $brandpop;		
 	    color: $fontcolor;
-			height: 100px;
+			height: 75px;
+
+			h4 {
+				font-family: 'Open Sans', sans-serif;
+			}
+
+			p {
+				font-family: 'Open Sans', sans-serif;
+			}
     }
 }
 
@@ -331,7 +372,7 @@ body {
         background: black;
     }
     .landing-img {
-        opacity: 0.8;
+        opacity: 0.5;
         position: absolute;
         min-height: 445px;
     }
@@ -372,6 +413,7 @@ body {
                 background: $brandpop;
                 border: none;
                 border-radius: 0px;
+      					padding: 0 20px;
                 color: #fff;
             }
                 
@@ -450,6 +492,7 @@ body {
 
                     		&:hover {
                     			color: $brandbkgd;
+                    			text-decoration: none;
                     		}            
                     	}
                   	}
@@ -489,7 +532,7 @@ body {
                 		height: 30px;
                 		font-size: 16px;
                   	background: #fff;
-                  	padding: 0px;
+                  	padding: 0px 20px;
                   	border: 1px solid $brandpop;
                   	margin: 10px 0 20px;
 
@@ -508,6 +551,7 @@ body {
 
 					        		&:hover{
 							    			color: $fontcolor;
+							    			text-decoration: none;
 							    		}
 						      	}
                   }
@@ -532,6 +576,26 @@ body {
                   	padding-top: 30px;
 
 
+                  	.playercoach-signup-container {
+                  		float: none;
+                  		margin: 0 auto;
+
+                  			.btn {
+                  				height: 70px;
+                  				width: 190px;
+                  				margin: 20px 5px;
+                  				
+                  				&:hover {
+                  					color: $fontcolor;
+                  				}
+                  				
+                  				a{
+                  					color: none;
+                  					font-size: 24px;
+                  				}
+                  			}	                  	
+                  	}
+
                   	.sm-input {
                   		width: 60px;
                   	}
@@ -551,12 +615,15 @@ body {
                   		border-radius: 4px;
                   		padding-bottom: 15px; 
                   		text-align: left;
+
                   		h3 {
+                  			font-family: 'Open Sans', sans-serif;
                   			border-bottom: 1px solid $brandpop;
                   			padding-bottom: 5px;
                   		}
 
                   		h5 {
+                  			font-family: 'Open Sans', sans-serif;
                   			margin: 3px 0;
                   		}
                   	}
@@ -565,13 +632,15 @@ body {
                   		border-radius: 4px;
                   		padding-bottom: 15px; 
                   		text-align: left;
-
+                  		
                   		h3 {
+                  			font-family: 'Open Sans', sans-serif;
                   			border-bottom: 1px solid $brandpop;
                   			padding-bottom: 5px;
                   		}
 
                   		h5 {
+                  			font-family: 'Open Sans', sans-serif;
                   			margin: 3px 0;
                   		}
                   	}
@@ -581,7 +650,7 @@ body {
                 		width: auto;
                 		height: 30px;
                   	background: #fff;
-                  	padding: 0px;
+                  	padding: 0px 20px;
                   	border: 1px solid $brandpop;
                   	margin: 5px 5px;
 
@@ -603,6 +672,7 @@ body {
 
                   		&:hover{
                   			color: $fontcolor;
+                  			text-decoration: none;
                   		}
                   	}
                   }
@@ -629,28 +699,39 @@ body {
                       		color: #fff;
                       		
                       		h4 {
+                      			font-family: 'Open Sans', sans-serif;
 	                      		padding: 5px;	
                       		}
                       	}
 
                       	.cal-top {
+
                       		border-radius: 4px 4px 0 0; 
                       		background: $brandpop;                      	
                       		color: #fff;
+                      		
+                      		h4 {
+                      			font-family: 'Open Sans', sans-serif;
+                      		}
 
                       		.event-mon{
+                      			font-family: 'Open Sans', sans-serif;
                       			margin: 2px 0; 
                       		}
                       	}
 
                       	.cal-bot {  
+                      		font-family: 'Open Sans', sans-serif;
                       		border-radius: 0 0 4px 4px;
                       		background: #fff;
                       		border: 1px solid $brandmain;
                       		margin-bottom: 10px;
                       		padding-top: 2px; 
+                      		padding-left: 0px;
+                      		padding-right: 0px;
 
-                      		.event-time {
+                      		.event-time {                      			
+                      			font-size: 	14px;
                       			margin: 0; 
 	                      		padding: 2px;	
                       			color: $brandmain;                      
@@ -661,6 +742,19 @@ body {
                       .event-content-info {
                       	position: relative;
 
+                      	h4 {
+                      		font-family: 'Open Sans', sans-serif;
+                      	}
+
+                      	.direction-container {
+                      		display: inline-block;
+                      		.direction-word {
+                      			padding-left: 0px;
+                      			background: none;
+                      			border: none;
+                      			color: $brandpop;
+                      		}
+                      	}
 	                      .subject {
 	                      	margin-top: 10px;
 	                      	text-transform: uppercase; 
@@ -670,23 +764,22 @@ body {
 
 	                      .content {
 	                      	height: 87px;
-	                        font-family: 'Open Sans Condensed', sans-serif;
+	                        font-family: 'Open Sans', sans-serif;
 	                        font-size: 16px;
 	                        border-radius: 4px;
 	                        margin-bottom: 0px;
 	                        margin-top: 3px;	                       
 	                      }
 
-	                      a {
-	                      	color: green;
-	                      }
-
 	                      button {
+              						padding: 0 20px;
+
 	                      	a{
 	                      		color: $brandpop;
 
 	                      		&:hover {
 	                      			color: $fontcolor;
+	                      			text-decoration: none;
 	                      		}
 	                      	}
 	                      }
@@ -764,6 +857,7 @@ body {
                         text-align: left;
                         font-size: 16px;
 
+
                         a {
                           cursor: pointer;
                           color: $brandpop;
@@ -802,6 +896,7 @@ body {
         }
 
         .signup-button {
+					padding: 0px 20px;
           background: $brandpop;
           border: 1px solid $brandbkgdthree;
           border-radius: 4px;
@@ -897,6 +992,8 @@ body {
 		font-size: 18px;
 	margin-right: 10px;		
 }
+
+
 /* Supporting marketing content */
 .marketing {
     position: relative;
@@ -910,6 +1007,7 @@ body {
     }
 
     .team-search-bar {
+    	box-shadow: 0 -1px 20px $brandbkgdthree;
 	    background: $brandpop;
     	text-align: center;
     	color: $fontcolor;
@@ -924,7 +1022,7 @@ body {
 	    		margin-bottom:  5px;
 	    		padding-left: 0px;
 	    		text-align: left;
-					padding-left: 55px;
+					padding-left: 35px;
 	    	}
 
 				input {
@@ -940,7 +1038,7 @@ body {
 	    		width: auto;
 	    		height: 50px;
 	      	background: #fff;
-	      	padding: 0px;
+	      	padding: 0px 20px;
 	      	border: 1px solid $brandpop;
 	      	margin: 0px auto 7px;
 
@@ -962,6 +1060,7 @@ body {
 
 	      		&:hover{
 	      			color: $fontcolor;
+	      			text-decoration: none;
 	      		}
 	      	}
 	      }
@@ -970,11 +1069,19 @@ body {
 
     .services-bar {
     	background: $brandbkgd;
-    	padding: 60px 0px;
+    	padding: 0px 0px 10px;
+
+    	h1 {
+  			font-family: 'Open Sans', sans-serif;
+    		text-decoration: underline;
+    		text-align: center;
+    		margin-bottom: 20px;
+    	}
 
     	.service {
     		box-shadow: 0 0 10px $brandpop;
     		background: $brandbkgdthree;
+    		height: 250px;
     		margin-bottom: 30px; 
     		border-radius: 4px;
     		padding-top: 30px;

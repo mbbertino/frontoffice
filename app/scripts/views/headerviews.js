@@ -107,6 +107,6 @@ var GuestTeamHeaderBar = Parse.View.extend({
 
   render: function() {
     var teamname = this.model.attributes.teamname
-    this.$el.html('<h1>Team: ' + teamname + '</h1>')
+    this.$el.html('<h2>Team: ' + teamname + '</h2>')
   }
 })

@@ -5,10 +5,18 @@ var VisitorView = Parse.View.extend({
   renderedtemplate: _.template($('#guest-page').text()),
 
   events: {
-    'click .js-players': 'popPlayers',
-    'click .js-coaches': 'popCoaches',
+    'click .js-signup': 'popSingUp',
     'click .js-events': 'popEvents',
     'click .js-messages': 'popMessages',
+    'click .js-players': 'popPlayers',
+    'click .js-coaches': 'popCoaches',
+  },
+
+  popSingUp: function() {
+    $('.full-pages').empty()
+    new PlayerOrCoachSignUp({
+      model: this.model
+    })
   },
 
   popPlayers: function() {
@@ -21,6 +29,7 @@ var VisitorView = Parse.View.extend({
           new FullPlayerList({
             model: player
           })
+          $('.js-edit').remove()
         })
       }
     });
@@ -38,6 +47,7 @@ var VisitorView = Parse.View.extend({
           new FullCoachList({
             model: coach
           })
+          $('.js-edit').remove()
         })
       }
     });
@@ -56,6 +66,7 @@ var VisitorView = Parse.View.extend({
           new FullEventList({
             model: event
           })
+          $('.action-container').remove()
         })
       }
     });
@@ -71,6 +82,7 @@ var VisitorView = Parse.View.extend({
           new FullMessageList({
             model: message
           })
+          $('.action-container').remove()
         })
       }
     });
@@ -79,6 +91,9 @@ var VisitorView = Parse.View.extend({
   initialize: function() {
     $('.jumbotron').html(this.el)
     this.render()
+    new PlayerOrCoachSignUp({
+      model: this.model
+    })
   },
 
   render: function() {
