@@ -1,6 +1,6 @@
-<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js><!--<![endif]--><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>FO</title><meta name=description content=""><meta name=viewport content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/fae656ea.main.css><script src=bower_components/modernizr/modernizr.js></script><body><!--[if lt IE 10]>
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js><!--<![endif]--><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>FO</title><meta name=description content=""><meta name=viewport content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/ddb2377b.vendor.css><link rel=stylesheet href=styles/930e3213.main.css><script src=bower_components/modernizr/modernizr.js></script><body><!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]--><div class=header></div><div class=jumbotron></div><div class="row marketing"></div><!-- ////////////////////////// --><!-- Below are all my templates --><!-- ////////////////////////// --><!-- Guest header templates --><script type=text/template id=guest-headerbar-template><a href=""><h2 class="pull-left">FRONT OFFICE</h2></a>
+        <![endif]--><div class=wrapper><div class=header></div><div class=jumbotron></div><div class="row marketing"></div></div><div class=footer><div class=footer-top></div><div class=footer-bot></div></div><!-- ////////////////////////// --><!-- Below are all my templates --><!-- ////////////////////////// --><!-- Guest header templates --><script type=text/template id=guest-headerbar-template><h2 class="pull-left">Front Office</h2>
             <div class="head-login-form">
                 <input id="password" type="password" value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
                 <input value="bertman45@gmail.com" placeholder="Username"class="email js-login-username pull-right"></input>
@@ -11,7 +11,7 @@
                     <h1>Front Office</h1>
                     <p class="lead">A Sports Team Management Software</p>
                     <div class="col-xs-12">
-                        <button class="signup-button js-signup">Create A Team</button>
+                        <button class="signup-button js-signup"><a>Create A Team</a></button>
                     </div>
                 </div>
             </div></script><!-- Signup template --><script type=text/template id=signup-template><div class="col-xs-12 col-md-6 centered">
@@ -28,28 +28,51 @@
                 <input placeholder="Email"class="col-xs-12 email js-coach-username"></input>
                 <input id="password" type="password" placeholder="Password"class="col-xs-12 password js-coach-password"></input>
                     <button class="col-xs-12 button btn js-create-team">Create</button>
-            </div></script><!-- This is the Marketing Template --><script type=text/template id=marketing-template><div class="service col-xs-6">
-                <!-- <img src=""> need to add in a calander here for an image -->
-                <h3>Scheduling</h3>
-                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
-            </div> 
-            <div class="service col-xs-6">
-                <!-- <img src=""> need to add in a calander here for an image -->
-                <h3>Scheduling</h3>
-                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
-            </div>
-            <div class="service col-xs-6">
-                <!-- <img src=""> need to add in a calander here for an image -->
-                <h3>Scheduling</h3>
-                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
-            </div>
-            <div class="service col-xs-6">
-                <!-- <img src=""> need to add in a calander here for an image -->
-                <h3>Scheduling</h3>
-                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
-            </div></script><!-- Coach header template --><script type=text/template id=user-headerbar-template><a href=""><h2 class="pull-left">Manager Dashboard</h2></a>
+            </div></script><!-- This is the Marketing Template --><script type=text/template id=marketing-template><div class="team-search-bar">
+	        	<div class="container">
+							<div class="search-copy col-xs-8">
+				        <h4 class='col-xs-12'>Find Your Team!</h4>
+			        	<input placeholder="Team ID" class="team-id js-search-input"></input>
+			        	<button class="btn"><a class="js-team-search">Search</a></button>
+							</div>
+	        	</div>
+	        </div>
+	        <div class="services-bar">
+		        <div class="container">
+			        <h1>Services</h1>
+			        <div class="col-sm-6 col-xs-12">
+		            <div class="service col-xs-12">
+	                <i class='icon ion-chatboxes col-xs-4'></i>
+	                <h1 class='col-xs-8'>Messaging</h1>
+	                <p class='col-xs-12'>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+		            </div> 
+			        </div>
+			        <div class="col-sm-6 col-xs-12">
+		            <div class="service col-xs-12">				            
+			            <i class='icon ion-ios7-calendar col-xs-4'></i>
+	                <h1 class='col-xs-8'>Schedule</h1>			            
+	                <p class='col-xs-12'>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+		            </div>
+			        </div>
+			        <div class="col-sm-6 col-xs-12">
+		            <div class="service col-xs-12">	
+			            <i class='icon ion-person-stalker col-xs-4'></i>
+	                <h1 class='col-xs-8'>Roster</h1>			            
+	                <p class='col-xs-12'>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+		            </div>
+			        </div>
+			        <div class="col-sm-6 col-xs-12">
+		            <div class="service col-xs-12">				            
+			            <i class='icon ion-clipboard col-xs-4'></i>
+	                <h1 class='col-xs-8'>Tryouts</h1>			            
+	                <p class='col-xs-12'>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+		            </div>
+			        </div>
+		        </div>	
+	        </div></script><!-- Coach header template --><script type=text/template id=user-headerbar-template><a href=""><i class="icon ion-home pull-left"></i></a>
+            <h2 class="pull-left">Manager Dashboard</h2>
             <div class="head-login-form pull-right">
-			        <button class="button btn col-xs-7"><a class="js-create-new-team">Add Team</a></button>
+			        <button class="button btn col-xs-7"><a class="js-create-new-team"><i class='ion-plus-round'></i>Add Team</a></button>
               <button class="button btn btn-inverse col-xs-5 js-logout"><a href="">Logout</a></button>               
             </div></script><!-- Coach Dashboard Template --><script type=text/template id=coach-dashboard><div class="js-dashboard row">
                 <div class="maincontent col-xs-12">
@@ -60,51 +83,52 @@
 				        <h2 class="col-xs-12"><%= this.model.get('teamname')%></h2>
 				        <h5 class="col-xs-9">Sport: <%= this.model.get('sport') %></h5>
 			        </div>
-							<div class="team-logo col-xs-3"></div>
             </div>
             <div class="col-xs-12 board js-team">
-							<h4 class="col-xs-12"><a class="js-manage-team" href='#/team/<%= this.link %>'>Team Dashboard</a></h4>
-							<h4 class="col-xs-12"><a class="js-manage-team-tryout" href='#/team/tryout/<%= this.link %>'>Manage Tryouts</a></h4>
-							<h4 class="col-xs-12"><a class="js-team-settings">Team Settings</a></h4>
-            </div></script><!-- Team header template --><script type=text/template id=team-headerbar-template><a href=""><h2 class="pull-left"><%= this.model.get('teamname')%> Dashboard</h2></a>
+							<h4 class="col-xs-12"><a class="js-manage-team" href='#/team/<%= this.link %>'><i class='ion-clipboard'></i>Team Dashboard</a></h4>
+							<h4 class="col-xs-12"><a class="js-manage-team-tryout" href='#/team/visitor/<%= this.link %>'><i class='ion-ios7-person'></i>Visitor Page</a></h4>
+							<h4 class="col-xs-12"><a class="js-team-settings"><i class='ion-gear-a'></i>Team Settings</a></h4>
+
+            </div></script><!-- Team header template --><script type=text/template id=team-headerbar-template><a href=""><i class="icon ion-home pull-left"></i></a>
+            <h2 class="pull-left"><%= this.model.get('teamname')%> Dashboard</h2>
             <div class="head-login-form pull-right">
-	            <button class="button btn col-xs-8"><a class="js-team-settings">Team Settings</a></button>  
+	            <button class="button btn col-xs-8"><a class="js-team-settings"><i class='ion-gear-a'></i>Team Settings</a></button>  
               <button class="button btn btn-inverse col-xs-4 js-logout"><a href="">Logout</a></button>               
             </div></script><!-- Team Dashboard Template --><script type=text/template id=team-dashboard><div class="js-dashboard row">
                 <div class="maincontent col-xs-12">
                     <div class="col-xs-4 left-section">                    
 	                    <div class="col-sm-12 section">
 	                        <div class="col-xs-12 board-title">
-	                        	<h3 class="col-sm-12 col-xs-12 roster-title">Roster</h3>
+	                        	<h3 class="col-sm-12 col-xs-12 roster-title"><i class='ion-person-stalker'></i>Roster</h3>
+										        <button class="btn col-xs-12" style="float: none;"><a href='#/team/roster/<%= this.model.id %>'>Full Roster</a></button> 
 	                        </div>
 	                        <div class="col-xs-12 roster board">	
                             <span class="roster-section col-xs-12" >Players</span>
                             <div class="col-xs-11 players"></div>                                
                             <span class="roster-section col-xs-12" >Coaches</span>
                             <div class="col-xs-11 coaches"></div>
-										        <button class="btn col-xs-12" style="float: none;"><a href='#/team/roster/<%= this.model.id %>'>Full Roster</a></button> 
 	                        </div>
 	                    </div>                
                     </div>
                     <div class="col-xs-8 right-section">                    
 	                    <div class="col-xs-12 section">
 	                        <div class="col-xs-12 board-title">
-										        <h3 class="col-sm-8 col-xs-12">Recent Messages</h3>
-										        <button class="btn col-xs-4 pull-right"><a class="js-send-message-creation">Send Message</a></button> 
+										        <h3 class="col-xs-12"><i class='ion-chatboxes'></i>Recent Messages</h3>
+										        <button class="btn pull-right"><a class="js-send-message-creation"><i class='ion-plus-round'></i>Send Message</a></button> 
+										        <button class="btn pull-left"><a href='#/team/messages/<%= this.model.id %>'>All Messages</a></button> 
 	                        </div>
 	                        <div class="col-xs-12 board">
 														<div class="messages"></div>
-										        <button class="btn button"><a href='#/team/messages/<%= this.model.id %>'>All Messages</a></button> 
 	                        </div>
 	                    </div>                
 	                    <div class="col-sm-12 section">
 	                        <div class="col-xs-12 board-title">
-										        <h3 class="col-xs-8">Upcoming Schedule</h3>
-										        <button class="btn col-xs-4 pull-right"><a class="js-add-event-creation">Create Event</a></button> 
+										        <h3 class="col-xs-12"><i class='ion-ios7-calendar'></i>Upcoming Schedule</h3>
+										        <button class="btn pull-right"><a class="js-add-event-creation"><i class='ion-plus-round'></i>Create Event</a></button> 
+										        <button class="btn pull-left"><a href='#/team/events/<%= this.model.id %>'>Full Schedule</a></button>        
 	                        </div>
 	                        <div class="col-xs-12 board">
 		                        <div class="events"></div>
-										        <button class="btn button"><a href='#/team/events/<%= this.model.id %>'>Full Schedule</a></button> 										        
 	                        </div>
 	                    </div>                        
                     </div>
@@ -113,14 +137,14 @@
               <div class="maincontent col-xs-12">
                 <div class="col-xs-12 section">
                   <div class="col-xs-12 board-title">
-                  	<h3 class="col-xs-12">Roster</h3>				            
-										<div class="head-login-form pull-left" style="padding-left: 15px;" >
+                  	<h3 class="col-xs-12"><i class='ion-person-stalker'></i>Roster</h3>				            
+										<div class="head-login-form pull-left">
 					            <button class="button btn js-players"><a>Players</a></button>  
 				              <button class="button btn js-coaches"><a>Coaches</a></button>
 				            </div>
-				            <div class="head-login-form pull-right" style="padding-right: 15px;">  
-				              <button class="button btn js-add-player"><a>Add Player</a></button>
-				              <button class="button btn js-add-coach"><a>Add Coach</a></button>
+				            <div class="head-login-form pull-right">  
+				              <button class="button btn js-add-player"><a><i class='ion-plus-round'></i>Add Player</a></button>
+				              <button class="button btn js-add-coach"><a><i class='ion-plus-round'></i>Add Coach</a></button>
 				            </div>
                   </div>
                   <div class="col-xs-12 roster board">
@@ -132,10 +156,8 @@
               <div class="maincontent col-xs-12">
                 <div class="col-xs-12 section">
                   <div class="col-xs-12 board-title">
-                  	<h3 class="pull-left">Messages</h3>				            
-										<div class="head-login-form pull-right" >
-					            <button class="button btn js-send-msg"><a>Send Message</a></button>  
-				            </div>
+                  	<h3 class="col-xs-12"><i class='ion-chatboxes'></i>Messages</h3>				            
+				            <button class="pull-left btn js-send-msg"><a><i class='ion-plus-round'></i>Send Message</a></button>  
                   </div>
                   <div class="col-xs-12 board">
                     <div class="col-xs-12 messages full-pages"></div> 
@@ -146,40 +168,51 @@
               <div class="maincontent col-xs-12">
                 <div class="col-xs-12 section">
                   <div class="col-xs-12 board-title">
-                  	<h3 class="pull-left">Schedule</h3>				            
-										<div class="head-login-form pull-right" >
-					            <button class="button btn js-new-event"><a>New Event</a></button>  
-				            </div>
+                  	<h3 class="col-xs-12"><i class='ion-ios7-calendar'></i>Schedule</h3>				            
+				            <button class="pull-left btn js-new-event"><a><i class='ion-plus-round'></i>New Event</a></button>  
                   </div>
                   <div class="col-xs-12 roster board">
                     <div class="col-xs-12 events full-pages"></div> 
                   </div>
                 </div>                
               </div>
-            </div></script><!-- This is the Player listview template --><script type=text/template id=player-list><a class="js-person-expand"><%= this.model.get('firstName')+' '+this.model.get('lastName')%></a></script><script type=text/template id=full-player-list><span><%= this.model.get('firstName')%></span>
-          <span><%= this.model.get('lastName')%></span>
-          <span><%= this.model.get('email')%></span>
-          <span><%= this.model.get('phoneAcode')%></span> -
-          <span><%= this.model.get('phoneThree')%></span> -
-          <span><%= this.model.get('phoneFour')%></span>
-          <span><%= this.model.get('address')%></span>
-          <span><%= this.model.get('city')%></span>
-          <span><%= this.model.get('state')%></span>
-          <span><%= this.model.get('zip')%></span>
-          <span><%= this.model.get('primaryPos')%></span>
-          <span><%= this.model.get('secondaryPos')%></span>
-          <button class="button btn js-edit"><a>Edit</a></button></script><!-- This is the Player listview template --><script type=text/template id=full-player-list-modal><div class="modal-container">
-			  		<div class="col-xs-12 modal-body">	
+            </div></script><!-- Guest/Tryout Page Template --><script type=text/template id=guest-page><div class="js-dashboard row">
+              <div class="maincontent col-xs-12">
+                <div class="col-xs-12 section">
+                  <div class="col-xs-12 board-title">
+                  	<h3 class="visitor-headers js-signup"><a><i class='ion-edit'></i>Signups</a></h3>				            				            
+                  	<h3 class="visitor-headers js-events"><a><i class='ion-ios7-calendar'></i>Schedule</a></h3>	            				            
+                  	<h3 class="visitor-headers js-messages"><a><i class='ion-chatboxes'></i>Messages</a></h3>				            				            
+                  	<h3 class="visitor-headers js-players"><a><i class='ion-person-stalker'></i>Players</a></h3>				            				            
+                  	<h3 class="visitor-headers js-coaches"><a><i class='ion-person-stalker'></i>Coaches</a></h3>				            				            
+                  </div>
+                  <div class="col-xs-12 board">
+                    <div class="col-xs-12 events messages players coaches full-pages"></div> 
+                  </div>
+                </div>                
+              </div>
+            </div></script><!-- This is the Player listview template --><script type=text/template id=player-list><a class="js-person-expand"><%= this.model.get('firstName')+' '+this.model.get('lastName')%></a></script><script type=text/template id=full-player-list><div class="player-container col-xs-12">
+	        	<h3 class="col-xs-12"><%= this.model.get('firstName')+' '+this.model.get('lastName')%></h3>
+	          <h5 class="col-xs-12"><%= this.model.get('address')+' '+this.model.get('city')+', '+this.model.get('state')+' '+this.model.get('zip')%></h5>
+	          <h5 class="col-xs-12"><%= this.model.get('email')%></h5>
+	          <h5 class="col-xs-12"><%= this.model.get('phoneAcode')+'.'+this.model.get('phoneThree')+'.'+this.model.get('phoneFour')%></h5>
+	          <h5 class="col-xs-6">Positions: <%= this.model.get('primaryPos')+' & '+this.model.get('secondaryPos')%></h5>
+	          <button class="button btn js-edit pull-right"><a>Edit</a></button>					
+					</div></script><!-- This is the Player listview template --><script type=text/template id=full-player-list-modal><div class="modal-container">
+			  		<div class="col-xs-12 modal-body">
+				  		<div class="modal-head-container">
+					  		<h3>edit a player</h3>
+				  		</div>	
 			        <input value="<%= this.model.get('firstName')%>" class=" js-form-player-firstname"></input>
 	            <input value="<%= this.model.get('lastName')%>" class=" js-form-player-lastname"></input>
 	            <input value="<%= this.model.get('email')%>" class=" js-form-player-email"></input>
-	            <input value="<%= this.model.get('phoneAcode')%>" class=" js-form-player-phone-acode"></input> -
-	            <input value="<%= this.model.get('phoneThree')%>" class=" js-form-player-phone-three"></input> -
-	            <input value="<%= this.model.get('phoneFour')%>" class=" js-form-player-phone-four"></input>
+	            <input value="<%= this.model.get('phoneAcode')%>" class=" js-form-player-phone-acode sm-input"></input>
+	            <input value="<%= this.model.get('phoneThree')%>" class=" js-form-player-phone-three sm-input"></input>
+	            <input value="<%= this.model.get('phoneFour')%>" class=" js-form-player-phone-four sm-input"></input>
 	            <input value="<%= this.model.get('address')%>" class=" js-form-player-address"></input>
 	            <input value="<%= this.model.get('city')%>" class=" js-form-player-city"></input>
-	            <input value="<%= this.model.get('state')%>" class=" js-form-player-state"></input>
-	            <input value="<%= this.model.get('zip')%>" class=" js-form-player-zip"></input>
+	            <input value="<%= this.model.get('state')%>" class=" js-form-player-state sm-input"></input>
+	            <input value="<%= this.model.get('zip')%>" class=" js-form-player-zip sm-input"></input>
 	            <select class="js-form-player-position-primary">
 	                <option value="<%= this.model.get('primaryPos')%>" selected><%= this.model.get('primaryPos')%></option>
 	                <option value="P">P</option>
@@ -212,45 +245,44 @@
 	                <option value="Other">Other</option>
 	                <option value="" disabled >Secondary Position</option>
 	            </select>
-							<button class="button btn js-save pull-left"><a>Save Edits</a></button>
+							<button class="button btn js-save pull-left action-item"><a>Save Edits</a></button>
 	            <button class="button btn js-delete pull-left"><a>Delete Player</a></button>
 	            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 	          </div>
 			  	</div></script><!-- This is the expanded PlayerCard view --><script type=text/template id=player-card-addition><div class="modal-container">
 				  		<div class="col-xs-12 modal-body">		                     
-								<div class="portrait"></div>
 								<h3><%= this.model.get('firstName')+' '+this.model.get('lastName') %></h3>
-								<h6>Address: <%= this.model.get('address')+' '+this.model.get('city')+', '+this.model.get('state')+' '+this.model.get('zip')%></h6>
-								<h6>Email: <%= this.model.get('email')%></h6>
-								<h6>Phone: <%= this.model.get('phoneAcode')+'.'+this.model.get('phoneThree')+'.'+this.model.get('phoneFour')%></h6>
+								<div class="portrait"><i class='ion-person'></i></div>
+								<h5>Address: <%= this.model.get('address')+' '+this.model.get('city')+', '+this.model.get('state')+' '+this.model.get('zip')%></h5>
+								<h5>Email: <%= this.model.get('email')%></h5>
+								<h5>Phone: <%= this.model.get('phoneAcode')+'.'+this.model.get('phoneThree')+'.'+this.model.get('phoneFour')%></h5>
 								<br>
-								<h6>Primary Position: <%= this.model.get('primaryPos')%></h6>
-								<h6>Secondary Position: <%= this.model.get('secondaryPos')%></h6>
-		            <button class="button btn js-close-view"><a>Cancel</a></button>   
+								<h5>Primary Position: <%= this.model.get('primaryPos')%></h5>
+								<h5>Secondary Position: <%= this.model.get('secondaryPos')%></h5>
+		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>   
 				  		</div>
-				  	</div></script><!-- This is the Coach listview template --><script type=text/template id=coach-list><a class="js-person-expand"><%= this.model.get('firstName')+' '+this.model.get('lastName')%></a></script><script type=text/template id=full-coach-list><span><%= this.model.get('firstName')%></span>
-	            <span><%= this.model.get('lastName')%></span>
-	            <span><%= this.model.get('email')%></span>
-	            <span><%= this.model.get('phoneAcode')%></span>
-	            <span><%= this.model.get('phoneThree')%></span>
-	            <span><%= this.model.get('phoneFour')%></span>
-	            <span><%= this.model.get('address')%></span>
-	            <span><%= this.model.get('city')%></span>
-	            <span><%= this.model.get('state')%></span>
-	            <span><%= this.model.get('zip')%></span>
-	            <span><%= this.model.get('role')%></span>
-							<button class="button btn js-edit"><a>Edit</a></button></script><!-- This is the Coach listview template --><script type=text/template id=full-coach-list-modal><div class="modal-container">
-			  		<div class="col-xs-12 modal-body">     
+				  	</div></script><!-- This is the Coach listview template --><script type=text/template id=coach-list><a class="js-person-expand"><%= this.model.get('firstName')+' '+this.model.get('lastName')%></a></script><script type=text/template id=full-coach-list><div class="coach-container col-xs-12">
+							<h3 class="col-xs-12"><%= this.model.get('firstName')+' '+this.model.get('lastName')%></h3>
+	            <h5 class="col-xs-12"><%= this.model.get('address')+' '+this.model.get('city')+', '+this.model.get('state')+' '+this.model.get('zip')%></h5>
+		          <h5 class="col-xs-12"><%= this.model.get('email')%></h5>
+		          <h5 class="col-xs-12"><%= this.model.get('phoneAcode')+'.'+this.model.get('phoneThree')+'.'+this.model.get('phoneFour')%></h5>
+	            <h5 class="col-xs-12">Coach Of: <%= this.model.get('role')%></h5>
+							<button class="button btn js-edit pull-right"><a>Edit</a></button>
+					</div></script><!-- This is the Coach listview template --><script type=text/template id=full-coach-list-modal><div class="modal-container">
+			  		<div class="col-xs-12 modal-body"> 
+			  			<div class="modal-head-container">
+					  		<h3>edit a coach</h3>
+				  		</div>
 							<input value="<%= this.model.get('firstName')%>" class=" js-form-coach-firstname"></input>
 	            <input value="<%= this.model.get('lastName')%>" class=" js-form-coach-lastname"></input>
 	            <input value="<%= this.model.get('email')%>" class=" js-form-coach-email"></input>
-	            <input value="<%= this.model.get('phoneAcode')%>" class=" js-form-coach-phone-acode"></input>
-	            <input value="<%= this.model.get('phoneThree')%>" class=" js-form-coach-phone-three"></input>
-	            <input value="<%= this.model.get('phoneFour')%>" class=" js-form-coach-phone-four"></input>
+	            <input value="<%= this.model.get('phoneAcode')%>" class=" js-form-coach-phone-acode sm-input"></input>
+	            <input value="<%= this.model.get('phoneThree')%>" class=" js-form-coach-phone-three sm-input"></input>
+	            <input value="<%= this.model.get('phoneFour')%>" class=" js-form-coach-phone-four sm-input"></input>
 	            <input value="<%= this.model.get('address')%>" class=" js-form-coach-address"></input>
 	            <input value="<%= this.model.get('city')%>" class=" js-form-coach-city"></input>
-	            <input value="<%= this.model.get('state')%>" class=" js-form-coach-state"></input>
-	            <input value="<%= this.model.get('zip')%>" class=" js-form-coach-zip"></input>
+	            <input value="<%= this.model.get('state')%>" class=" js-form-coach-state sm-input"></input>
+	            <input value="<%= this.model.get('zip')%>" class=" js-form-coach-zip sm-input"></input>
 	            <select class="js-form-coach-position-role">
 	                <option value="<%= this.model.get('role')%>" selected><%= this.model.get('role')%></option>
 	                <option value="Batting">Batting</option>
@@ -262,20 +294,20 @@
 	                <option value="Conditioning">Conditioning</option>
 	                <option value="Strength">Strength</option>
 	            </select>
-							<button class="button btn js-save pull-left"><a>Save Edits</a></button>
+							<button class="button btn js-save pull-left action-item"><a>Save Edits</a></button>
 	            <button class="button btn js-delete pull-left"><a>Delete Coach</a></button>
 	            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 						</div>
 			  	</div></script><!-- This is the expanded PlayerCard view --><script type=text/template id=coach-card-addition><div class="modal-container">
 				  		<div class="col-xs-12 modal-body">		                     
-								<div class="portrait"></div>
 								<h3><%= this.model.get('firstName')+' '+this.model.get('lastName') %></h3>
-								<h6>Address: <%= this.model.get('address')+' '+this.model.get('city')+', '+this.model.get('state')+' '+this.model.get('zip')%></h6>
-								<h6>Email: <%= this.model.get('email')%></h6>
-								<h6>Phone: <%= this.model.get('phoneAcode')+'.'+this.model.get('phoneThree')+'.'+this.model.get('phoneFour')%></h6>
+								<div class="portrait"><i class='ion-person'></i></div>
+								<h5>Address: <%= this.model.get('address')+' '+this.model.get('city')+', '+this.model.get('state')+' '+this.model.get('zip')%></h5>
+								<h5>Email: <%= this.model.get('email')%></h5>
+								<h5>Phone: <%= this.model.get('phoneAcode')+'.'+this.model.get('phoneThree')+'.'+this.model.get('phoneFour')%></h5>
 								<br>
-								<h6>Primary Role: <%= this.model.get('role')%></h6>
-		            <button class="button btn js-close-view">Cancel</button>   
+								<h5>Primary Role: <%= this.model.get('role')%></h5>
+		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>   
 				  		</div>
 				  	</div></script><!-- This is the Message listview template --><script type=text/template id=message-list><div class="msg-content-info col-xs-12">
 						<h3 class='col-xs-8'><%= this.model.get('subject')%></h3>
@@ -288,7 +320,7 @@
 					</div>
 					<div class="action-container pull-right">
 						  <button class="button btn"><a class="js-delete-msg col-xs-12">Delete</a></button> 
-				  </div></script><!-- // <button class="button btn"><a class="js-edit-msg col-xs-12">Edit</a></button>  --><!-- This is the event list template --><script type=text/template id=event-list><div class="event-info col-xs-3">
+				  </div></script><!-- This is the event list template --><script type=text/template id=event-list><div class="event-info col-xs-3">
             <div class="event-type">
 							<h4><%= this.model.get('type')%></h4>
             </div>
@@ -302,7 +334,7 @@
 					</div>
 					<div class="event-content-info col-xs-9">
 					  <h4 class="col-xs-12 subject"><%= this.model.get('subject')%></h4>
-						<span class="col-xs-12 event-location"><a href="">Directions</a></span>
+						<span class="col-xs-12 event-location"><a href=""><i class='ion-ios7-location'></i>Directions</a></span>
 					  <p class="col-xs-12 content"><%= this.model.get('content')%></p>	
 					</div></script><script type=text/template id=full-event-list><div class="event-info col-xs-3">
             <div class="event-type">
@@ -318,19 +350,19 @@
 					</div>
 					<div class="event-content-info col-xs-9">
 					  <h4 class="col-xs-12 subject"><%= this.model.get('subject')%></h4>
-						<span class="col-xs-12 event-location"><a href="">Directions</a></span>
+						<span class="col-xs-12 event-location"><a href=""><i class='ion-ios7-location'></i>Directions</a></span>
 					  <p class="col-xs-12 content"><%= this.model.get('content')%></p>
 					  <div class="action-container pull-right">
 						  <button class="button btn"><a class="js-delete-msg col-xs-12">Delete</a></button> 
 					  </div>
-					</div></script><!-- // <button class="button btn"><a class="js-edit-msg col-xs-12">Edit</a></button>  --><!-- this is the add message form while in the team dashboard --><script type=text/template id=team-message-addition><div class="modal-container">
+					</div></script><!-- this is the add message form while in the team dashboard --><script type=text/template id=team-message-addition><div class="modal-container">
 				  		<div class="col-xs-12 modal-body">
 					  		<div class="modal-head-container">
 						  		<h3>Send a new message!</h3>
 					  		</div>
 		            <input placeholder="Subject" class="js-msg-subject"></input>
 		            <textarea placeholder="Message" class="js-msg-content"></textarea>
-		            <button class="button btn js-send-message pull-left"><a>Send</a></button>
+		            <button class="button btn js-send-message pull-left action-item"><a>Send</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>		          
 				  		</div>
 				  	</div></script><!-- Select Team Template --><script type=text/template id=teamname-list-item><option><%= result.get('teamname') %></option></script><!-- Add Team Form --><script type=text/template id=team-addition><div class="modal-container">
@@ -347,7 +379,7 @@
 	                <option value="Basketball">Basketball</option>
 	                <option value="Other">Other</option>
 		            </select>
-		            <button class="button btn js-add-team pull-left"><a>Add team</a></button>
+		            <button class="button btn js-add-team pull-left action-item"><a>Add team</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 				  		</div>
 				  	</div></script><script type=text/template id=event-addition><div class="modal-container">
@@ -364,10 +396,10 @@
 		                <option value="Practice">Practice</option>
 		                <option value="Meetup">Meetup</option>
 		            </select>
-		            <input placeholder="Pick A Date"type='text' class='xs-time-input col-xs-4 js-date-picker'>
-		            <input placeholder="From: Time"type="text" class="sm-time-input col-xs-4 js-time-from-picker">
-		            <input placeholder="To: Time "type="text" class="xs-time-input col-xs-4 js-time-to-picker">            
-		            <button class="button btn js-add-event pull-left"><a>Add Event</a></button>
+		            <input placeholder="Pick A Date" type='text' class='xs-time-input col-xs-4 js-date-picker'>
+		            <input placeholder="From: Time" type="text" class="sm-time-input col-xs-4 js-time-from-picker">
+		            <input placeholder="To: Time " type="text" class="xs-time-input col-xs-4 js-time-to-picker">            
+		            <button class="button btn js-add-event pull-left action-item"><a>Add Event</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 		          </div>
 				  	</div></script><script type=text/template id=player-addition><div class="modal-container">
@@ -378,13 +410,13 @@
 		            <input placeholder="first name" class=" js-form-player-firstname"></input>
 		            <input placeholder="last name" class=" js-form-player-lastname"></input>
 		            <input placeholder="email" class=" js-form-player-email"></input>
-		            <input placeholder="" class=" js-form-player-phone-acode"></input> -
-		            <input placeholder="" class=" js-form-player-phone-three"></input> - 
-		            <input placeholder="" class=" js-form-player-phone-four"></input>
+		            <input placeholder="123" class=" js-form-player-phone-acode sm-input"></input>
+		            <input placeholder="456" class=" js-form-player-phone-three sm-input"></input>
+		            <input placeholder="7890" class=" js-form-player-phone-four sm-input"></input>
 		            <input placeholder="address" class=" js-form-player-address"></input>
 		            <input placeholder="city" class=" js-form-player-city"></input>
-		            <input placeholder="state" class=" js-form-player-state"></input>
-		            <input placeholder="zip" class=" js-form-player-zip"></input>
+		            <input placeholder="state" class=" js-form-player-state sm-input"></input>
+		            <input placeholder="zip" class=" js-form-player-zip sm-input"></input>
 		            <select class="js-form-player-position-primary">
 		                <option value="" disabled selected>Primary Position</option>
 		                <option value="P">P</option>
@@ -415,7 +447,7 @@
 		                <option value="U">U</option>
 		                <option value="Other">Other</option>
 		            </select>
-		            <button class="button btn js-add-player pull-left"><a>Add Player</a></button>
+		            <button class="button btn js-add-player pull-left action-item"><a>Add Player</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 	            </div>
 				  	</div></script><script type=text/template id=coach-addition><div class="modal-container">
@@ -423,16 +455,16 @@
 				        <div class="modal-head-container">
 						  		<h3>add a new coach!</h3>
 				        </div>
-		            <input value="Matt" placeholder="first name" class=" js-form-coach-firstname"></input>
-		            <input value="Bertino" placeholder="last name" class=" js-form-coach-lastname"></input>
-		            <input value="bertman45@gmail.com" placeholder="email" class=" js-form-coach-email"></input>
-		            <input value="561" placeholder="" class=" js-form-coach-phone-acode"></input>
-		            <input value="543" placeholder="" class=" js-form-coach-phone-three"></input>
-		            <input value="7466" placeholder="" class=" js-form-coach-phone-four"></input>
-		            <input value="194 Jones Creek Dr" placeholder="address" class=" js-form-coach-address"></input>
-		            <input value="Jupiter" placeholder="city" class=" js-form-coach-city"></input>
-		            <input value="FL" placeholder="state" class=" js-form-coach-state"></input>
-		            <input value="33458" placeholder="zip" class=" js-form-coach-zip"></input>
+		            <input placeholder="first name" class=" js-form-coach-firstname"></input>
+		            <input placeholder="last name" class=" js-form-coach-lastname"></input>
+		            <input placeholder="email" class=" js-form-coach-email"></input>
+		            <input placeholder="123" class=" js-form-coach-phone-acode sm-input"></input>
+		            <input placeholder="456" class=" js-form-coach-phone-three sm-input"></input>
+		            <input placeholder="7890" class=" js-form-coach-phone-four sm-input"></input>
+		            <input placeholder="address" class=" js-form-coach-address"></input>
+		            <input placeholder="city" class=" js-form-coach-city"></input>
+		            <input placeholder="state" class=" js-form-coach-state sm-input"></input>
+		            <input placeholder="zip" class=" js-form-coach-zip sm-input"></input>
 		            <select class="js-form-coach-position-role">
 		                <option value="" disabled selected>Primary Role</option>
 		                <option value="Batting">Batting</option>
@@ -444,7 +476,7 @@
 		                <option value="Conditioning">Conditioning</option>
 		                <option value="Strength">Strength</option>
 		            </select>
-		            <button class="button btn js-add-coach pull-left"><a>Add Coach</a></button>
+		            <button class="button btn js-add-coach pull-left action-item"><a>Add Coach</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 		          </div>
 				  	</div></script><script type=text/template id=settings-addition><div class="modal-container">
@@ -461,13 +493,13 @@
 		                <option value="Basketball">Basketball</option>
 		                <option value="Other">Other</option>
 		            </select>
-		            <button class="button btn js-teamset-edit pull-left"><a>Save Team Edits</a></button>
+		            <button class="button btn js-teamset-edit pull-left action-item"><a>Save Team Edits</a></button>
 		            <button class="button btn js-teamset-delete pull-left"><a>Delete Team</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>		        
 				  		</div>
-				  	</div></script><!-- ////////////////////////// --><!-- End of my templates --><!-- ////////////////////////// --><script src=scripts/9622796b.vendor.js></script><!-- this is the parse sdk --><script src=//www.parsecdn.com/js/parse-1.2.17.min.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+				  	</div></script><!-- ////////////////////////// --><!-- End of my templates --><!-- ////////////////////////// --><script src=scripts/e0c7a4b3.vendor.js></script><!-- this is the parse sdk --><script src=//www.parsecdn.com/js/parse-1.2.17.min.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/aaf74903.plugins.js></script><script src=scripts/bee5f41d.main.js></script>
+            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/aaf74903.plugins.js></script><script src=scripts/f3b9ee11.main.js></script>
