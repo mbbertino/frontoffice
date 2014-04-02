@@ -6,6 +6,7 @@ var MainRouter = Backbone.Router.extend({
     "team/roster/:id": "teamRosterPage",
     "team/messages/:id": "teamMessagesPage",
     "team/events/:id": "teamEventsPage",
+    "team/visitor/:id": "visitorPage",
   },
 
   initialize: function() {},
@@ -16,6 +17,20 @@ var MainRouter = Backbone.Router.extend({
     } else {
       new AppView()
     }
+  },
+
+  visitorPage: function(id) {
+    var teamQuery = new Parse.Query(Team)
+    teamQuery.get(id, {
+      success: function(object) {
+        new VisitorView({
+          model: object
+        })
+        new GuestTeamHeaderBar({
+          model: object
+        })
+      }
+    })
   },
 
   teamRosterPage: function(id) {

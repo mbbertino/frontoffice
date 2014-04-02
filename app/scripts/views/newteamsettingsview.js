@@ -54,11 +54,15 @@ var NewTeamSettingsForm = Parse.View.extend({
         Parse.Object.destroyAll(results)
       }
     });
-    that.team.destroy({
+
+    that.model.destroy({
       success: function(myObject) {
+        console.log('I am successfu')
+        that.remove()
         window.router.navigate("", {
           trigger: true
         })
+        location.reload()
       }
     })
   },

@@ -60,7 +60,7 @@ $break-small: 600px;
 
 		.modal-body{
 			overflow: hidden;
-			padding: 10px;
+			padding: 20px;
 			position: relative;
 			font-size: 16px;
 			color: $fontcolordark;
@@ -82,6 +82,7 @@ $break-small: 600px;
 			}
 
 			input {
+				padding-left: 10px;
 				width: 98.2%;
 				margin: 10px 0;
 				border-radius: 4px;
@@ -100,12 +101,14 @@ $break-small: 600px;
 			}
 
 			select {
+				padding-left: 10px;
 				margin: 10px 0;
 				width: 98.2%;
 				margin-left: 5px;			
 			}
 
 			textarea {
+				padding-left: 10px;
 				margin: 10px 0;
 				width: 98.2%;
 				border-radius: 4px;
@@ -113,6 +116,7 @@ $break-small: 600px;
 			}
 
 			.modal-head-container {
+				margin-bottom: 10px;
 				background: $brandpop;
 				margin-left: -20px;
 				margin-right: -20px;
@@ -126,6 +130,14 @@ $break-small: 600px;
 					float: none;
 					margin: 0 auto;
 					text-transform: uppercase;
+				}
+			}
+
+			.action-item {
+				background: $brandpop;
+
+				a {
+					color: $fontcolor;
 				}
 			}
 
@@ -163,15 +175,35 @@ $break-small: 600px;
 
 
 /* Space out content a bit */
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
 
 body {	
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 1px;
   color: $fontcolor;
   background: $brandbkgd;
-  // padding-top: 20px;
-  padding-bottom: 20px;
 }
+
+.wrapper {
+	min-height: 100%;
+	margin: 0 auto -301px;
+
+	&:after {
+		content: '';
+		display: block;
+	}
+}
+
+.footer, .wrapper:after {
+	height: 301px;
+}
+
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 
@@ -184,7 +216,6 @@ body {
     padding: 0 0;
     border-bottom: 1px solid $brandmain;
     background: $brandbkgdthree;
-
 
     .container{
     	padding-left: 45px;
@@ -199,8 +230,13 @@ body {
     		color: $brandpop;
     	}
 	    .ion-home{
+	    	text-align: center;
 	    	font-size: 30px;
 	    	margin: 15px 5px;
+	    	border: 1px solid $brandpop;
+	    	border-radius: 4px;
+	    	padding-left: 4px;
+	    	padding-right: 2px;
 	    }
     }
 
@@ -224,6 +260,7 @@ body {
             border-radius: 4px;
             margin-right: 5px;
             margin-left: 5px;
+            padding-left: 10px;
 
             @media screen and (max-width: $break-small) {
                 position: relative;
@@ -264,9 +301,19 @@ body {
 
 /* Custom page footer */
 .footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
+
+    .footer-top {
+			height: 200px;
+		  border-top: 1px solid $brandpop;
+	    color: $fontcolordark;
+    	background: $brandbkgdthree;
+    }
+
+    .footer-bot {
+			background: $brandpop;		
+	    color: $fontcolor;
+			height: 100px;
+    }
 }
 
 .container-narrow > hr {
@@ -276,7 +323,6 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
     text-align: center;
-    // background: black;
     padding: 0;
     overflow: hidden;
 
@@ -418,7 +464,16 @@ body {
                   border: 1px solid $brandpop;
                   padding-left: 30px;
                   padding-right: 30px;
+
+                  a {
+                		color: $fontcolor;
+                		cursor: pointer;
+                	}
                   
+                  .visitor-headers {
+                  	margin: 10px 10px;
+                  	display: inline-block;
+                  }
                   h3 {
 	                  font-family: 'Open Sans', sans-serif;
 	                  font-weight: 400;
@@ -474,6 +529,8 @@ body {
                   .full-pages {
                   	height: 1000px;
                   	overflow-y: scroll;
+                  	padding-top: 30px;
+
 
                   	.sm-input {
                   		width: 60px;
@@ -493,6 +550,7 @@ body {
                   		border: 1px solid $brandpop;
                   		border-radius: 4px;
                   		padding-bottom: 15px; 
+                  		text-align: left;
                   		h3 {
                   			border-bottom: 1px solid $brandpop;
                   			padding-bottom: 5px;
@@ -506,6 +564,8 @@ body {
                   		border: 1px solid $brandpop;
                   		border-radius: 4px;
                   		padding-bottom: 15px; 
+                  		text-align: left;
+
                   		h3 {
                   			border-bottom: 1px solid $brandpop;
                   			padding-bottom: 5px;
@@ -737,14 +797,21 @@ body {
         margin-bottom: 100px;
         
         h1 {
-            margin-top: 120px;
+        	font-weight: 400px;
+          margin-top: 120px;
         }
 
         .signup-button {
-            background: $brandpop;
-            border: none;
-            border-radius: 0px;
-            color: #fff;
+          background: $brandpop;
+          border: 1px solid $brandbkgdthree;
+          border-radius: 4px;
+
+          a {
+          	padding-left: 5px; 
+          	padding-right: 5px; 
+          	color: $fontcolor;
+          	cursor: pointer;
+          }
         }
         .signup-tainer {
             overflow: hidden;
@@ -764,6 +831,7 @@ body {
                 @include inputgen;
             }
             .btn {
+            		border-radius: 0 0 4px 4px;
                 background: $brandpop;
                 width: 100%;
                 color: #fff;
@@ -819,27 +887,118 @@ body {
 .ion-ios7-location {
 	margin-right: 5px;		
 }
+
+.ion-edit {
+	font-size: 25px;
+	margin-right: 10px;	
+}
+
+.ion-ios7-person {
+		font-size: 18px;
+	margin-right: 10px;		
+}
 /* Supporting marketing content */
 .marketing {
     position: relative;
     color: $fontcolordark;
-    // background: $brandpop;
+  	background: $brandbkgdthree;
     margin: 0 0;
     margin-top: -30px;
-    padding: 20px 0;
-
-    p + h4 {
-        
-    }
 
     h3 {
-        font-family: 'Walter Turncoat', cursive;
+        font-family: 'Open Sans', sans-serif;
     }
 
     .team-search-bar {
-    	background: $brandpop;
+	    background: $brandpop;
     	text-align: center;
     	color: $fontcolor;
+    	padding: 10px 0 20px;
+			
+			.search-copy {
+				margin: 0 auto;
+				float: none;
+
+	    	h4 {
+	    		font-family: 'Open Sans', sans-serif;
+	    		margin-bottom:  5px;
+	    		padding-left: 0px;
+	    		text-align: left;
+					padding-left: 55px;
+	    	}
+
+				input {
+					height: 50px;
+					width: 400px;
+					font-size: 20px;
+					border-radius: 4px;
+					padding-left: 10px;
+					color: $fontcolordark;
+				}
+
+	    	button {
+	    		width: auto;
+	    		height: 50px;
+	      	background: #fff;
+	      	padding: 0px;
+	      	border: 1px solid $brandpop;
+	      	margin: 0px auto 7px;
+
+	      		@media screen and (max-width: $break-small) {                     
+	            display: none;
+	          }
+
+	          &:hover{
+		    			background: $brandpop;
+		    			border: 1px solid $brandbkgdthree;
+		    		}
+
+				   	a {
+	      		padding: 5px;
+	        	text-align: center;
+	      		font-size: 20px;
+	      		color: $fontcolordark;
+	      		cursor: pointer;
+
+	      		&:hover{
+	      			color: $fontcolor;
+	      		}
+	      	}
+	      }
+			}
+    }
+
+    .services-bar {
+    	background: $brandbkgd;
+    	padding: 60px 0px;
+
+    	.service {
+    		box-shadow: 0 0 10px $brandpop;
+    		background: $brandbkgdthree;
+    		margin-bottom: 30px; 
+    		border-radius: 4px;
+    		padding-top: 30px;
+    		padding-bottom: 30px; 
+
+    		h1 {
+    			text-align: center;
+    			margin-bottom: 0px;
+    			margin-top: 25px;
+    			font-family: 'Open Sans', sans-serif;
+    		}
+
+    		p {				
+					margin-top: 10px;
+					padding-top: 20px;
+				}
+			
+    		.icon {
+    			color: $brandpop;
+    			text-align: center;
+    			font-size: 100px;    		
+    			margin-right: 0px;
+    		}
+    	}
     }
 }
 

@@ -15,7 +15,7 @@ var TeamSnapshot = Parse.View.extend({
   },
 
   initialize: function() {
-    $('.js-team-snapshot-container').prepend(this.el)
+    $('.js-team-snapshot-container').append(this.el)
     this.setHref();
     this.render()
   },

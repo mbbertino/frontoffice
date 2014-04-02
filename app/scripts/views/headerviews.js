@@ -96,3 +96,17 @@ var TeamHeaderBar = Parse.View.extend({
     new AppView()
   }
 })
+
+var GuestTeamHeaderBar = Parse.View.extend({
+  className: 'container',
+
+  initialize: function(options) {
+    $('.header').html(this.el)
+    this.render()
+  },
+
+  render: function() {
+    var teamname = this.model.attributes.teamname
+    this.$el.html('<h1>Team: ' + teamname + '</h1>')
+  }
+})

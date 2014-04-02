@@ -34,16 +34,21 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <div class="wrapper">
+	        <div class="header">
+	        </div>
 
-        <div class="header">
+	        <div class="jumbotron">
+	        </div>
+
+	        <div class="row marketing">
+	        </div>
         </div>
 
-        <div class="jumbotron">
+        <div class="footer">
+        	<div class="footer-top"></div>
+        	<div class="footer-bot"></div>
         </div>
-
-        <div class="row marketing">
-        </div>
-
         <!-- ////////////////////////// -->
         <!-- Below are all my templates -->
         <!-- ////////////////////////// -->
@@ -66,7 +71,7 @@
                     <h1>Front Office</h1>
                     <p class="lead">A Sports Team Management Software</p>
                     <div class="col-xs-12">
-                        <button class="signup-button js-signup">Create A Team</button>
+                        <button class="signup-button js-signup"><a>Create A Team</a></button>
                     </div>
                 </div>
             </div>
@@ -95,29 +100,44 @@
         <script type="text/template" id="marketing-template">
 	        <div class="team-search-bar">
 	        	<div class="container">
-			        <h2 class='col-xs-12'>Search for a team by their ID</h2>
-
-		        	<input class="team-id"></input>
-		        	<button class="btn js-team-search">Search</button>
+							<div class="search-copy col-xs-8">
+				        <h4 class='col-xs-12'>Find Your Team!</h4>
+			        	<input placeholder="Team ID" class="team-id"></input>
+			        	<button class="btn js-team-search"><a href="">Search</a></button>
+							</div>
 	        	</div>
 	        </div>
-	        <div class="container">
-            <div class="service col-xs-6">
-                <h3>Scheduling</h3>
-                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
-            </div> 
-            <div class="service col-xs-6">
-                <h3>Scheduling</h3>
-                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
-            </div>
-            <div class="service col-xs-6">
-                <h3>Scheduling</h3>
-                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
-            </div>
-            <div class="service col-xs-6">
-                <h3>Scheduling</h3>
-                <p>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
-            </div>
+	        <div class="services-bar">
+		        <div class="container">
+			        <div class="col-sm-6 col-xs-12">
+		            <div class="service col-xs-12">
+	                <i class='icon ion-chatboxes col-xs-4'></i>
+	                <h1 class='col-xs-8'>Messaging</h1>
+	                <p class='col-xs-12'>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+		            </div> 
+			        </div>
+			        <div class="col-sm-6 col-xs-12">
+		            <div class="service col-xs-12">				            
+			            <i class='icon ion-ios7-calendar col-xs-4'></i>
+	                <h1 class='col-xs-8'>Schedule</h1>			            
+	                <p class='col-xs-12'>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+		            </div>
+			        </div>
+			        <div class="col-sm-6 col-xs-12">
+		            <div class="service col-xs-12">	
+			            <i class='icon ion-person-stalker col-xs-4'></i>
+	                <h1 class='col-xs-8'>Roster</h1>			            
+	                <p class='col-xs-12'>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+		            </div>
+			        </div>
+			        <div class="col-sm-6 col-xs-12">
+		            <div class="service col-xs-12">				            
+			            <i class='icon ion-clipboard col-xs-4'></i>
+	                <h1 class='col-xs-8'>Tryouts</h1>			            
+	                <p class='col-xs-12'>With FrontOffice you will be able to quickly set up a team schedule for practices and games. After that you will be able to distrubte this schedule out to players, parents, and other coaches. </p>
+		            </div>
+			        </div>
+		        </div>	
 	        </div>
         </script>
 
@@ -149,8 +169,8 @@
 			        </div>
             </div>
             <div class="col-xs-12 board js-team">
-							<h4 class="col-xs-12"><a class="js-manage-team" href='#/team/<%= this.link %>'><i class='ion-android-data'></i>Team Dashboard</a></h4>
-							<h4 class="col-xs-12"><a class="js-manage-team-tryout" href='#/team/tryout/<%= this.link %>'><i class='ion-clipboard'></i>Manage Tryouts</a></h4>
+							<h4 class="col-xs-12"><a class="js-manage-team" href='#/team/<%= this.link %>'><i class='ion-clipboard'></i>Team Dashboard</a></h4>
+							<h4 class="col-xs-12"><a class="js-manage-team-tryout" href='#/team/visitor/<%= this.link %>'><i class='ion-ios7-person'></i>Visitor Page</a></h4>
 							<h4 class="col-xs-12"><a class="js-team-settings"><i class='ion-gear-a'></i>Team Settings</a></h4>
 
             </div> 
@@ -267,6 +287,26 @@
             </div>
         </script>
 
+<!-- Guest/Tryout Page Template -->	
+        <script type="text/template" id="guest-page">
+            <div class="js-dashboard row">
+              <div class="maincontent col-xs-12">
+                <div class="col-xs-12 section">
+                  <div class="col-xs-12 board-title">
+                  	<h3 class="visitor-headers js-signup"><a><i class='ion-edit'></i>Signups</a></h3>				            				            
+                  	<h3 class="visitor-headers js-events"><a><i class='ion-ios7-calendar'></i>Schedule</a></h3>	            				            
+                  	<h3 class="visitor-headers js-messages"><a><i class='ion-chatboxes'></i>Messages</a></h3>				            				            
+                  	<h3 class="visitor-headers js-players"><a><i class='ion-person-stalker'></i>Players</a></h3>				            				            
+                  	<h3 class="visitor-headers js-coaches"><a><i class='ion-person-stalker'></i>Coaches</a></h3>				            				            
+                  </div>
+                  <div class="col-xs-12 board">
+                    <div class="col-xs-12 events messages players coaches full-pages"></div> 
+                  </div>
+                </div>                
+              </div>
+            </div>
+        </script>
+
 <!-- This is the Player listview template -->
         <script type="text/template" id="player-list">            
             <a class="js-person-expand"><%= this.model.get('firstName')+' '+this.model.get('lastName')%></a>
@@ -332,7 +372,7 @@
 	                <option value="Other">Other</option>
 	                <option value="" disabled >Secondary Position</option>
 	            </select>
-							<button class="button btn js-save pull-left"><a>Save Edits</a></button>
+							<button class="button btn js-save pull-left action-item"><a>Save Edits</a></button>
 	            <button class="button btn js-delete pull-left"><a>Delete Player</a></button>
 	            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 	          </div>
@@ -400,7 +440,7 @@
 	                <option value="Conditioning">Conditioning</option>
 	                <option value="Strength">Strength</option>
 	            </select>
-							<button class="button btn js-save pull-left"><a>Save Edits</a></button>
+							<button class="button btn js-save pull-left action-item"><a>Save Edits</a></button>
 	            <button class="button btn js-delete pull-left"><a>Delete Coach</a></button>
 	            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 						</div>
@@ -497,7 +537,7 @@
 					  		</div>
 		            <input placeholder="Subject" class="js-msg-subject"></input>
 		            <textarea placeholder="Message" class="js-msg-content"></textarea>
-		            <button class="button btn js-send-message pull-left"><a>Send</a></button>
+		            <button class="button btn js-send-message pull-left action-item"><a>Send</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>		          
 				  		</div>
 				  	</div>
@@ -524,7 +564,7 @@
 	                <option value="Basketball">Basketball</option>
 	                <option value="Other">Other</option>
 		            </select>
-		            <button class="button btn js-add-team pull-left"><a>Add team</a></button>
+		            <button class="button btn js-add-team pull-left action-item"><a>Add team</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 				  		</div>
 				  	</div>
@@ -548,7 +588,7 @@
 		            <input placeholder="Pick A Date" type='text' class='xs-time-input col-xs-4 js-date-picker'>
 		            <input placeholder="From: Time" type="text" class="sm-time-input col-xs-4 js-time-from-picker">
 		            <input placeholder="To: Time " type="text" class="xs-time-input col-xs-4 js-time-to-picker">            
-		            <button class="button btn js-add-event pull-left"><a>Add Event</a></button>
+		            <button class="button btn js-add-event pull-left action-item"><a>Add Event</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 		          </div>
 				  	</div>
@@ -600,7 +640,7 @@
 		                <option value="U">U</option>
 		                <option value="Other">Other</option>
 		            </select>
-		            <button class="button btn js-add-player pull-left"><a>Add Player</a></button>
+		            <button class="button btn js-add-player pull-left action-item"><a>Add Player</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 	            </div>
 				  	</div>
@@ -633,7 +673,7 @@
 		                <option value="Conditioning">Conditioning</option>
 		                <option value="Strength">Strength</option>
 		            </select>
-		            <button class="button btn js-add-coach pull-left"><a>Add Coach</a></button>
+		            <button class="button btn js-add-coach pull-left action-item"><a>Add Coach</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>
 		          </div>
 				  	</div>
@@ -654,7 +694,7 @@
 		                <option value="Basketball">Basketball</option>
 		                <option value="Other">Other</option>
 		            </select>
-		            <button class="button btn js-teamset-edit pull-left"><a>Save Team Edits</a></button>
+		            <button class="button btn js-teamset-edit pull-left action-item"><a>Save Team Edits</a></button>
 		            <button class="button btn js-teamset-delete pull-left"><a>Delete Team</a></button>
 		            <button class="button btn js-close-view pull-right"><a>Cancel</a></button>		        
 				  		</div>
@@ -719,6 +759,7 @@
 
         <script src="scripts/views/coachdashboardview.js"></script>
         <script src="scripts/views/teamsnapshotview.js"></script>
+        <script src="scripts/views/visitorview.js"></script>
         
 
         <!-- Team pages -->

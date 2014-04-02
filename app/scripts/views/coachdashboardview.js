@@ -19,7 +19,7 @@ var CoachDashboard = Parse.View.extend({
 
     var userTeamQuery = new Parse.Query(Team);
     userTeamQuery.equalTo("user", Parse.User.current());
-    userTeamQuery.descending('createdAt')
+    userTeamQuery.ascending('createdAt')
     userTeamQuery.find({
       success: function(usersTeams) {
         _.each(usersTeams, function(team) {
