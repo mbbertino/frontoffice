@@ -19,6 +19,9 @@ $fontcolordark: #3e606f;   // font color / also the offset the main color
 
 $break-small: 600px;
 
+.fa {
+	padding-right: 5px; 
+}
 @media screen and (max-width: $break-small) {
     // this is where the media break changes go
 }
@@ -79,6 +82,12 @@ $break-small: 600px;
 				background: $brandpop;
 				border-radius: 4px;
 				text-align: center;
+
+				i {
+					padding: 100px 0;
+					color: #fff;
+
+				}
 			}
 
 			input {
@@ -231,7 +240,7 @@ body {
     		color: $brandpop;
     		text-decoration: none;
     	}
-	    .ion-home{
+	    .fa-home{
 	    	text-align: center;
 	    	font-size: 30px;
 	    	margin: 15px 5px;
@@ -1088,7 +1097,7 @@ body {
     	.service {
     		box-shadow: 0 0 10px $brandpop;
     		background: $brandbkgdthree;
-    		height: 250px;
+    		height: 325px;
     		margin-bottom: 30px; 
     		border-radius: 4px;
     		padding-top: 30px;
@@ -1106,7 +1115,7 @@ body {
 					padding-top: 20px;
 				}
 			
-    		.icon {
+    		.fa {
     			color: $brandpop;
     			text-align: center;
     			font-size: 100px;    		
