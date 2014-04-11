@@ -11,3 +11,7 @@ Pickadate
 Jquery
 Momentjs
 underscore
+Sass
+Compass
+Font awesome
+Bootstrap
