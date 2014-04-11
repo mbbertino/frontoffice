@@ -1,9 +1,9 @@
-<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js><!--<![endif]--><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>FO</title><meta name=description content=""><meta name=viewport content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/3c1b9080.vendor.css><link rel=stylesheet href=styles/b9f680d2.main.css><script src=bower_components/modernizr/modernizr.js></script><script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script><body><!--[if lt IE 10]>
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js><!--<![endif]--><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>FO</title><meta name=description content=""><meta name=viewport content="width=device-width"><link rel=stylesheet href=bower_components/ionicons/css/ionicons.css><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/55852fd5.vendor.css><link rel=stylesheet href=styles/3edaddaa.main.css><script src=bower_components/modernizr/modernizr.js></script><script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script><body><!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]--><div class=wrapper><div class=header></div><div class=jumbotron></div><div class="row marketing"></div></div><div class=footer><div class=footer-top><div class=container><div class="fo-mission col-xs-7"><h3>Mission Statement:</h3><p>Front Office strives to encourage better communication and management of small teams</p><br><p>Through a simple yet effective product we are trying to lessen the burden that is put on team managers, who are often the coaches themselves. With Front Office we hope that Coaches can get back to coaching.</p></div><div class="fo-team col-xs-5"><h3>The Team</h3><span>Matt Bertino: Lead Dev</span><br><p>Jsut me right now but if you find this applicaiton interesting shoot me an email!</p></div></div></div><div class=footer-bot><div class=container><div class="fo-contact col-xs-12"><h4>Front Office</h4><p>heyfrontoffice@gmail.com</p></div></div></div></div><!-- ////////////////////////// --><!-- Below are all my templates --><!-- ////////////////////////// --><!-- Guest header templates --><script type=text/template id=guest-headerbar-template><h2 class="pull-left">Front Office</h2>
             <div class="head-login-form">
-                <input id="password" type="password" value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
-                <input value="bertman45@gmail.com" placeholder="Username"class="email js-login-username pull-right"></input>
+                <input id="password" type="password" placeholder="Password" class="password js-login-password pull-right"></input>
+                <input placeholder="Username"class="email js-login-username pull-right"></input>
                 <button class="button btn btn-inverse pull-right js-login"><a>Login</a></button>
             </div></script><!-- Main App View Template --><script type=text/template id=appview-template><img src="images/41a99da1.Landing.jpg" class="landing-img img-responsive" alt="Responsive image">
             <div class="container">
@@ -20,12 +20,12 @@
                 <input placeholder="Sport"class="col-xs-12 js-team-sport"></input>                
                 <input placeholder="Email"class="col-xs-12 email js-coach-username"></input>
                 <input id="password" type="password" placeholder="Password"class="col-xs-12 password js-coach-password"></input>
-                    <button class="col-xs-12 button btn js-create-team">Create</button>
+                    <button class="col-xs-12 button btn js-create-team"><a>Create</a></button>
             </div></script><!-- This is the Marketing Template --><script type=text/template id=marketing-template><div class="team-search-bar">
 	        	<div class="container">
 							<div class="search-copy col-xs-8">
 				        <h4 class='col-xs-12'>Find Your Team!</h4>
-			        	<input value="0oJaBVbuE7" placeholder="Team ID" class="team-id js-search-input"></input>
+			        	<input placeholder="Team ID" class="team-id js-search-input"></input>
 			        	<button class="btn"><a class="js-team-search">Search</a></button>
 							</div>
 	        	</div>
@@ -247,7 +247,7 @@
 	            <h5 class="col-xs-12"><%= this.model.get('address')+' '+this.model.get('city')+', '+this.model.get('state')+' '+this.model.get('zip')%></h5>
 		          <h5 class="col-xs-12"><%= this.model.get('email')%></h5>
 		          <h5 class="col-xs-12"><%= this.model.get('phoneAcode')+'.'+this.model.get('phoneThree')+'.'+this.model.get('phoneFour')%></h5>
-	            <h5 class="col-xs-12"Role: <%= this.model.get('role')%></h5>
+	            <h5 class="col-xs-12">Role: <%= this.model.get('role')%></h5>
 							<button class="button btn js-edit pull-right"><a>Edit</a></button>
 					</div></script><!-- This is the Coach listview template --><script type=text/template id=full-coach-list-modal><div class="modal-container">
 			  		<div class="col-xs-12 modal-body"> 
