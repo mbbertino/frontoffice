@@ -558,7 +558,7 @@ body {
                 }
 
                 .board {
-                	// background: $brandpop;
+                	background: $brandbkgdthree;
                   border-radius: 0px 0px 4px 4px;
                   overflow: hidden;
                   color: $fontcolordark;
@@ -615,6 +615,7 @@ body {
                   		border-radius: 4px;
                   		padding-bottom: 15px; 
                   		text-align: left;
+                  		margin-bottom: 30px;
 
                   		h3 {
                   			font-family: 'Open Sans', sans-serif;
@@ -632,6 +633,7 @@ body {
                   		border-radius: 4px;
                   		padding-bottom: 15px; 
                   		text-align: left;
+                  		margin-bottom: 30px;
                   		
                   		h3 {
                   			font-family: 'Open Sans', sans-serif;
@@ -678,7 +680,7 @@ body {
                   }
 
                   .events {
-                  	overflow: hidden;
+                  	// overflow: hidden;
                   	background: $brandbkgdthree;
 
 	                  .event-container {
@@ -788,7 +790,7 @@ body {
                   }
 
                   .messages {
-                  	overflow: hidden;
+                  	// overflow: hidden;
                   	background: $brandbkgdthree;
 
                   	.message-container {
@@ -856,6 +858,7 @@ body {
                       .player-container {
                         text-align: left;
                         font-size: 16px;
+                        // margin-bottom: 30px;
 
 
                         a {
@@ -889,6 +892,10 @@ body {
         margin: 20px 0;
         color: $fontcolor;
         margin-bottom: 100px;
+
+        a{
+        	color: $fontcolor;
+        }
         
         h1 {
         	font-weight: 400px;

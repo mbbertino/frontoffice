@@ -9,15 +9,17 @@
         <title>FO</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
         <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="bower_components/hideShowPassword/css/example.minimal.css">
         <link rel="stylesheet" href="bower_components/pickadate/lib/themes/default.time.css">
@@ -80,8 +82,8 @@
         <script type="text/template" id="guest-headerbar-template">
             <h2 class="pull-left">Front Office</h2>
             <div class="head-login-form">
-                <input id="password" type="password" value="1234" placeholder="Password" class="password js-login-password pull-right"></input>
-                <input value="bertman45@gmail.com" placeholder="Username"class="email js-login-username pull-right"></input>
+                <input id="password" type="password" placeholder="Password" class="password js-login-password pull-right"></input>
+                <input placeholder="Username"class="email js-login-username pull-right"></input>
                 <button class="button btn btn-inverse pull-right js-login"><a>Login</a></button>
             </div>
         </script>
@@ -108,7 +110,7 @@
                 <input placeholder="Sport"class="col-xs-12 js-team-sport"></input>                
                 <input placeholder="Email"class="col-xs-12 email js-coach-username"></input>
                 <input id="password" type="password" placeholder="Password"class="col-xs-12 password js-coach-password"></input>
-                    <button class="col-xs-12 button btn js-create-team">Create</button>
+                    <button class="col-xs-12 button btn js-create-team"><a>Create</a></button>
             </div>
         </script>
 <!-- This is the Marketing Template -->
@@ -117,7 +119,7 @@
 	        	<div class="container">
 							<div class="search-copy col-xs-8">
 				        <h4 class='col-xs-12'>Find Your Team!</h4>
-			        	<input value="0oJaBVbuE7" placeholder="Team ID" class="team-id js-search-input"></input>
+			        	<input placeholder="Team ID" class="team-id js-search-input"></input>
 			        	<button class="btn"><a class="js-team-search">Search</a></button>
 							</div>
 	        	</div>
@@ -416,7 +418,7 @@
 	            <h5 class="col-xs-12"><%= this.model.get('address')+' '+this.model.get('city')+', '+this.model.get('state')+' '+this.model.get('zip')%></h5>
 		          <h5 class="col-xs-12"><%= this.model.get('email')%></h5>
 		          <h5 class="col-xs-12"><%= this.model.get('phoneAcode')+'.'+this.model.get('phoneThree')+'.'+this.model.get('phoneFour')%></h5>
-	            <h5 class="col-xs-12"Role: <%= this.model.get('role')%></h5>
+	            <h5 class="col-xs-12">Role: <%= this.model.get('role')%></h5>
 							<button class="button btn js-edit pull-right"><a>Edit</a></button>
 					</div>  
         </script>    
